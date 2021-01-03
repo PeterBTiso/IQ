@@ -54,5 +54,5 @@ Next:
 * Add an Extra Page to display School Roster
 * Add an extra page to display students categorically
 * Add A Roster 
-* Make StudentAssesments edit button display none when not the user:admin
-* check why file upload package isnt working 
+* Add studenAssesment edit page
+* Ask pauls brother to help fix the bootstrap dropwdown and the custom file upload

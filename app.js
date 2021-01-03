@@ -94,6 +94,7 @@ const scriptSrcUrls = [
     "https://cdnjs.cloudflare.com/",
     "https://cdn.jsdelivr.net",
     "https://unpkg.com",
+    "https://www.npmjs.com"
 ];
 const styleSrcUrls = [
     "https://kit-free.fontawesome.com/",
@@ -102,13 +103,15 @@ const styleSrcUrls = [
     "https://api.tiles.mapbox.com/",
     "https://fonts.googleapis.com/",
     "https://use.fontawesome.com/",
+    "https://unpkg.com",
+    "https://www.npmjs.com"
 ];
 const connectSrcUrls = [
     "https://api.mapbox.com/",
     "https://a.tiles.mapbox.com/",
     "https://b.tiles.mapbox.com/",
     "https://events.mapbox.com/",
-    "https://unpkg.com",
+    
 ];
 const fontSrcUrls = [];
 app.use(

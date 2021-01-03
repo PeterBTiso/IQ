@@ -23,23 +23,23 @@
                 <nav class="nav float-right nav-masthead justify-content-center ">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                     <% if(!currentUser) { %>
-                    <a class="nav-link" href="/students">Students</a>
-                    <% } else { %>
                         <a class="nav-link" href="/login">Students</a>
-                        <% } %>
-                    <% if(!currentUser) { %>
-                    <a class="nav-link" href="/login">Login</a>
-                    <a class="nav-link" href="/register">Register</a>
                     <% } else { %>
-                    <a class="nav-link" href="/logout">Logout</a>
+                        <a class="nav-link" href="/students">Students</a>
+                    <% } %>
+                    <% if(!currentUser) { %>
+                        <a class="nav-link" href="/login">Login</a>
+                        <a class="nav-link" href="/register">Register</a>
+                    <% } else { %>
+                        <a class="nav-link" href="/logout">Logout</a>
                     <% } %>
                 </nav>
             </div>
         </header>
         <main class="px-3">
             <h1><b>IQ International</b></h1>
-             <p class="lead"> Welcome to IQ International!</p><medium>Jump right in and explore our School.</medium><br>
-                <p>Feel free to Register and browse the</p>
+             <p class="lead"> <b><i>Welcome!</i></b></p><medium>Jump right in and explore our School.</medium><br>
+                <p>Feel free to Register or Login</p>
 
                 <% if(!currentUser) { %>
                     <a href="/register" class="btn btn-lg btn-secondary font-weight-bold border-white bg-white">View Students</a>

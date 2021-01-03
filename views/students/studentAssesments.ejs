@@ -54,7 +54,9 @@
                                                         </p>
                                                         <center>
                                                             <!--this is to center the btn for now -->
-                                                            <button class="btn btn-warning" type="button">Edit</button>
+                                                            <% if( currentUser && student.admin.equals(currentUser._id)) {%>
+                                                                <button class="btn btn-warning" type="button">Edit</button>
+                                                            <% } %>
                                                         </center>
                                                     </div>
                                                 </div>

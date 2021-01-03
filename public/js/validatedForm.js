@@ -20,5 +20,5 @@
         })
 })();
 
-// custpome file input script
-var upload = new FileUploadWithPreview("myUniqueUploadId");
+// custome file input script
+// var upload = new FileUploadWithPreview("myUniqueUploadId");
