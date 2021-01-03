@@ -1,0 +1,58 @@
+MVC - Model View Control
+CRUD - Create Read Update Delete
+
+EXTRA PACKAGES:
+* file-upload-with-preview
+* express-mongo sanitize
+* Joi
+* sanitize-html
+* connect-mongo
+* brew tap heroku/brew && brew install heroku 
+
+Mongo Injection + XSS + Sanitize HTML + SessionCookies + Helmet:
+1) Express-Mongo Sanitize
+2) Cross Site Scripting
+3) Sanitizing HTML w/Joi
+4) Use Joi create a extension to disable html running in inputs
+5) Helmet clickjacking 
+
+
+Controllers are the Heart of the application.
+
+for each Student there should be :
+
+1) Object Id to find each Student
+2) Birth Date
+    2.2) Age
+3) Address
+4) Nationality
+5) SubjectAssesments:
+// Get all students level 
+- for each student that has the same level
+- loop through each subject 
+- display the subjectAssesments related to each subject
+    5.1) English 
+    5.2) Math
+    5.3) Science
+    5.4) Social Studies
+
+6) First Name
+7) Last Name
+8) Level
+9) Title
+10) Gender
+11) Description 
+12) Location 
+13) Image 
+14) Siblings
+15) Admin // person who created the new student
+16) 
+
+
+Next:
+* Add display toggle on studentAssesment view
+* Add an Extra Page to display School Roster
+* Add an extra page to display students categorically
+* Add A Roster 
+* Make StudentAssesments edit button display none when not the user:admin
+* check why file upload package isnt working 

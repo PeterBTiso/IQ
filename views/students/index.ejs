@@ -1,0 +1,39 @@
+<% layout('layouts/boilerplate') %>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2 text-sm-center col-md-12 text-md-left offset-md-0 col-lg-8 offset-lg-2">
+            <h1 class="text-center">All Students</h1>
+            <h3><a href="/students/new">Add New Student</a></h3>
+            
+            <% for(let student of students) { %>
+                <div class="card mb-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="img-fluid" src="<%= student.images[0].thumbnail%>" alt="Card image cap">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= student.firstN %>
+                                        <%= student.lastN %> <span class="text-dark">-</span>
+                                        Level: <%= student.level %>
+                                </h5>
+                                <h6 class="card-text">
+                                    <%= student.gender %> - <%= student.age %>
+                                </h6>
+                                <!-- <p class="card-text">Student-number: <%= student._id %>
+                                </p> -->
+                                <!-- <p class="card-text">
+                                <small class="text-muted">${studentDetails[random1000].level}`</small>
+                            </p> -->
+                                <a href="/students/<%= student._id %>" class="btn btn-primary">View Student</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+
+                    <button class="btn btn-warning"><a href="/">Landing Page</a></button>
+
+        </div>
+    </div>

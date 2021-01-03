@@ -1,0 +1,65 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="text-center"><i class="fas fa-marker"></i> All Student Marks</h1>
+            <!-- <h3><a href="/students/new">Add New Student</a></h3> -->
+            <% for(let student of students) { %>
+                <% let totalScore=0 %>
+                    <% let studentTotalScore=0 %>
+                        <% let studentPercentage = 0 %>
+                            <div class="row">
+                                <h3>
+                                    <!-- <span>
+                            <%= student.firstN %>
+                            <%= student.lastN %>
+                            <%= student.level %>
+                        </span> -->
+                                    <a href="/students/<%= student._id %>" class="text-dark">
+                                        <%= student.firstN %>
+                                            <%= student.lastN %>
+                                                <%= student.level %>
+                                    </a>
+                                    <button class="btn btn-md text-primary"><i class="fas fa-arrow-down"></i></button>
+                                </h3>
+
+                                <% for(let subjectAssesment of student.subjectAssesments) { %>
+                                    <% studentTotalScore +=subjectAssesment.studentScore %>
+                                        <% totalScore +=subjectAssesment.totalScore %>
+                                            <% studentPercentage +=subjectAssesment.studentTotalScore /
+                                                subjectAssesment.totalScore %>
+
+                                                <!-- <h6 class="text-success"> Total Student Mark <%= studentTotalScore %>
+                                                </h6>
+                                                <h6 class="text-danger"> Total Mark <%= totalScore %>
+                                                </h6> -->
+
+                                                <!-- <span>
+                                                    <%= subjectAssesment.subject %> | <%= subjectAssesment.topic %> | <%= subjectAssesment.date %> | <%= subjectAssesment.studentScore %> / <%=
+                                                    subjectAssesment.totalScore %> = <%= subjectAssesment.studentPercentage %>%
+                                                </span> -->
+
+                                                <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                                                    <div class="border">
+                                                        <h5 class="text-center">
+                                                            <%= subjectAssesment.subject %>
+                                                        </h5>
+                                                        <p class="text-center">
+                                                            <%= subjectAssesment.topic %>
+                                                        </p>
+                                                        <p class="text-center">
+                                                            <%= subjectAssesment.date %>
+                                                        </p>
+                                                        <p class="text-center">
+                                                            <%= parseFloat(subjectAssesment.studentScore/subjectAssesment.totalScore *100 ).toFixed(2)%> %
+                                                        </p>
+                                                        <center>
+                                                            <!--this is to center the btn for now -->
+                                                            <button class="btn btn-warning" type="button">Edit</button>
+                                                        </center>
+                                                    </div>
+                                                </div>
+                                                <% } %>
+                            </div>
+                            <% } %>
+        </div>
+    </div>

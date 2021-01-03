@@ -1,0 +1,163 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <div class="col-lg-6 col-md-10 mb-3">
+            
+            <div id="studentCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <% student.images.forEach((img, i) => {  %>
+                    <div class="carousel-item <%= i === 0 ? 'active' : ''%>">
+                        <img src="<%= img.url %>" class="d-block w-100" alt="">
+                    </div>
+                    <% }) %>
+    
+                </div>
+                <% if(student.images.length > 1) {%>
+                <a class="carousel-control-prev" href="#studentCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#studentCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                <% } %>
+            </div>
+
+            <div class="card">
+                <!-- <img class="card-img-top" src="<%= student.image %>" alt="Card image cap"> -->
+                <div class="card-body">
+                    <h2 class="card-title text-center">
+                        <%= student.title %>. <%= student.firstN %>
+                                <%= student.lastN %>
+                    </h2>
+                    <ul>
+                        <li class="card-text">Age: <%= student.age %>
+                        </li>
+                        <li class="card-text">Birthday: <%= student.dob %>
+                        </li>
+                        <li class="card-text">Level: <%= student.level %>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <%= student.gender %> - <%= student.nationality %>
+                    </li>
+                    <li class="list-group-item">
+                        <%= student.siblings %>
+                    </li>
+                    <li class="list-group-item">Address: <%= student.address %>
+                    </li>
+                    <li class="list-group-item">Description: <%= student.description %>
+                    </li>
+                    <li class="list-group-item">Author: <%= student.admin.username %>
+                    </li>
+                </ul>
+                <% if( currentUser && student.admin.equals(currentUser._id)) {%>
+                    <div class="card-body">
+                        <a href="/students/<%= student._id %>/edit">
+                            <button class="btn btn-success mb-3">Edit Student</button></a>
+                        <form action="/students/<%=student._id%>?_method=DELETE" method="POST">
+                            <button class="btn btn-danger">Delete Student</button>
+                        </form>
+                    </div>
+                    <% } %>
+
+            </div>
+            
+            </div>
+            <div class="col-lg-6 col-md-8 mb-3">
+                <% if(currentUser){ %>
+                    <form action="/students/<%= student._id %>/subjectAssesments" class="validated-form" method="POST"
+                        novalidate>
+                        <h2 class="text-center">Add Any Assesment To A Student</h2>
+                        <div class="mt-3 mb-5">
+                            <div>
+                                <label class="form-label" for="subject">Subject</label>
+                                <input class="form-control" type="text" id='subject' name='subjectAssesment[subject]' required>
+                                <div class="valid-feedback">
+                                    Valid Input
+                                </div>
+                            </div>
+                            <div>
+                                <label class="form-label" for="topic">Topic</label>
+                                <input class="form-control" type="text" id='topic' name='subjectAssesment[topic]' required>
+                                <div class="valid-feedback">
+                                    Valid Input
+                                </div>
+                            </div>
+                            <div>
+                                <label class="form-label" for="date">Date</label>
+                                <input class="form-control" type="date" id='date' name='subjectAssesment[date]' required>
+                                <div class="valid-feedback">
+                                    Valid Input
+                                </div>
+                            </div>
+                            <div>
+                                <label class="form-label" for="studentScore">Student Score</label>
+                                <input class="form-control" min="0" max="100" type="number" id='studentScore'
+                                    name='subjectAssesment[studentScore]' required>
+                                <div class="valid-feedback">
+                                    Valid Input
+                                </div>
+                            </div>
+                            <div>
+                                <label class="form-label" for="totalScore">Total</label>
+                                <input class="form-control" min="0" max="100" type="number" id='totalScore'
+                                    name='subjectAssesment[totalScore]' required>
+                                <div class="valid-feedback">
+                                    Valid Input
+                                </div>
+                            </div>
+                            <!-- <div>
+                                <label class="form-label" for="studentPercentage">Student Percentage</label>
+                                <input class="form-control" min="0" max="100" type="Number" id='studentPercentage'
+                                    name='subjectAssesment[studentPercentage]' required>
+                                <div class="valid-feedback">
+                                    Valid Input
+                                </div>
+                            </div> -->
+                            <div>
+                                <label class="form-label" for="subject">Comments</label>
+                                <textarea class="form-control" col="30" row="10" type="text" id='subject'
+                                    name='subjectAssesment[comment]' required></textarea>
+                                <div class="valid-feedback">
+                                    Valid Input
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-success mb-5">Submit</button>
+                    </form>
+                    <% } %>
+                    <div class="row">
+                    <% for(let subjectAssesment of student.subjectAssesments) { %>
+                      
+                        <div class="card mb-3 col-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Subject: <span class="text-primary"><%= subjectAssesment.subject %></span>
+                                </h5>
+                                <p class="card-text"><b><i>Topics:</i></b> <%= subjectAssesment.topic %>
+                                </p>
+                                <p class="card-text"><b><i><%= subjectAssesment.date %></i></b> 
+                                </p>
+                                <p class="card-text"><b><i>Score:</i></b> <%= subjectAssesment.studentScore %>/<%= subjectAssesment.totalScore
+                                            %> = <%= parseFloat(subjectAssesment.studentScore/subjectAssesment.totalScore *100 ).toFixed(2)%>%
+                                </p>
+                                <p class="card-text"><b><i>Comment:</i></b> <%= subjectAssesment.comment %>
+                                </p>
+                                <h6 class="card-subtitle mb-2 text-muted">By <%= subjectAssesment.admin.username%></h6>
+                                <%  if( currentUser && subjectAssesment.admin.equals(currentUser._id))  {%>
+                                <form
+                                    action="/students/<%= student._id %>/subjectAssesments/<%= subjectAssesment._id %>?_method=DELETE"
+                                    method="POST">
+                                    <button class="btn btn-sm btn-danger btn-center">Delete</button>
+                                </form>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                        <% } %>
+                    
+                            <a href="/students"><button class="btn btn-warning">All Students</button></a>
+                </div>
+    </div>

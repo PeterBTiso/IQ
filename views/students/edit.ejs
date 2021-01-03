@@ -1,0 +1,122 @@
+<% layout('layouts/boilerplate') %>
+<h1 class="text-center">Edit Student</h1>
+<div class="row">
+    <div class="col-6 offset-3">
+        <form action="/students/<%= student._id %>?_method=PUT" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div>
+                <label class="form-label" for="firstN">First Name</label>
+                <input class="form-control" type="text" id="firstN" name="student[firstN]" value="<%=student.firstN %>" required>
+                <div class="valid-feedback">
+                    Valid Input
+                </div>
+            </div>
+            <div>
+                <label class="form-label" for="lastN">Last Name</label>
+                <input class="form-control" type="text" id="lastN" name="student[lastN]" value="<%= student.lastN%>" required>
+                <div class="valid-feedback">
+                    Valid Input
+                </div>
+            </div>
+            <div>
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id='title' name='student[title]' value="<%= student.title%>" required>
+                <div class="valid-feedback">
+                    Valid Input
+                </div>
+            </div>
+            <div>
+                <label class="form-label" for="age">Age</label>
+                <input class="form-control" type="text" id='age' name='student[age]' value="<%= student.age%>" required>
+                <div class="valid-feedback">
+                    Valid Input
+                </div>
+            </div>
+            <div>
+                <label class="form-label" for="level">Level</label>
+                <input class="form-control" type="number" id='level' name='student[level]' value="<%= student.level%>" required>
+                <div class="valid-feedback">
+                    Valid Input
+                </div>
+            </div>
+            <div>
+                <label class="form-label" for="dob">Date of Birth</label>
+                <input class="form-control" type="date" id="dob" name="student[dob]" value="<%= student.dob%>" required>
+                <div class="valid-feedback">
+                    Valid Input
+                </div>
+            </div>
+            <div>
+                <label class="form-label" for="gender">Gender</label>
+                <input class="form-control" type="text" id="gender" name="student[gender]" value="<%= student.gender%>" required>
+                <div class="valid-feedback">
+                    Valid Input
+                </div>
+            </div>
+            <div>
+                <label class="form-label" for="address">Address</label>
+                <input class="form-control" type="text" id='address' name='student[address]' value="<%= student.address%>" required>
+                <div class="valid-feedback">
+                    Valid Input
+                </div>
+            </div>
+            <div>
+                <label class="form-label" for="nationality">Nationality</label>
+                <input class="form-control" type="text" id='nationality' name='student[nationality]' value="<%= student.nationality%>"required> 
+                <div class="valid-feedback">
+                    Valid Input
+                </div>
+            </div>
+            <div>
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id='description' name='student[description]' required><%= student.description%></textarea>
+                <div class="valid-feedback">
+                    Valid Input
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="siblings">Siblings</label>
+                <input class="form-control" type="text" id='siblings' name='student[siblings]' value="<%= student.siblings%>" required>
+                <div class="valid-feedback">
+                    Valid Input
+                </div>
+            </div>
+            <!-- Old image Upload -->
+            <!-- <div class="mb-3">
+                <div class="form-file custom-file">
+                    <input type="file" class="form-file-input" id="image" name="image" multiple>
+                    <label class="form-file-label" for="image">
+                        <span class="form-file-text custom-file-label">Add more image(s)...</span>
+                        <span class="form-file-button">Browse</span>
+                    </label>
+                </div>
+            </div> -->
+            <!-- NEW FILE UPLOAD --> 
+            <div class="custom-file-container" data-upload-id="myUniqueUploadId">
+                <label>Upload File
+                    <a href="javascript:void(0)" class="custom-file-container__image-clear"
+                        title="Clear Image">&times;</a>
+                </label>
+                <label class="custom-file-container__custom-file">
+                    <input type="file" class="custom-file-container__custom-file__custom-file-input" accept="*"
+                        multiple aria-label="Add more image(s)..." name='image'/>
+                    <!-- <input type="hidden" name="images" /> -->
+                    <span class="custom-file-container__custom-file__custom-file-control"></span>
+                </label>
+                <div class="custom-file-container__image-preview"></div>
+            </div>
+            <!--  -->
+
+            <div class="mb-3">
+                <% student.images.forEach(function(img, i) {  %>
+                <img src="<%= img.thumbnail %>" class="img-thumbnail" alt="">
+                <div class="form-check-inline">
+                    <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename%>">
+                </div>
+                <label for="image-<%=i%>">Delete?</label>
+                <% })%>
+            </div>
+            <button class="btn btn-success">Update student</button>
+        </form>
+        <a href="/students/<%= student._id %>"><button class="btn btn-warning" >Back To Student</button></a>
+    </div>
+</div>

@@ -1,0 +1,108 @@
+<% layout('layouts/boilerplate') %>
+    <h1 class="text-center">Add New Student</h1>
+    <div class="row">
+        <div class="col-sm-12 col-md-6 offset-md-3 col-lg-6 offset-lg-3 mb-5">
+            <form action="/students" method='POST' novalidate class="validatedForm" enctype="multipart/form-data">
+                <div>
+                    <label class="form-label" for="firstN">First Name</label>
+                    <input class="form-control" type="text" id='firstN' name='student[firstN]' required>
+                    <div class="valid-feedback">
+                        Valid Input
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label" for="lastN">Last Name</label>
+                    <input class="form-control" class="form-control" type="text" id='lastN' name='student[lastN]'
+                        required>
+                    <div class="valid-feedback">
+                        Valid Input
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" class="form-control" type="text" id='title' name='student[title]'
+                        required>
+                    <div class="valid-feedback">
+                        Valid Input
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label" for="age">Age</label>
+                    <input class="form-control" type="number" id='age' name='student[age]' required>
+                    <div class="valid-feedback">
+                        Valid Input
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label" for="dob">Date of Birth</label>
+                    <input class="form-control" type="date" id='dob' name='student[dob]' required>
+                    <div class="valid-feedback">
+                        Valid Input
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label" for="gender">Gender</label>
+                    <input class="form-control" type="text" id='gender' name='student[gender]' required>
+                    <div class="valid-feedback">
+                        Valid Input
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label" for="nationality">Nationality</label>
+                    <input class="form-control" type="text" id='nationality' name='student[nationality]' required>
+                    <div class="valid-feedback">
+                        Valid Input
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label" for="address">Address</label>
+                    <input class="form-control" type="text" id='address' name='student[address]' required>
+                    <div class="valid-feedback">
+                        Valid Input
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label" for="level">Level</label>
+                    <input class="form-control" type="number" id='level' name='student[level]' required>
+                    <div class="valid-feedback">
+                        Valid Input
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id='description' name='student[description]'
+                        required></textarea>
+                    <div class="valid-feedback">
+                        Valid Input
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label" for="siblings">Siblings</label>
+                    <input class="form-control" type="text" id='siblings' name='student[siblings]' required>
+                    <div class="valid-feedback">
+                        Valid Input
+                    </div>
+                </div>
+                <!-- <input class="form-control" type="file" name="image" id="" multiple> -->
+
+                <!-- NEW FILE UPLOAD --> 
+                <div class="custom-file-container" data-upload-id="myUniqueUploadId">
+                    <label>Upload File
+                        <a href="javascript:void(0)" class="custom-file-container__image-clear"
+                            title="Clear Image">&times;</a>
+                    </label>
+                    <label class="custom-file-container__custom-file">
+                        <input type="file" class="custom-file-container__custom-file__custom-file-input" accept="*"
+                            multiple aria-label="Choose File" name='image'/>
+                        <!-- <input type="hidden" name="images" /> -->
+                        <span class="custom-file-container__custom-file__custom-file-control"></span>
+                    </label>
+                    <div class="custom-file-container__image-preview"></div>
+                </div>
+                <!--  -->
+
+                <button class="btn btn-success">Add Student</button>
+            </form>
+            <a href="/students"><button class="btn btn-warning">All Students</button></a>
+        </div>
+    </div>
