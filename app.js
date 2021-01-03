@@ -166,9 +166,10 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render('error', {err});
 });
 
-app.listen(3001, () => {
-    console.log('listening on port:3001');
-});
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Serving on port ${port}`)
+})
 
 // DISPLAY OF HOW THE DATA IS STORED
 // {   "_id" : ObjectId("5fee8698ed606f094c49ea05"),

@@ -1,9 +1,10 @@
 {
-  "name": "schoolapp",
+  "name": "iq",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "app.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
