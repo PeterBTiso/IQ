@@ -132,7 +132,7 @@
                     <div class="row">
                     <% for(let subjectAssesment of student.subjectAssesments) { %>
                       
-                        <div class="card mb-3 col-4">
+                        <div class="card mb-3 ml-1 col-lg-4">
                             <div class="card-body">
                                 <h5 class="card-title">Subject: <span class="text-primary"><%= subjectAssesment.subject %></span>
                                 </h5>
@@ -155,9 +155,9 @@
                                 <% } %>
                             </div>
                         </div>
+                         <% } %>
                     </div>
-                        <% } %>
-                    
+                       
                             <a href="/students"><button class="btn btn-warning">All Students</button></a>
                 </div>
     </div>
