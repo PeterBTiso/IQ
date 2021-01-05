@@ -21,10 +21,12 @@ const mongoSanitize = require('express-mongo-sanitize');
 const MongoDBStore = require('connect-mongo')(session);
 
 const usersRoute = require('./routes/users');
+
 const studentsRoute = require('./routes/students');
 const subjectAssesmentsRoute = require('./routes/subjectAssesments');
-// 'mongodb://localhost:27017/schoolapp'
+// const aboutRoute = require('./routes/about');
 
+// 'mongodb://localhost:27017/schoolapp'
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/schoolapp';
 //dbUrl, // use this when wanting to coonect to mongoAtlas Data Base
 mongoose.connect(dbUrl, {
@@ -153,6 +155,10 @@ app.use('/',usersRoute);
 app.use('/students', studentsRoute);
 app.use('/students/:id/subjectAssesments', subjectAssesmentsRoute);
 app.use('/students/assesments',studentsRoute); // new route for studentAssesments view
+
+app.get('/about', (req, res) => {
+    res.render('about/index')
+});
 
 app.get('/', (req, res) => {
     res.render('home')

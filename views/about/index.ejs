@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+
+    <link rel="stylesheet" href="/css/about.css">
+
+    <title>IQ</title>
+
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand mr-5" href="#">IQ International</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/about">About</a>
+                    <a class="nav-link" href="/gallery">Gallery</a>
+                    <% if(currentUser) {%>
+                            <a class="nav-link" href="/office">Office</a>
+                            <% } %>
+                    <a class="nav-link" href="/students">Students</a>
+                    <a class="nav-link" href="/students/new">New Student</a>
+                    <a class="nav-link" href="/students/assesments">View Marks</a>
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <% if(!currentUser) {%>
+                        <a class="nav-link" href="/login">Login</a>
+                        <a class="nav-link" href="/register">Register</a>
+                        <% } else {%>
+                            <a class="nav-link" href="/logout">Logout</a>
+                            <% } %>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <h1 class="mainH">IQ International</h1>
+        <div class="container">
+            <div class="panel">
+
+                <div class="pricing-plan">
+                    <img src="icons/icon1.png" alt="" class="pricing-img">
+                    <h2 class="pricing-header">English</h2>
+                    <ul class="pricing-features">
+                        <p class="pricing-features-item">Custom Designs</p>
+                        <p class="pricing-features-item">Maintenance and Hosting</p>
+                    </ul>
+                    <span class="pricing-price">$800</span>
+                    <a href="#/" class="pricing-button">View</a>
+                </div>
+
+                <div class="pricing-plan">
+                    <img src="icons/icon2.png" alt="" class="pricing-img">
+                    <h2 class="pricing-header">English & Khmer</h2>
+                    <ul class="pricing-features">
+                        <li class="pricing-features-item">Store/Payments and Users</li>
+                        <li class="pricing-features-item">Maintenance, Hosting, Customization</li>
+                    </ul>
+                    <span class="pricing-price">$1300</span>
+                    <a href="#/" class="pricing-button is-featured">View</a>
+                </div>
+
+                <div class="pricing-plan">
+                    <img src="icons/icon3.png" alt="" class="pricing-img">
+                    <h2 class="pricing-header">Khmer</h2>
+                    <ul class="pricing-features">
+                        <li class="pricing-features-item">Full Package</li>
+                        <li class="pricing-features-item">Website, Web Application etc.</li>
+                    </ul>
+                    <span class="pricing-price">$600</span>
+                    <a href="#/" class="pricing-button ">View</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container list">
+            <p class="list-item">High Level Education</p>
+            <p class="list-item">Form Community</p>
+            <p class="list-item">Performance Based Learning</p>
+            <p class="list-item">Sponship Program</p>
+            <p class="list-item">Our School Offers a Path to a Vibrant Future</p>
+        </div>
+
+        <div class="container">
+            <section id="user">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4 mb-3" id="border">
+                            <div class="card">
+                                <img class="card-img-top"
+                                    src="https://images.unsplash.com/photo-1463320726281-696a485928c7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1650&q=80"
+                                    alt="">
+                                <div class="card-body">
+                                    <h3 class="card-title">Curriculums</h3>
+                                    <p class="card-text">View our curriculums according to each grade.</p>
+                                    <a href="#" class="btn btn-outline-info"><i class="fab fa-earlybirds"></i>VIEW</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="https://source.unsplash.com/random/?tech,lamp" alt=""
+                                    height="350">
+                                <div class="card-body ">
+                                    <h3 class="card-title">School Fees</h3>
+                                    <p class="card-text">Recieving top level education is the way to success.</p>
+                                    <a href="#" class="btn btn-outline-info"><i class="fab fa-earlybirds"></i>VIEW</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="https://source.unsplash.com/random/?tech,past" alt=""
+                                    height="350">
+                                <div class="card-body">
+                                    <h3 class="card-title">Enrollment</h3>
+                                    <p class="card-text">All the details needed for enrollment can be found here.</p>
+                                    <a href="#" class="btn btn-outline-info"><i class="fab fa-earlybirds"></i>VIEW</a>
+                                </div>
+                            </div>
+            </section>
+            <section id="user">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4 mb-3" id="border">
+                            <div class="card">
+                                <img class="card-img-top" src="https://source.unsplash.com/random/?tech,substance"
+                                    alt="">
+                                <div class="card-body">
+                                    <h3 class="card-title">Sponsors</h3>
+                                    <p class="card-text">Sponsor a student for a specified time.Find a sponsor for your
+                                        child.</p>
+                                    <a href="#" class="btn btn-outline-info"><i class="fab fa-earlybirds"></i>VIEW</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="https://source.unsplash.com/random/?tech,lamp" alt=""
+                                    height="350">
+                                <div class="card-body ">
+                                    <h3 class="card-title">Corona Restrictions</h3>
+                                    <p class="card-text">Changes and Rules for the School can be found here.</p>
+                                    <a href="#" class="btn btn-outline-info"><i class="fab fa-earlybirds"></i>VIEW</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 mb-3">
+                            <div class="card">
+                                <img class="card-img-top" src="https://source.unsplash.com/random/?tech,past" alt=""
+                                    height="350">
+                                <div class="card-body">
+                                    <h3 class="card-title">Staff</h3>
+                                    <p class="card-text">Meet our Staff. Why and How we choose our Staff.</p>
+                                    <a href="#" class="btn btn-outline-info"><i class="fab fa-earlybirds"></i>VIEW</a>
+                                </div>
+                            </div>
+            </section>
+            <div class="col-sm-4 mb-3">
+                </section>
+            </div>
+        </div>
+
+        <div class="container">
+            <h1 class="text-header">A Warm Welcome From The Director</h1>
+            <div class="welcome landing-text">
+                It is our pleasure to welcome you to IQ International School Siem Reap. We are fortunate to have an
+                incredible campus, caring and dedicated international teachers, and vibrant and diverse children who
+                chose
+                to study here. There is no place quite like IQ International School for children to learn and grow !
+                IQ International School Siem Reap students are engaged in a relevant, challenging and balanced
+                educational
+                program taught by experienced international educators. Our purpose built classrooms, surrounded by a
+                safe
+                and spacious green campus, give children amazing opportunities to explore, play and learn.
+                IQ International School was founded in 2002 . High quality standards and committed professional teachers
+                made the school very successful. Today IQ International is running 4 branches with more than 3000
+                students
+                and 200 employees. The school runs a complete Cambodian and American curriculum and is fully recognized
+                by
+                the Cambodian Ministry of Education. Students are taught in Cambodian as well as English language.
+            </div>
+            <h1 class="text-header">
+                About IQ International.
+            </h1>
+            <div class="landing-text">
+                Our facilities are fully equipped with computer lab, science lab, cafeteria, library, and offices for
+                teachers and other staff members. Students are taught English, Mathematics, Science, Physics, Chemistry,
+                Biology, Computers, Social Studies, Health, Arts and Physical Education.
+                We also offer courses in classical ballet, taekwondo and musical education. Our philosophy of education
+                is
+                based on knowing each child as an individual and recognizing their strengths and needs. Children are
+                taught
+                to ask critical questions and to seek answers, developing their knowledge and skills through the inquiry
+                process.
+                Students are active participants in the learning process, collaborating with their peers, developing
+                their
+                own ideas and strengthening their habits of mind and leadership abilities necessary for their future
+                success. IQ International School's beautiful physical setting, caring community, qualified and
+                professional
+                teachers, and internationally recognized curriculum combine for a unique educational environment.
+                Each child is nurtured to reach their full potential as individuals and build skills they will need to
+                ensure best possible education and a bright and successful future.
+            </div>
+        </div>
+
+
+        <div class="footer">
+            <footer>
+                <h4>
+                    Designed and Created by IQ International. Since 2014.
+                </h4>
+            </footer>
+        </div>
+    </div>

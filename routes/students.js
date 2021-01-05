@@ -13,7 +13,6 @@ const Student = require('../models/student');
 router.route('/')
     .get( catchAsync(students.index) )
     .post( isLoggedIn, upload.array('image'), validateStudent,  catchAsync( students.createStudent ) );
-    
 
 router.get('/new', isLoggedIn, students.renderNewForm); // this code has to run before the next block of code
 

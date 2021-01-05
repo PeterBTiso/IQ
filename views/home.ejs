@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="/css/home.css"> 
 
-    <title>EduApp</title>
+    <title>IQ</title>
 
 </head>
 <body class="d-flex text-center text-white bg-dark">
@@ -21,7 +21,7 @@
             <div>
                 <h1 class="float-md-left float-left mb-0 ml-2"><b><i>IQ International</i> </b></h1>
                 <nav class="nav float-right nav-masthead justify-content-center ">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/about">About</a>
                     <% if(!currentUser) { %>
                         <a class="nav-link" href="/login">Students</a>
                     <% } else { %>
@@ -42,11 +42,11 @@
                 <p>Feel free to Register or Login</p>
 
                 <% if(!currentUser) { %>
-                    <a href="/register" class="btn btn-lg btn-secondary font-weight-bold border-white bg-white">View Students</a>
+                    <a href="/register" class="btn btn-lg btn-secondary font-weight-bold border-white bg-white">Sign Up</a>
+                    <a href="/about" class="btn btn-lg btn-secondary border-white bg-white"><b><i>View School</i></b></a>
                 <% } else { %>
-                    <a href="/students" class="btn btn-lg btn-secondary border-white bg-white"><b><i>View School</i></b></a>
+                    <a href="/students" class="btn btn-lg btn-secondary font-weight-bold border-white bg-white">Continue</a>
                 <% } %>
-                
         </main>
 
         <footer class="mt-auto text-white-50">

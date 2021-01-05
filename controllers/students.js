@@ -7,6 +7,12 @@ module.exports.index = async (req, res) => {
     res.render('students/index', { students })
 };
 
+// for about page
+module.exports.about = async (req, res) => {
+    const students = await Student.find({});
+    res.render('students/about', { students })
+};
+
 // this is to display the new students assesments view page
 module.exports.assesments = async (req, res) => {
     const students = await Student.find({}).populate('subjectAssesments');

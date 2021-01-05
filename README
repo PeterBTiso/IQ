@@ -50,9 +50,25 @@ for each Student there should be :
 
 
 Next:
-* Add display toggle on studentAssesment view
-* Add an Extra Page to display School Roster
-* Add an extra page to display students categorically
-* Add A Roster 
-* Add studenAssesment edit page
-* Ask pauls brother to help fix the bootstrap dropwdown and the custom file upload
+
+* Insert IQ template - IQ-International.
+    - gallery but that will be images added to mongo and cloudinary
+    - try implement the register popup on the old landing page
+    - add the old office page with the nice folder layout
+    - add old about page more about why use the website.
+    - 
+
+* Add the iq template to the students view pqge not when viewing the student,
+    - when clicking on the the students subject mark in the table then
+    -  it drops down the students assesments that gave the student that mark.
+    - make students dropdown in groups categorically
+
+* Add an Extra Page to display School Roster 
+    - save roster to mongo 
+    - make roster editable the pop-up is basically the edit form.
+
+* Add studenAssesment edit page or allow editing on student show page somehow.
+
+* Add password security on user register.
+
+* Ask pauls brother to help fix the bootstrap dropwdown and the custom file upload.
