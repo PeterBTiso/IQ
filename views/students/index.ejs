@@ -1,7 +1,10 @@
 <% layout('layouts/boilerplate') %>
 
+    <h1 class="text-center mt-0">All Students</h1>
+    <h3 class="text-center"><a href="/students/new">Add New Student</a></h3>
+
     <!-- toggle buttons at the top -->
-    <div class="container col-md-12  col-lg-6 offset-lg-3 offset-md-1 mb-3 sticky">
+    <div class="container col-md-12 col-lg-6 offset-lg-3 offset-md-1 mb-3 sticky">
         <button class=" btn btn-success" id="hideAdd"><i class="fas fa-user-plus"></i><a class="text-light"
                 href="/students/new">ADD</a></button>
         <button class="btn btn-primary" id="hideData"><i class="fas fa-align-justify"></i> DATA </button>
@@ -16,23 +19,25 @@
     <div class="tbl_user_data " id="studentData" style="overflow-x:auto;">
         <h1 class="text-center"><i class="fas fa-marker "></i>DataBase</h1>
         <div class="row">
-        <div class="col-lg-12 sticky" id="add">
-            <button class="btn btn-warning" id="hideAdd"><i class="fas fa-user-plus"></i>Gr1</button>
-            <button class="btn btn-warning" id="hideData"><i class="fas fa-align-justify"></i>Gr2</button>
-            <button class=" btn btn-warning" id="hideAdd"><i class="fas fa-user-plus"></i>Gr3</button>
-            <button class="btn btn-warning" id="hideData"><i class="fas fa-align-justify"></i>Gr4</button>
-            <button class="btn btn-warning" id="hideMarks"><i class="fas fa-marker"></i>Gr5</button>
-            <button class="btn btn-warning" id="hideEvents"><i class="fas fa-calendar-alt"></i> Gr6</button>
-            <button class=" btn btn-warning" id="hideAdd"><i class="fas fa-user-plus"></i>Gr7</button>
-            <button class="btn btn-warning" id="hideData"><i class="fas fa-align-justify"></i>Gr8</button>
-            <button class=" btn btn-warning" id="hideAdd"><i class="fas fa-user-plus"></i>Gr9</button>
-            <button class="btn btn-warning" id="hideData"><i class="fas fa-align-justify"></i>Gr10</button>
-            <button class="btn btn-warning" id="hideMarks"><i class="fas fa-marker"></i>Gr11</button>
-            <button class="btn btn-warning" id="hideEvents"><i class="fas fa-calendar-alt"></i>Gr12</button>
+        <div class="col-8 offset-3 sticky mb-5" id="add">
+            <button class="btn btn-warning" id="g1"><i class="fas fa-user-plus"></i>Gr1</button>
+            <button class="btn btn-warning" id="g2"><i class="fas fa-align-justify"></i>Gr2</button>
+            <button class=" btn btn-warning" id="g3"><i class="fas fa-user-plus"></i>Gr3</button>
+            <button class="btn btn-warning" id="g4"><i class="fas fa-align-justify"></i>Gr4</button>
+            <button class="btn btn-warning" id="g5"><i class="fas fa-marker"></i>Gr5</button>
+            <button class="btn btn-warning" id="g6"><i class="fas fa-calendar-alt"></i> Gr6</button>
+            <button class=" btn btn-warning" id="g7"><i class="fas fa-user-plus"></i>Gr7</button>
+            <button class="btn btn-warning" id="g8"><i class="fas fa-align-justify"></i>Gr8</button>
+            <button class=" btn btn-warning" id="g9"><i class="fas fa-user-plus"></i>Gr9</button>
+            <button class="btn btn-warning" id="g10"><i class="fas fa-align-justify"></i>Gr10</button>
+            <button class="btn btn-warning" id="g11"><i class="fas fa-marker"></i>Gr11</button>
+            <button class="btn btn-warning " id="g12"><i class="fas fa-calendar-alt"></i>Gr12</button>
             </div>
         </div>
-        <table class="table table-hover">
-            <thead class="thBack">
+
+        <div id="gr1">
+        <table class="table table-hover mb-5">
+            <thead class="thBack bg-secondary text-light">
                 <tr>
                     <th>Name</th>
                     <th>Last Name</th>
@@ -42,14 +47,16 @@
                     <th>Khm Avg</th>
                 </tr>
             </thead>
-            <tbody>
                 <% for(let student of students) { %>
+                <% if(student.level === 1){ %>
+                <tbody>
                     <tr>
                         <td>
                             <div class="row_data" edit_type="click" col_name="fname"><a
                                     href="/students/<%= student._id %>">
                                     <%= student.firstN %>
-                                </a></div>
+                                </a>
+                            </div>
                         </td>
                         <td>
                             <div class="row_data" edit_type="click" col_name="lname">
@@ -74,24 +81,595 @@
                                 <%= student.firstN %>
                             </div>
                         </td>
+                    </tbody>
+                
+                    <% } %>
+                    <% } %>
+                </table>
+        </div>
+            <div id="gr2">
+                <table class="table table-hover mb-5">
+                    <thead class="thBack bg-secondary text-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Last Name</th>
+                            <th>Absences</th>
+                            <th>Avg</th>
+                            <th>Eng Avg</th>
+                            <th>Khm Avg</th>
+                        </tr>
+                    </thead>
+                <% for(let student of students) { %>
+                    <% if(student.level === 2){ %>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="row_data" edit_type="click" col_name="fname"><a
+                                        href="/students/<%= student._id %>">
+                                        <%= student.firstN %>
+                                    </a></div>
+                            </td>
+                            <td>
+                                <div class="row_data" edit_type="click" col_name="lname">
+                                    <%= student.lastN %>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="row_data" edit_type="click" col_name="absc">3</div>
+                            </td>
+                            <td>
+                                <div class="row_data" edit_type="click" col_name="avg">
+                                    <%= student.level %>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="row_data" edit_type="click" col_name="engAvg">
+                                    <%= student.firstN %>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="row_data" edit_type="click" col_name="khmerAvg">
+                                    <%= student.firstN %>
+                                </div>
+                            </td>
+                        </tbody>
+                    
                         <% } %>
-            </tbody>
-        </table>
+                        <% } %>
+                    </table>
+            </div>
+                <div id="gr3">
+                    <table class="table table-hover mb-5">
+                        <thead class="thBack bg-secondary text-light">
+                            <tr>
+                                <th>Name</th>
+                                <th>Last Name</th>
+                                <th>Absences</th>
+                                <th>Avg</th>
+                                <th>Eng Avg</th>
+                                <th>Khm Avg</th>
+                            </tr>
+                        </thead>
+                    <% for(let student of students) { %>
+                        <% if(student.level === 3){ %>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="row_data" edit_type="click" col_name="fname"><a
+                                            href="/students/<%= student._id %>">
+                                            <%= student.firstN %>
+                                        </a></div>
+                                </td>
+                                <td>
+                                    <div class="row_data" edit_type="click" col_name="lname">
+                                        <%= student.lastN %>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="row_data" edit_type="click" col_name="absc">3</div>
+                                </td>
+                                <td>
+                                    <div class="row_data" edit_type="click" col_name="avg">
+                                        <%= student.level %>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="row_data" edit_type="click" col_name="engAvg">
+                                        <%= student.firstN %>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="row_data" edit_type="click" col_name="khmerAvg">
+                                        <%= student.firstN %>
+                                    </div>
+                                </td>
+                            </tbody>
+                        
+                            <% } %>
+                            <% } %>
+                        </table>
+                </div>
+                <div id="gr4">
+                    <table class="table table-hover mb-5">
+                        <thead class="thBack bg-secondary text-light">
+                            <tr>
+                                <th>Name</th>
+                                <th>Last Name</th>
+                                <th>Absences</th>
+                                <th>Avg</th>
+                                <th>Eng Avg</th>
+                                <th>Khm Avg</th>
+                            </tr>
+                        </thead>
+                    <% for(let student of students) { %>
+                        <% if(student.level === 4){ %>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="row_data" edit_type="click" col_name="fname"><a
+                                            href="/students/<%= student._id %>">
+                                            <%= student.firstN %>
+                                        </a></div>
+                                </td>
+                                <td>
+                                    <div class="row_data" edit_type="click" col_name="lname">
+                                        <%= student.lastN %>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="row_data" edit_type="click" col_name="absc">3</div>
+                                </td>
+                                <td>
+                                    <div class="row_data" edit_type="click" col_name="avg">
+                                        <%= student.level %>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="row_data" edit_type="click" col_name="engAvg">
+                                        <%= student.firstN %>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="row_data" edit_type="click" col_name="khmerAvg">
+                                        <%= student.firstN %>
+                                    </div>
+                                </td>
+                            </tbody>
+                        
+                            <% } %>
+                            <% } %>
+                    </table>
+                    </div>
+                    <div id="gr5">
+                            <table class="table table-hover mb-5">
+                                <thead class="thBack bg-secondary text-light">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Last Name</th>
+                                        <th>Absences</th>
+                                        <th>Avg</th>
+                                        <th>Eng Avg</th>
+                                        <th>Khm Avg</th>
+                                    </tr>
+                                </thead>
+                            <% for(let student of students) { %>
+                                <% if(student.level === 5){ %>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="row_data" edit_type="click" col_name="fname"><a
+                                                    href="/students/<%= student._id %>">
+                                                    <%= student.firstN %>
+                                                </a></div>
+                                        </td>
+                                        <td>
+                                            <div class="row_data" edit_type="click" col_name="lname">
+                                                <%= student.lastN %>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="row_data" edit_type="click" col_name="absc">3</div>
+                                        </td>
+                                        <td>
+                                            <div class="row_data" edit_type="click" col_name="avg">
+                                                <%= student.level %>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="row_data" edit_type="click" col_name="engAvg">
+                                                <%= student.firstN %>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="row_data" edit_type="click" col_name="khmerAvg">
+                                                <%= student.firstN %>
+                                            </div>
+                                        </td>
+                                    </tbody>
+                                
+                                    <% } %>
+                                    <% } %>
+                                </table>
+                    </div>
+                        <div id="gr6">
+                                <table class="table table-hover mb-5 bg-secondary text-light">
+                                    <thead class="thBack bg-secondary text-light">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Last Name</th>
+                                            <th>Absences</th>
+                                            <th>Avg</th>
+                                            <th>Eng Avg</th>
+                                            <th>Khm Avg</th>
+                                        </tr>
+                                    </thead>
+                                <% for(let student of students) { %>
+                                    <% if(student.level === 6){ %>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="row_data" edit_type="click" col_name="fname"><a
+                                                        href="/students/<%= student._id %>">
+                                                        <%= student.firstN %>
+                                                    </a></div>
+                                            </td>
+                                            <td>
+                                                <div class="row_data" edit_type="click" col_name="lname">
+                                                    <%= student.lastN %>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="row_data" edit_type="click" col_name="absc">3</div>
+                                            </td>
+                                            <td>
+                                                <div class="row_data" edit_type="click" col_name="avg">
+                                                    <%= student.level %>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="row_data" edit_type="click" col_name="engAvg">
+                                                    <%= student.firstN %>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="row_data" edit_type="click" col_name="khmerAvg">
+                                                    <%= student.firstN %>
+                                                </div>
+                                            </td>
+                                        </tbody>
+                                    
+                                        <% } %>
+                                        <% } %>
+                                    </table>
+                        </div>
+                            <div id="gr7">
+                                    <table class="table table-hover mb-5 bg-secondary text-light">
+                                        <thead class="thBack bg-secondary text-light">
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Last Name</th>
+                                                <th>Absences</th>
+                                                <th>Avg</th>
+                                                <th>Eng Avg</th>
+                                                <th>Khm Avg</th>
+                                            </tr>
+                                        </thead>
+                                    <% for(let student of students) { %>
+                                        <% if(student.level === 7){ %>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="row_data" edit_type="click" col_name="fname"><a
+                                                            href="/students/<%= student._id %>">
+                                                            <%= student.firstN %>
+                                                        </a></div>
+                                                </td>
+                                                <td>
+                                                    <div class="row_data" edit_type="click" col_name="lname">
+                                                        <%= student.lastN %>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="row_data" edit_type="click" col_name="absc">3</div>
+                                                </td>
+                                                <td>
+                                                    <div class="row_data" edit_type="click" col_name="avg">
+                                                        <%= student.level %>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="row_data" edit_type="click" col_name="engAvg">
+                                                        <%= student.firstN %>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="row_data" edit_type="click" col_name="khmerAvg">
+                                                        <%= student.firstN %>
+                                                    </div>
+                                                </td>
+                                            </tbody>
+                                        
+                                            <% } %>
+                                            <% } %>
+                                        </table>
+                            </div>
+                                <div id="gr8">
+                                        <table class="table table-hover mb-5 bg-secondary text-light">
+                                            <thead class="thBack bg-secondary text-light">
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Absences</th>
+                                                    <th>Avg</th>
+                                                    <th>Eng Avg</th>
+                                                    <th>Khm Avg</th>
+                                                </tr>
+                                            </thead>
+                                        <% for(let student of students) { %>
+                                            <% if(student.level === 8){ %>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="row_data" edit_type="click" col_name="fname"><a
+                                                                href="/students/<%= student._id %>">
+                                                                <%= student.firstN %>
+                                                            </a></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="row_data" edit_type="click" col_name="lname">
+                                                            <%= student.lastN %>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="row_data" edit_type="click" col_name="absc">3</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="row_data" edit_type="click" col_name="avg">
+                                                            <%= student.level %>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="row_data" edit_type="click" col_name="engAvg">
+                                                            <%= student.firstN %>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="row_data" edit_type="click" col_name="khmerAvg">
+                                                            <%= student.firstN %>
+                                                        </div>
+                                                    </td>
+                                                </tbody>
+                                            
+                                                <% } %>
+                                                <% } %>
+                                            </table>
+                                </div>
+                                    <div id="gr9">
+                                            <table class="table table-hover mb-5 bg-secondary text-light">
+                                                <thead class="thBack bg-secondary text-light">
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Last Name</th>
+                                                        <th>Absences</th>
+                                                        <th>Avg</th>
+                                                        <th>Eng Avg</th>
+                                                        <th>Khm Avg</th>
+                                                    </tr>
+                                                </thead>
+                                            <% for(let student of students) { %>
+                                                <% if(student.level === 9){ %>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="row_data" edit_type="click" col_name="fname"><a
+                                                                    href="/students/<%= student._id %>">
+                                                                    <%= student.firstN %>
+                                                                </a></div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="row_data" edit_type="click" col_name="lname">
+                                                                <%= student.lastN %>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="row_data" edit_type="click" col_name="absc">3</div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="row_data" edit_type="click" col_name="avg">
+                                                                <%= student.level %>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="row_data" edit_type="click" col_name="engAvg">
+                                                                <%= student.firstN %>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="row_data" edit_type="click" col_name="khmerAvg">
+                                                                <%= student.firstN %>
+                                                            </div>
+                                                        </td>
+                                                    </tbody>
+                                                
+                                                    <% } %>
+                                                    <% } %>
+                                                </table>
+                                    </div>
+                                        <div id="gr10">
+                                                <table class="table table-hover mb-5 bg-secondary text-light">
+                                                    <thead class="thBack bg-secondary text-light">
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Last Name</th>
+                                                            <th>Absences</th>
+                                                            <th>Avg</th>
+                                                            <th>Eng Avg</th>
+                                                            <th>Khm Avg</th>
+                                                        </tr>
+                                                    </thead>
+                                                <% for(let student of students) { %>
+                                                    <% if(student.level === 10){ %>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="row_data" edit_type="click" col_name="fname"><a
+                                                                        href="/students/<%= student._id %>">
+                                                                        <%= student.firstN %>
+                                                                    </a></div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="row_data" edit_type="click" col_name="lname">
+                                                                    <%= student.lastN %>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="row_data" edit_type="click" col_name="absc">3</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="row_data" edit_type="click" col_name="avg">
+                                                                    <%= student.level %>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="row_data" edit_type="click" col_name="engAvg">
+                                                                    <%= student.firstN %>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="row_data" edit_type="click" col_name="khmerAvg">
+                                                                    <%= student.firstN %>
+                                                                </div>
+                                                            </td>
+                                                        </tbody>
+                                                    
+                                                        <% } %>
+                                                        <% } %>
+                                                    </table>
+                                        </div>
+                                            <div id="gr11">
+                                                    <table class="table table-hover mb-5 bg-secondary text-light">
+                                                        <thead class="thBack bg-secondary text-light">
+                                                            <tr>
+                                                                <th>Name</th>
+                                                                <th>Last Name</th>
+                                                                <th>Absences</th>
+                                                                <th>Avg</th>
+                                                                <th>Eng Avg</th>
+                                                                <th>Khm Avg</th>
+                                                            </tr>
+                                                        </thead>
+                                                    <% for(let student of students) { %>
+                                                        <% if(student.level ===11){ %>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="row_data" edit_type="click" col_name="fname"><a
+                                                                            href="/students/<%= student._id %>">
+                                                                            <%= student.firstN %>
+                                                                        </a></div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="row_data" edit_type="click" col_name="lname">
+                                                                        <%= student.lastN %>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="row_data" edit_type="click" col_name="absc">3</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="row_data" edit_type="click" col_name="avg">
+                                                                        <%= student.level %>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="row_data" edit_type="click" col_name="engAvg">
+                                                                        <%= student.firstN %>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="row_data" edit_type="click" col_name="khmerAvg">
+                                                                        <%= student.firstN %>
+                                                                    </div>
+                                                                </td>
+                                                            </tbody>
+                                                        
+                                                            <% } %>
+                                                            <% } %>
+                                                        </table>
+                                            </div>
+                                            <div id="gr12">
+                                                        <table class="table table-hover mb-5">
+                                                            <thead class="thBack bg-secondary text-light">
+                                                                <tr>
+                                                                    <th>Name</th>
+                                                                    <th>Last Name</th>
+                                                                    <th>Absences</th>
+                                                                    <th>Avg</th>
+                                                                    <th>Eng Avg</th>
+                                                                    <th>Khm Avg</th>
+                                                                </tr>
+                                                            </thead>
+                                                        <% for(let student of students) { %>
+                                                            <% if(student.level ===12){ %>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="row_data" edit_type="click" col_name="fname"><a
+                                                                                href="/students/<%= student._id %>">
+                                                                                <%= student.firstN %>
+                                                                            </a></div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="row_data" edit_type="click" col_name="lname">
+                                                                            <%= student.lastN %>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="row_data" edit_type="click" col_name="absc">3</div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="row_data" edit_type="click" col_name="avg">
+                                                                            <%= student.level %>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="row_data" edit_type="click" col_name="engAvg">
+                                                                            <%= student.firstN %>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="row_data" edit_type="click" col_name="khmerAvg">
+                                                                            <%= student.firstN %>
+                                                                        </div>
+                                                                    </td>
+                                                                </tbody>
+                                                            
+                                                                <% } %>
+                                                                <% } %>
+                                                            </table>
+                                            </div>
     </div>
 
    <!-- students in each grade and their avg for subjects to date --> 
     <div class="container marks" id="marksContainer">
         <h1 class="text-center mb-3"><i class="fas fa-marker "></i>Student Marks</h1>
         <div class="container border">
+            <% let n = 0 %>
             <% for(let student of students) { %>
                 <div class="container border">
-                    <h3><a href="/students/<%= student._id %>">
+                    <h3 class="text-center" ><a href="/students/<%= student._id %>">
                             <%= student.firstN %>
-                        </a></h3>
+                        </a>
+                    </h3>
+                    <button class="btn btn-primary"> English </button>
+                    <a class="btn btn-warning">Mathematics</a>
+                    <a class="btn btn-danger">Science</a>
+                    <a class="btn btn-info">Social Studies</a>
                     <div class="mb-5">
-                        <table class="table" id="english">
-                            <h3><button class="btn btn-primary">English</button> </h3>
-                            <tr class="bg-info">
+                        <div class="english">
+                            <table class="table" >
+                            <h2 class="text-light bg-dark">English</h2>
+                            <tr class="bg-primary">
                                 <th data-column="name" data-order="desc">Date &#9650</th>
                                 <th data-column="name" data-order="desc">Topic &#9650</th>
                                 <th data-column="english" data-order="desc">Score &#9650</th>
@@ -142,7 +720,7 @@
                                             <td>
                                                 <div class="row_data" edit_type="click" col_name="fname">
                                                     <span>
-                                                        <%= student.admin %>
+                                                        <%= student.admin.username %>
                                                     </span>
                                                 </div>
                                             </td>
@@ -150,11 +728,12 @@
                                         <% } %>
                                         <% } %>
                             </tbody>
-                        </table>
-
-                        <table class="table" id="math">
-                            <h3 class="btn btn-warning">Mathematics</h3>
-                            <tr class="bg-info">
+                            </table>
+                        </div>
+                        <div class="math">
+                            <table class="table" >
+                            <h2 class="text-light bg-dark">Mathematics</h2>
+                            <tr class="bg-warning">
                                 <th data-column="name" data-order="desc">Date &#9650</th>
                                 <th data-column="name" data-order="desc">Topic &#9650</th>
                                 <th data-column="english" data-order="desc">Score &#9650</th>
@@ -206,7 +785,7 @@
                                             <td>
                                                 <div class="row_data" edit_type="click" col_name="fname">
                                                     <span>
-                                                        <%= student.admin %>
+                                                        <%= student.admin.username %>
                                                     </span>
                                                 </div>
                                             </td>
@@ -214,11 +793,12 @@
                                         <% } %>
                                             <% } %>
                             </tbody>
-                        </table>
-
-                        <table class="table" id="science">
-                            <h3 class="btn btn-success">Science</h3>
-                            <tr class="bg-info">
+                            </table>
+                        </div>
+                        <div class="science">
+                            <table class="table" >
+                            <h2 class="text-light bg-dark">Science</h2>
+                            <tr class="bg-danger">
                                 <th data-column="name" data-order="desc">Date &#9650</th>
                                 <th data-column="name" data-order="desc">Topic &#9650</th>
                                 <th data-column="english" data-order="desc">Score &#9650</th>
@@ -277,10 +857,11 @@
                                         <% } %>
                                             <% } %>
                             </tbody>
-                        </table>
-
-                        <table class="table" id="social">
-                            <h3 class="btn btn-info">Social Studies</h3>
+                            </table>
+                        </div>
+                        <div class="social">
+                            <table class="table" >
+                            <h2 class="text-light bg-dark">Social Studies</h2>
                             <tr class="bg-info">
                                 <th data-column="name" data-order="desc">Date &#9650</th>
                                 <th data-column="name" data-order="desc">Topic &#9650</th>
@@ -332,7 +913,7 @@
                                             <td>
                                                 <div class="row_data" edit_type="click" col_name="fname">
                                                     <span>
-                                                        <%= student.admin %>
+                                                        <%= subjectAssesment.admin.username %>
                                                     </span>
                                                 </div>
                                             </td>
@@ -340,7 +921,8 @@
                                         <% } %>
                                             <% } %>
                             </tbody>
-                        </table>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <% } %>
@@ -436,12 +1018,9 @@
         </table>
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <div class="col-sm-8 offset-sm-2 text-sm-center col-md-12 text-md-left offset-md-0 col-lg-8 offset-lg-2">
-                <h1 class="text-center">All Students</h1>
-                <h3><a href="/students/new">Add New Student</a></h3>
-
                 <% for(let student of students) { %>
                     <div class="card mb-3">
                         <div class="row">
@@ -463,7 +1042,7 @@
                                     <!-- <p class="card-text">
                                 <small class="text-muted">${studentDetails[random1000].level}`</small>
                             </p> -->
-                                    <a href="/students/<%= student._id %>" class="btn btn-primary">View
+                                    <!-- <a href="/students/<%= student._id %>" class="btn btn-primary">View
                                         Student</a>
                                 </div>
                             </div>
@@ -474,4 +1053,4 @@
                         <button class="btn btn-warning"><a href="/">Landing Page</a></button>
             </div>
         </div>
-    </div>
+    </div> -->

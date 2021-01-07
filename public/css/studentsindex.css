@@ -1,17 +1,4 @@
 
-
-/* #english{
-    display:none;
-}
-#math{
-    display:none;
-}
-#science{
-    display:none;
-}
-#social{
-    display:none;
-} */
 #studentData{
     display:none;
 }
@@ -24,3 +11,69 @@
 #rosterContainer{
     display:none;
 }
+table{
+    width:100%;
+    table-layout: auto;
+}
+#gr1{
+    width:100%;
+    display:none;
+}
+#gr2{
+    width:100%;
+    display:none;
+}
+#gr3{
+    width:100%;
+    display:none;
+}
+#gr4{
+    width:100%;
+    display:none;
+}
+#gr5{
+    width:100%;
+    display:none;
+}
+#gr6{
+    width:100%;
+    display:none;
+}
+#gr7{
+    width:100%;
+    display:none;
+}
+#gr8{
+    width:100%;
+    display:none;
+}
+#gr9{
+    width:100%;
+    display:none;
+}
+#gr10{
+    width:100%;
+    display:none;
+}
+#gr11{
+    width:100%;
+    display:none;
+}
+#gr12{
+    display:none;
+    min-width:100%;
+}
+
+/* TO SHOW AND HIDE MARKS DROPWDOWN */
+/* .english{
+    display:none;
+}
+.math{
+    display:none;
+}
+.science{
+    display:none;
+}
+.social{
+    display:none;
+} */
