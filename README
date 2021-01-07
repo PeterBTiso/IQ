@@ -52,7 +52,7 @@ for each Student there should be :
 Next:
 
 * Insert IQ template - IQ-International.
-    - gallery but that will be images added to mongo and cloudinary
+    - gallery - let office admin be able to add and delete images
     - try implement the register popup on the old landing page
     - add the old office page with the nice folder layout
     - add old about page more about why use the website.

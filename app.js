@@ -24,6 +24,7 @@ const usersRoute = require('./routes/users');
 
 const studentsRoute = require('./routes/students');
 const subjectAssesmentsRoute = require('./routes/subjectAssesments');
+// const gallery = require('./routes/gallery');
 // const aboutRoute = require('./routes/about');
 
 // 'mongodb://localhost:27017/schoolapp'
@@ -155,14 +156,19 @@ app.use('/',usersRoute);
 app.use('/students', studentsRoute);
 app.use('/students/:id/subjectAssesments', subjectAssesmentsRoute);
 app.use('/students/assesments',studentsRoute); // new route for studentAssesments view
+// app.use('/gallery', galleryRoute);
+
+app.get('/', (req, res) => {
+    res.render('home')
+});
 
 app.get('/about', (req, res) => {
     res.render('about/index')
 });
 
-app.get('/', (req, res) => {
-    res.render('home')
-});
+app.get('/gallery', (req, res) => {
+    res.render('gallery')
+})
 
 app.all('*',( req, res, next) => {
     next(new ExpressError('Page not found!!!',404));
