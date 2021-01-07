@@ -3,15 +3,15 @@ const SubjectAssesment = require('../models/subjectAssesment');
 const { cloudinary } = require('../cloudinary');
 
 module.exports.index = async (req, res) => {
-    const students = await Student.find({});
+    const students = await Student.find({}).populate('subjectAssesments').populate('admin');
     res.render('students/index', { students })
 };
 
 // for about page
-module.exports.about = async (req, res) => {
-    const students = await Student.find({});
-    res.render('students/about', { students })
-};
+// module.exports.about = async (req, res) => {
+//     const students = await Student.find({});
+//     res.render('students/about', { students })
+// };
 
 // this is to display the new students assesments view page
 module.exports.assesments = async (req, res) => {

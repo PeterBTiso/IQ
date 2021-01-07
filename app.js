@@ -21,7 +21,6 @@ const mongoSanitize = require('express-mongo-sanitize');
 const MongoDBStore = require('connect-mongo')(session);
 
 const usersRoute = require('./routes/users');
-
 const studentsRoute = require('./routes/students');
 const subjectAssesmentsRoute = require('./routes/subjectAssesments');
 // const gallery = require('./routes/gallery');
@@ -167,8 +166,16 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/gallery', (req, res) => {
-    res.render('gallery')
-})
+    res.render('gallery/index')
+});
+
+// app.get('/office', (req, res) => {
+//     res.render('office/index')
+// });
+
+// app.get('/contact', (req, res) => {
+//     res.render('/views/office/index')
+// });
 
 app.all('*',( req, res, next) => {
     next(new ExpressError('Page not found!!!',404));

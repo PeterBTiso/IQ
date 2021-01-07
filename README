@@ -54,11 +54,12 @@ Next:
 * Insert IQ template - IQ-International.
     - gallery - let office admin be able to add and delete images
     - try implement the register popup on the old landing page
-    - add the old office page with the nice folder layout
-    - add old about page more about why use the website.
-    - 
+    - add the old office page with the nice folder layout - figure out why its not working
+    - add old about page more about why use the website. - figure out why its not working
+    - add a events Model
+    - School Year Roster
 
-* Add the iq template to the students view pqge not when viewing the student,
+* Add the iq template to the students view page not when viewing the student,
     - when clicking on the the students subject mark in the table then
     -  it drops down the students assesments that gave the student that mark.
     - make students dropdown in groups categorically
