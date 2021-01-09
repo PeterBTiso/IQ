@@ -3,7 +3,7 @@
 }
 html{
   line-height: 1.5;
-  background-color: rgb(39, 39, 41);
+  background-color: rgb(255, 255, 255);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -12,7 +12,7 @@ html{
 	text-align:center;
 	font-weight:700;
 	font-size:5em;
-	color:rgb(42, 183, 248);
+	color:rgb(30, 30, 31);
 	text-shadow:#040505 0 -3px;
   }
 nav{
@@ -24,7 +24,7 @@ nav{
   transition: background 500ms;
 }
 #main{
-  color:rgb(42, 183, 248);
+  color:rgb(42, 42, 43);
 }
 .nav-link{
   color:rgb(42, 183, 248);
@@ -33,7 +33,7 @@ nav{
   color:rgb(42, 183, 248);
 }
 #navbar-brand{
-    color:rgb(42, 183, 248);
+    color:rgb(33, 34, 34);
   }
 /**
   * Material Modal CSS
@@ -242,23 +242,23 @@ a {
   color: inherit;
 }
 .grade1Roster{
-  color:rgb(235, 240, 240);
+  color:rgb(58, 59, 59);
   font-size: 3em;
 }
 .time{
   font-size:20px;
-  color:rgb(42, 183, 248);
+  color:rgb(43, 44, 44);
 }
 table{
   text-align:center;
   border:none;
 }
 th{
-  color:rgb(42, 183, 248);
+  color:rgb(49, 50, 51);
 }
 .titles{
-  color:rgb(42, 183, 248);
+  color:rgb(62, 64, 65);
 }
 table .break{
-  color:rgb(42, 183, 248);
+  color:rgb(56, 57, 58);
 }

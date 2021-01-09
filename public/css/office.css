@@ -7,25 +7,27 @@ body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	background-color: #333230;
+	background-color: #ffffff;
 }
 #main {
 	color: rgb(39, 164, 247);
 	font-size: 1.5rem;
-	font-weight: 700;
 }
 nav {
 	font-size: 1.5rem;
-	font-weight: 350;
 	background-color: #333230;
 	color: white;
 }
+.nav-link {
+	font-size: 1rem;
+	color: white;
+}
 .container{
-	background-color: #333230;
+	background-color: #ffffff;
 	padding:0px;
 }
 .flexbox-container{
-	background-color: #333230;
+	background-color: #ffffff;
     text-align:center;
     justify-content: center;
     display: flex;
@@ -50,7 +52,7 @@ nav {
 	color:blue;
 }
 h4{
-	color:white;
+	color:rgb(59, 57, 57);
 }
 .folder>span:hover{
 	margin-top:0;
@@ -70,6 +72,12 @@ h4{
 svg {
 	margin-right: 20px;
 }
+
+
+
+
+/* TO DISPLAY SIDENAVBAR */
+/* 
 .sidenav {
 	height: 100%;
 	width: 0;
@@ -106,7 +114,7 @@ svg {
 	padding:0px;
 	float: right;
 }
-
+ */
 @media screen and (max-height: 450px) {
 	.sidenav {
 		padding-top: 15px;
@@ -160,7 +168,7 @@ a button:hover {
 	border: none;
 }
 
-.office {
+/* .office {
 	margin-top: -30px;
 	display: none;
 }
@@ -196,5 +204,5 @@ a button:hover {
 }
 .studentNav {
 	display: visible;
-}
+}  */
 /* Add Media queryies for screen shrink */
