@@ -9,9 +9,13 @@
       <div class="navbar-nav">
         <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/about">About</a>
-         <a class="nav-link" href="/students">Students</a>
+        <% if(currentUser) {%>
+          <a class="nav-link" href="/office">Office</a>
+            <% } %>
+         <!-- <a class="nav-link" href="/students">Students</a> -->
+         <!-- <a class="nav-link" href="/students/assesments">Assesments</a> -->
         <!-- <a class="nav-link" href="/students/new">New Student</a> -->
-        <a class="nav-link" href="/students/assesments">View Marks</a>
+        
       </div>
       <div class="navbar-nav ml-auto">
         <% if(!currentUser) {%>

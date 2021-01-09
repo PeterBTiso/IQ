@@ -169,6 +169,22 @@ app.get('/gallery', (req, res) => {
     res.render('gallery/index')
 });
 
+app.get('/roster', (req, res) => {
+    res.render('roster')
+});
+
+app.get('/office', (req, res) => {
+    res.render('office/index')
+});
+
+app.get('/calender', (req, res) => {
+    res.render('calender/index')
+});
+
+app.get('/contact', (req, res) => {
+    res.render('contact/index')
+});
+
 // app.get('/office', (req, res) => {
 //     res.render('office/index')
 // });

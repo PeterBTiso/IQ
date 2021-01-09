@@ -52,24 +52,18 @@ for each Student there should be :
 Next:
 
 * Insert IQ template - IQ-International.
-    - gallery - let office admin be able to add and delete images
-    - try implement the register popup on the old landing page
-    - add the old office page with the nice folder layout - figure out why its not working
-    - add old about page more about why use the website. - figure out why its not working
-    - add a events Model
-    - School Year Roster
+    - GALLERY - create gallery model and give CRUD
+    - ROSTER ADDED - add a roster model and add the model to mongo and give CRUD
+    - OFFICE - 
+    - EVENTS - add an events Model and CRUD
+    - CALENDER - add calender model and CRUD
+    - CONTACT - add contact page from old design
 
-* Add the iq template to the students view page not when viewing the student,
-    - when clicking on the the students subject mark in the table then
-    -  it drops down the students assesments that gave the student that mark.
-    - make students dropdown in groups categorically
-
-* Add an Extra Page to display School Roster 
-    - save roster to mongo 
+* School Roster 
     - make roster editable the pop-up is basically the edit form.
 
 * Add studenAssesment edit page or allow editing on student show page somehow.
 
-* Add password security on user register.
+* Add password security on user register (0-9a-z!@#$%^&*()).
 
 * Ask pauls brother to help fix the bootstrap dropwdown and the custom file upload.
