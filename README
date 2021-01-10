@@ -59,6 +59,7 @@ Next:
     - CALENDER - add calender model and CRUD.
     - CONTACT - add gps features etc and remove jquery.
     - Add student assesment edit page or allow editing on student show page somehow.
+    - Add a notification/anouncements view page.
 
 * School Roster 
     - make roster editable the pop-up is basically the edit form.
