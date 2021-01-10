@@ -52,18 +52,16 @@ for each Student there should be :
 Next:
 
 * Insert IQ template - IQ-International.
-    - GALLERY - create gallery model and give CRUD
-    - ROSTER ADDED - add a roster model and add the model to mongo and give CRUD
-    - OFFICE - 
-    - EVENTS - add an events Model and CRUD
-    - CALENDER - add calender model and CRUD
-    - CONTACT - add contact page from old design
+    - GALLERY - display all images in the school images collection, model, routes.
+    - ROSTER ADDED - add a roster model and add the model to mongo and give CRUD.
+    - OFFICE - make possible to add new working folders.
+    - EVENTS - add an events Model and CRUD.
+    - CALENDER - add calender model and CRUD.
+    - CONTACT - add gps features etc and remove jquery.
+    - Add student assesment edit page or allow editing on student show page somehow.
 
 * School Roster 
     - make roster editable the pop-up is basically the edit form.
 
-* Add studenAssesment edit page or allow editing on student show page somehow.
-
 * Add password security on user register (0-9a-z!@#$%^&*()).
-
 * Ask pauls brother to help fix the bootstrap dropwdown and the custom file upload.

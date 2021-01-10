@@ -24,7 +24,14 @@
                         </div>
                         <div class="mb-1">
                             <label class="form-label" for="password">Password</label>
-                            <input class="form-control" type="password" id="password" name="password" required>
+                            <input class="form-control" type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,0}" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-1">
+                            <label class="form-label" for="password2">Confirm Password</label>
+                            <input class="form-control" type="password" id="password2" name="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,0}" required>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
