@@ -15,6 +15,14 @@ document.querySelector("#hideData").addEventListener("click", function myFunctio
       x.style.display = "none";
     }
   })
+  document.querySelector("#hideAssesments").addEventListener("click", function myFunction() {
+    var x = document.querySelector("#assesmentsContainer") ;
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  })
   document.querySelector("#hideEvents").addEventListener("click", function myFunction() {
     var x = document.querySelector("#eventsContainer") ;
     if (x.style.display === "none") {
