@@ -19,7 +19,7 @@
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="mb-auto">
             <div>
-                <h1 class="float-md-left float-left mb-0 ml-2"><b><i>IQ International</i> </b></h1>
+                <h1 class="float-md-left float-left mb-0 ml-2 navHead"><b><i>IQ </i> </b><span class="navHead2"><b><i>International</i> </b></span></h1>
                 <nav class="nav float-right nav-masthead justify-content-center ">
                     <a class="nav-link active" aria-current="page" href="/about">About</a>
                     <% if(!currentUser) { %>
@@ -36,10 +36,12 @@
                 </nav>
             </div>
         </header>
-        <main class="px-3">
-            <h1><b>IQ International</b></h1>
-             <p class="lead"> <b><i>Welcome!</i></b></p><medium>Jump right in and explore our School.</medium><br>
-                <p>Feel free to Register or Login</p>
+
+        <main class="">
+            <h1 class="shrink text-center"><b>Welcome!</b></h1>
+            
+             <p class="lead mb-3"><medium>Jump right in and explore our School.</medium><br>
+                
 
                 <% if(!currentUser) { %>
                     <a href="/register" class="btn btn-lg btn-secondary font-weight-bold border-white bg-white">Sign Up</a>
@@ -50,7 +52,7 @@
         </main>
 
         <footer class="mt-auto text-white-50">
-            <p>&copy; 2020 </p>
+            <p class="foot">&copy; Since 2020 </p>
         </footer>
 
 

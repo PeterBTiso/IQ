@@ -10,17 +10,17 @@ html{
   body {
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    background-color: #504d4d;
+    background-color: #ffffff;
     background-position: center;
     background-size: 100%;
     background-position-y: bottom;
   }
   .mainH{
     margin-top:70px;
+    font-weight:800;
     text-align:center;
-    /* font-family: 'MuseoModerno', cursive, sans-serif; */
-    font-weight:700;
-    color:rgb(2, 2, 2);
+    color:rgb(35, 36, 36);
+    text-decoration: underline;
     /* text-shadow:#040505 0 -3px; */
   }
   .mainH2{
@@ -29,6 +29,19 @@ html{
     /* font-family: 'MuseoModerno', cursive, sans-serif; */
     font-weight:700;
     color:rgb(0, 0, 0);
+    font-size: 3em;
+    color:rgb(82, 220, 238);
+    /* text-shadow:#040505 0 -3px; */
+  }
+
+  .mainH3{
+    margin:0px;
+    text-align:center;
+    /* font-family: 'MuseoModerno', cursive, sans-serif; */
+    font-weight:700;
+    color:rgb(0, 0, 0);
+    font-size: 4em;
+    color:rgb(82, 220, 238);
     /* text-shadow:#040505 0 -3px; */
   }
   
@@ -63,12 +76,7 @@ html{
     transform: scale(1.4);
     transition:0.5s;
   }
-  h1{
-    font-size:4em;
-    margin-top:40px;
-    text-align:center;
-    color:rgb(5, 4, 43);
-  }
+ 
   .hello{
     opacity: 1 !important;
   }

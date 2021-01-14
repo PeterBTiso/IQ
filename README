@@ -51,18 +51,23 @@ for each Student there should be :
 
 Next:
 
+loop through all html classes, search where class list is i+=1
+if this button is clicked search for class="`n${i}`" and toggle display
+maybe check if the button that is clicked child has the same class the toggle display
+
+
 * Insert IQ template - IQ-International.
-    - GALLERY - display all images in the school images collection, model, routes.
+- START WORKING ON THE DESIGNS
+- START ARRANGING THE CONTENT
+    - GALLERY - Make a gallery model with CRUD
     - ROSTER ADDED - add a roster model and add the model to mongo and give CRUD.
     - OFFICE - make possible to add new working folders.
     - EVENTS - add an events Model and CRUD.
     - CALENDER - add calender model and CRUD.
     - CONTACT - add gps features etc and remove jquery.
-    - Add student assesment edit page or allow editing on student show page somehow.
+    - Add a absence page. Click on student and mark absent and add to student model.
     - Add a notification/anouncements view page.
-
-* School Roster 
-    - make roster editable the pop-up is basically the edit form.
+    - give the roster CRUD capabilty
 
 * Add password security on user register (0-9a-z!@#$%^&*()).
-* Ask pauls brother to help fix the bootstrap dropwdown and the custom file upload.
+* Ask pauls brother to help fix the bootstrap dropwdown and the add the password security and confirmation

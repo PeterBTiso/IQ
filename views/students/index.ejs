@@ -1,7 +1,7 @@
 <% layout('layouts/boilerplate') %>
 
     <h1 class="text-center mt-0">All Students</h1>
-    <h3 class="text-center"><a href="/students/new">Add New Student</a></h3>
+    <!-- <h3 class="text-center"><a href="/students/new">Add New Student</a></h3> -->
 
     <!-- toggle buttons at the top -->
     <div class="container col-md-12 col-lg-8 offset-lg-2 offset-md-1 mb-3 sticky">
@@ -937,21 +937,30 @@
     <div class="container marks" id="marksContainer">
         <h1 class="text-center mb-3"><i class="fas fa-marker "></i>Student Marks</h1>
         <div class="container border">
-            <% let n=0 %>
+            <% let nEng = 0 %>
+            <% let nMath = 0 %>
+            <% let nSci = 0 %>
+            <% let nSco = 0 %>
                 <% for(let student of students) { %>
+
+                    <% nEng += 1 %>
+                    <% nMath += 1 %>
+                    <% nSci += 1 %>
+                    <% nSco += 1 %>
+
                     <div class="container border">
                         <h3 class="text-center"><a href="/students/<%= student._id %>">
                                 <%= student.firstN %>
                             </a>
                         </h3>
-                        <button class="btn btn-primary"> English </button>
-                        <a class="btn btn-warning">Mathematics</a>
-                        <a class="btn btn-danger">Science</a>
-                        <a class="btn btn-info">Social Studies</a>
+                        <button class="btn btn-primary <%= nEng %>"> English <%= nEng %> </button>
+                        <button class="btn btn-warning <%= nMath %>"> Mathematics <%= nMath %> </button>
+                        <button class="btn btn-danger <%= nSci %>"> Science <%= nSci %> </button>
+                        <button class="btn btn-info <%= nSco %>"> Social Studies <%= nSco %> </button>
                         <div class="mb-5">
-                            <div class="english">
+                            <div class="english n<%= nEng %>">
                                 <table class="table">
-                                    <h2 class="text-light bg-dark">English</h2>
+                                    <h2 class="text-light bg-dark">English <%= nMath %></h2>
                                     <tr class="bg-primary">
                                         <th data-column="name" data-order="desc">Date &#9650</th>
                                         <th data-column="name" data-order="desc">Topic &#9650</th>
@@ -1014,9 +1023,9 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="math">
+                            <div class="math <%= nMath %>">
                                 <table class="table">
-                                    <h2 class="text-light bg-dark">Mathematics</h2>
+                                    <h2 class="text-light bg-dark">Mathematics <%= nMath %></h2>
                                     <tr class="bg-warning">
                                         <th data-column="name" data-order="desc">Date &#9650</th>
                                         <th data-column="name" data-order="desc">Topic &#9650</th>
@@ -1080,7 +1089,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="science">
+                            <div class="science <%= nEng %>">
                                 <table class="table">
                                     <h2 class="text-light bg-dark">Science</h2>
                                     <tr class="bg-danger">
@@ -1145,7 +1154,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="social">
+                            <div class="social <%= nEng %>">
                                 <table class="table">
                                     <h2 class="text-light bg-dark">Social Studies</h2>
                                     <tr class="bg-info">
@@ -1377,3 +1386,4 @@
             </tbody>
         </table>
     </div>
+

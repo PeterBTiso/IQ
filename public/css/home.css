@@ -35,3 +35,72 @@ body {
     color: #333;
     text-shadow: none;
 }
+
+@media screen and (min-width: 601px) {
+    a.nav-link {
+      font-size: 30px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+   a.nav-link {
+      font-size: 23px;
+      margin-left:1px;
+      margin-top:0px;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    h1.navHead {
+      font-size: 44px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    h1.navHead {
+      font-size: 27px;
+      margin-left:1px;
+      padding-left:0px;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    h1.navHead2 {
+      font-size: 40px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    h1.navHead2 {
+      font-size: 29px;
+      margin-left:0px;
+      padding-left:0px;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    h1.shrink {
+      font-size: 80px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    h1.shrink {
+        margin-top:-20px;
+      font-size: 40px;
+      margin-left:0px;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    p.foot {
+      font-size: 80px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    p.foot {
+      font-size: 15px;
+      margin-bottom:0px;
+    }
+}

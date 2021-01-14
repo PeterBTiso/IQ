@@ -139,7 +139,18 @@ document.querySelector("#g1").addEventListener("click", function myFunction() {
     }
   }) 
 
-  // // this is to hide and show the subjects on the marks dropdown
+
+  // this is to hide and show the subjects on the marks dropdown
+// let studentsSubjects = document.querySelectorAll("div");
+// // console.log(studentsSubjects)
+// for(let i = 0 ; i <= studentsSubjects.length() ; i++ ){
+//   if(studentsSubjects.classList.contains(`n${i}`))
+//   document.querySelector(`n${i}`).toggle().display();
+//   console.log(i)
+// }
+  
+
+
   // document.querySelector(".engBtn").addEventListener("click", function myFunction() {
   //   var x = document.querySelector(".english") ;
   //   if (x.style.display === "none") {
