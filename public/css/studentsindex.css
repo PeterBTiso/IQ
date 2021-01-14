@@ -1,4 +1,8 @@
-
+#add{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
 #studentData{
     display:none;
 }
@@ -80,3 +84,16 @@ table{
 .social{
     display:none;
 } */
+
+@media screen and (min-width: 601px) {
+    p.foot {
+      font-size: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    p.foot {
+      font-size: 15px;
+      margin-bottom:0px;
+    }
+}

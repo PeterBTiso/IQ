@@ -55,9 +55,8 @@ loop through all html classes, search where class list is i+=1
 if this button is clicked search for class="`n${i}`" and toggle display
 maybe check if the button that is clicked child has the same class the toggle display
 
-
-* Insert IQ template - IQ-International.
 - START WORKING ON THE DESIGNS
+    - Make students index page grade buttons sticky and shrink on mobile
 - START ARRANGING THE CONTENT
     - GALLERY - Make a gallery model with CRUD
     - ROSTER ADDED - add a roster model and add the model to mongo and give CRUD.
@@ -69,5 +68,9 @@ maybe check if the button that is clicked child has the same class the toggle di
     - Add a notification/anouncements view page.
     - give the roster CRUD capabilty
 
-* Add password security on user register (0-9a-z!@#$%^&*()).
-* Ask pauls brother to help fix the bootstrap dropwdown and the add the password security and confirmation
+* Add 
+* Ask pauls brother to help fix:
+    - password security on user register (0-9a-z!@#$%^&*())
+    - the bootstrap dropwdown 
+    - the password security and confirmation
+    - the screen rotation css
