@@ -185,6 +185,13 @@ app.get('/contact', (req, res) => {
     res.render('contact/index')
 });
 
+app.get('/admissions', (req, res) => {
+    res.render('admissions/index')
+});
+
+app.get('/sponsor', (req, res) => {
+    res.render('sponsor/index')
+});
 // app.get('/office', (req, res) => {
 //     res.render('office/index')
 // });

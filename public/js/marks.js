@@ -1,4 +1,33 @@
 // Top Buttons
+// function dataBtn() {
+//   var element = document.getElementById("hideData");
+//   element.classList.toggle("mystyle");
+// }
+// function marksBtn() {
+//   var element = document.getElementById("hideMarks");
+//   element.classList.toggle("mystyle");
+// }
+// function assesBtn() {
+//   var element = document.getElementById("hideAssesments");
+//   element.classList.toggle("mystyle");
+// }
+// function eventsBtn() {
+//   var element = document.getElementById("hideEvents");
+//   element.classList.toggle("mystyle");
+// }
+// function rosterBtn() {
+//   var element = document.getElementById("hideRoster");
+//   element.classList.toggle("mystyle");
+// }
+// function vacaBtn() {
+//   var element = document.getElementById("hideNews");
+//   element.classList.toggle("mystyle");
+// }
+// function newsBtn() {
+//   var element = document.getElementById("hideNews");
+//   element.classList.toggle("mystyle");
+// }
+
 document.querySelector("#hideData").addEventListener("click", function myFunction() {
     var x = document.querySelector("#studentData") ;
     if (x.style.display === "none") {
@@ -7,6 +36,7 @@ document.querySelector("#hideData").addEventListener("click", function myFunctio
       x.style.display = "none";
     }
   })
+
   document.querySelector("#hideMarks").addEventListener("click", function myFunction() {
     var x = document.querySelector("#marksContainer") ;
     if (x.style.display === "none") {

@@ -5,15 +5,15 @@
 
     <!-- toggle buttons at the top -->
     <div class="container col-md-12 col-lg-8 offset-lg-2 offset-md-1 mb-3 sticky">
-        <button class=" btn btn-success" id="hideAdd"><i class="fas fa-user-plus"></i><a class="text-light"
+        <button class=" btn btn-success" id="hideAdd" ><i class="fas fa-user-plus"></i><a class="text-light"
                 href="/students/new">ADD</a></button>
-        <button class="btn btn-primary" id="hideData"><i class="fas fa-align-justify"></i> DATA </button>
-        <button class="btn btn-primary" id="hideMarks"><i class="fas fa-marker"></i>MARKS</button>
-        <button class="btn btn-primary" id="hideAssesments"><i class="fas fa-marker"></i>ASSESMENTS</button>
-        <button class="btn btn-primary" id="hideEvents"><i class="fas fa-calendar-alt"></i> EVENTS</button>
-        <button class="btn btn-primary" id="hideRoster">ROSTER</button>
-        <button class="btn btn-primary" id="">VACATIONS</button>
-        <button class="btn btn-primary" id="">NEWS</button>
+        <button class="btn btn-primary" id="hideData" onclick="dataBtn()"><i class="fas fa-align-justify"></i> DATA </button>
+        <button class="btn btn-primary" id="hideMarks" onclick="marksBtn()"><i class="fas fa-marker"></i>MARKS</button>
+        <button class="btn btn-primary" id="hideAssesments" onclick="assesBtn()"><i class="fas fa-marker"></i>ASSESMENTS</button>
+        <button class="btn btn-primary" id="hideEvents" onclick="eventsBtn()"><i class="fas fa-calendar-alt"></i> EVENTS</button>
+        <button class="btn btn-primary" id="hideRoster" onclick="rosterBtn()">ROSTER</button>
+        <button class="btn btn-primary" id="hideVaca" onclick="vacaBtn()">VACATIONS</button>
+        <button class="btn btn-primary" id="hideNews" onclick="newsBtn()">NEWS</button>
     </div>
 
     <!-- students in each grade and their avg for subjects to date -->

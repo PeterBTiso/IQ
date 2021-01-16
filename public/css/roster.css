@@ -145,7 +145,7 @@ nav{
   */
 body {
   height: 100vh;
-  background: rgba(51, 46, 46, 0.13);
+  background-color: rgb(255, 255, 255);
 }
 img {
   max-width: 100%;
