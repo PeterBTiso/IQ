@@ -86,6 +86,51 @@ table{
 } */
 
 @media screen and (min-width: 601px) {
+    button {
+      font-size: 30px;
+      width:auto;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .btn{
+      font-size: 7px;
+      font-weight: 600;
+      border: 10px;
+    }
+}
+
+
+@media screen and (min-width: 601px) {
+    table {
+        font-size: medium;
+    }
+    main{
+        margin-top:30px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    table{
+        table-layout: auto;
+        font-size: x-small;
+        font-weight: 400;
+    }
+    .box{
+        font-size: x-small;
+        font-weight: 400;
+        max-width:65px;
+        padding:0px;
+    }
+    h1{
+        font-size: x-large;
+    }
+    main{
+        margin-top:10px;
+    }
+}
+
+@media screen and (min-width: 601px) {
     p.foot {
       font-size: 20px;
     }

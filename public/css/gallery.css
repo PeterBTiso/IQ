@@ -20,8 +20,6 @@ body {
 
 .container {
 	max-width: 100rem;
-	margin: 0 auto;
-	padding: 0 2rem 2rem;
 }
 
 .heading {
@@ -30,8 +28,8 @@ body {
 	font-weight: 500;
 	line-height: 1.5;
 	text-align: center;
-	padding: 3.5rem 0;
 	color: #1a1a1a;
+	
 }
 
 .heading span {
@@ -54,17 +52,45 @@ body {
 	overflow: hidden;
 }
 
-.gallery-image {
+
+
+.gallery-image:hover {
+	transform: scale(1.15);
+}
+
+@media screen and (min-width: 601px) {
+    .gallery-image {
 	display: block;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	transition: transform 400ms ease-out;
+	}
+	.heading{
+		font-weight: 500;
+	}
+}
+  
+  @media screen and (max-width: 600px) {
+	.gallery-item {
+		display: block;
+		width: 40vw;
+		height: 30vh;
+		object-fit: fill;
+		transition: transform 400ms ease-out;
+		}
+		.gallery-image {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 400ms ease-out;
+			}
+			.heading{
+				font-size: xx-large;
+			}
 }
 
-.gallery-image:hover {
-	transform: scale(1.15);
-}
 
 /*
 

@@ -57,6 +57,8 @@ maybe check if the button that is clicked child has the same class the toggle di
 
 - START WORKING ON THE DESIGNS
     - Make students index page grade buttons sticky and shrink on mobile
+    - add show which button is clicked on pages
+    - fix assesments table overflow
 - START ARRANGING THE CONTENT
     - GALLERY - Make a gallery model with CRUD
     - ROSTER ADDED - add a roster model and add the model to mongo and give CRUD.
