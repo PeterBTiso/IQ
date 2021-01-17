@@ -4,11 +4,9 @@ body {
 	font-weight: 400;
 	font-size: 1em;
 	color: #000;
-	background-color: #3b3b3a;
+	background-color: #3b3a3a;
 }
-.container{
-	margin:100px;
-}
+
 .dn {
 	display: none;
 }

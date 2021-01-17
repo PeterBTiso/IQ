@@ -100,33 +100,29 @@ table{
     display:none;
 } */
 
+
 @media screen and (min-width: 601px) {
     button {
       font-size: 30px;
       width:auto;
     }
-  }
-  
-  @media screen and (max-width: 600px) {
-    .btn{
-      font-size: 10px;
-      font-weight: 600;
-      border: 10px;
-    }
-    
-}
-
-
-@media screen and (min-width: 601px) {
     table {
         font-size: medium;
     }
     main{
         margin-top:30px;
     }
+    p.foot {
+        font-size: 20px;
+      }
   }
   
   @media screen and (max-width: 600px) {
+      .btn{
+      font-size: 10px;
+      font-weight: 600;
+      border: 10px;
+    }
     .backBtn{
         font-size: 20px;
         font-weight: 600;
@@ -156,6 +152,16 @@ table{
         font-weight: 600;
         border: 10px;
     }
+    .addStuForm{
+        font-size: 15px;
+        font-weight: 600;
+        border: 10px;
+    }
+    .allStuBtn{
+        font-size: 15px;
+        font-weight: 600;
+        border: 10px;
+    }
     table{
         table-layout: auto;
         font-size: small;
@@ -173,17 +179,5 @@ table{
     main{
         margin-top:10px;
     }
-}
-
-@media screen and (min-width: 601px) {
-    p.foot {
-      font-size: 20px;
-    }
-  }
-  
-  @media screen and (max-width: 600px) {
-    p.foot {
-      font-size: 15px;
-      margin-bottom:0px;
-    }
+    
 }
