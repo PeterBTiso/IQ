@@ -169,6 +169,104 @@ document.querySelector("#g1").addEventListener("click", function myFunction() {
     }
   }) 
 
+  // this is to hide and show the students marks 
+  document.querySelector("#gr1-marksB").addEventListener("click", function myFunction() {
+    var x = document.querySelector(".gr1Marks") ;
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }) 
+  document.querySelector("#gr2-marksB").addEventListener("click", function myFunction() {
+    var x = document.querySelector(".gr2Marks") ;
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }) 
+  document.querySelector("#gr3-marksB").addEventListener("click", function myFunction() {
+    var x = document.querySelector(".gr3Marks") ;
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }) 
+  document.querySelector("#gr4-marksB").addEventListener("click", function myFunction() {
+    var x = document.querySelector(".gr4Marks") ;
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }) 
+  document.querySelector("#gr5-marksB").addEventListener("click", function myFunction() {
+    var x = document.querySelector(".gr5Marks") ;
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }) 
+  document.querySelector("#gr6-marksB").addEventListener("click", function myFunction() {
+    var x = document.querySelector(".gr6Marks") ;
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }) 
+  document.querySelector("#gr7-marksB").addEventListener("click", function myFunction() {
+    var x = document.querySelector(".gr7Marks") ;
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }) 
+  document.querySelector("#gr8-marksB").addEventListener("click", function myFunction() {
+    var x = document.querySelector(".gr8Marks") ;
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }) 
+  document.querySelector("#gr9-marksB").addEventListener("click", function myFunction() {
+    var x = document.querySelector(".gr9Marks") ;
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }) 
+  document.querySelector("#gr10-marksB").addEventListener("click", function myFunction() {
+    var x = document.querySelector(".gr10Marks") ;
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }) 
+  document.querySelector("#gr11-marksB").addEventListener("click", function myFunction() {
+    var x = document.querySelector(".gr11Marks") ;
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }) 
+  document.querySelector("#gr12-marksB").addEventListener("click", function myFunction() {
+    var x = document.querySelector(".gr12Marks") ;
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }) 
+
 
   // this is to hide and show the subjects on the marks dropdown
 // let studentsSubjects = document.querySelectorAll("div");

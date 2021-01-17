@@ -73,8 +73,10 @@ maybe check if the button that is clicked child has the same class the toggle di
 
 
 * Ask Peter to help fix:
+    - how to make buttons hide and display each student marks.
     - password security on user register (0-9a-z!@#$%^&*())
     - Password confirmation on register
     - The bootstrap dropwdown 
     - marks table data on mobile scrollable
     - point me towards how to make the roster editable
+    - add a search feature

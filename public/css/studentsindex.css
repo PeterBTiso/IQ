@@ -26,6 +26,42 @@ body{
 #rosterContainer{
     display:none;
 }
+.gr1Marks{
+    display:none;
+}
+.gr2Marks{
+    display:none;
+}
+.gr3Marks{
+    display:none;
+}
+.gr4Marks{
+    display:none;
+}
+.gr5Marks{
+    display:none;
+}
+.gr6Marks{
+    display:none;
+}
+.gr7Marks{
+    display:none;
+}
+.gr8Marks{
+    display:none;
+}
+.gr9Marks{
+    display:none;
+}
+.gr10Marks{
+    display:none;
+}
+.gr11Marks{
+    display:none;
+}
+.gr12Marks{
+    display:none;
+}
 table{
     width:100%;
     table-layout: auto;
@@ -78,6 +114,54 @@ table{
     display:none;
 }
 #gr12{
+    display:none;
+    min-width:100%;
+}
+#gr1-marks{
+    width:100%;
+    display:none;
+ }
+#gr2-marks{
+    width:100%;
+    display:none;
+}
+#gr3-marks{
+    width:100%;
+    display:none;
+}
+#gr4-marks{
+    width:100%;
+    display:none;
+}
+#gr5-marks{
+    width:100%;
+    display:none;
+}
+#gr6-marks{
+    width:100%;
+    display:none;
+}
+#gr7-marks{
+    width:100%;
+    display:none;
+}
+#gr8-marks{
+    width:100%;
+    display:none;
+}
+#gr9-marks{
+    width:100%;
+    display:none;
+}
+#gr10-marks{
+    width:100%;
+    display:none;
+}
+#gr11-marks{
+    width:100%;
+    display:none;
+}
+#gr12-marks{
     display:none;
     min-width:100%;
 }
