@@ -71,9 +71,10 @@ maybe check if the button that is clicked child has the same class the toggle di
     - Add a notification/anouncements view page.
     - give the roster CRUD capabilty
 
-* Add 
-* Ask pauls brother to help fix:
+
+* Ask Peter to help fix:
     - password security on user register (0-9a-z!@#$%^&*())
-    - the bootstrap dropwdown 
-    - the password security and confirmation
-    - the screen rotation css
+    - Password confirmation on register
+    - The bootstrap dropwdown 
+    - marks table data on mobile scrollable
+    - point me towards how to make the roster editable

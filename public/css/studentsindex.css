@@ -109,10 +109,11 @@ table{
   
   @media screen and (max-width: 600px) {
     .btn{
-      font-size: 7px;
+      font-size: 10px;
       font-weight: 600;
       border: 10px;
     }
+    
 }
 
 
@@ -126,10 +127,23 @@ table{
   }
   
   @media screen and (max-width: 600px) {
-    table{
-        table-layout: auto;
-        font-size: x-small;
-        font-weight: 400;
+    .backBtn{
+        font-size: 20px;
+        font-weight: 600;
+        border: 10px;
+    }
+    .editBtn{
+        font-size: 20px;
+        font-weight: 600;
+        border: 10px;
+    }
+    .delBtn{
+        font-size: 20px;
+        font-weight: 600;
+        border: 10px;
+    }
+    .card-body{
+        text-align: center;
     }
     .box{
         font-size: x-small;
@@ -137,6 +151,22 @@ table{
         max-width:65px;
         padding:0px;
     }
+    .cardDelBtn{
+        font-size: 15px;
+        font-weight: 600;
+        border: 10px;
+    }
+    table{
+        table-layout: auto;
+        font-size: small;
+        font-weight: 400;
+    }
+    a{
+        table-layout: auto;
+        font-size: small;
+        font-weight: 700;
+    }
+    
     h1{
         font-size: x-large;
     }
