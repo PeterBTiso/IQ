@@ -970,409 +970,414 @@
             <h1 class="text-center">Level 1</h1>
             <% for(let student of students) { %>
                 <% if(student.level===1){ %>
-                    
+
                     <% let nEng=0 %>
-                    <% let nMath=0 %>
-                    <% let nSci=0 %>
-                    <% let nSco=0 %>
+                        <% let nMath=0 %>
+                            <% let nSci=0 %>
+                                <% let nSco=0 %>
 
-                        <% nEng +=1 %>
-                        <% nMath +=1 %>
-                        <% nSci +=1 %>
-                        <% nSco +=1 %>
-                            <div class="">
-                                <h3 class="text-center"><a href="/students/<%= student._id %>">
-                                        <%= student.firstN %><%= student.lastN %>
-                                    </a>
-                                </h3>
-                                <button class="btn btn-primary text-center <%= nEng %>"> English <%= nEng %>
-                                </button>
-                                <button class="btn btn-warning <%= nMath %>"> Mathematics <%=nMath %> </button>
-                                <button class="btn btn-danger <%= nSci %>"> Science <%= nSci %>
-                                </button>
-                                <button class="btn btn-info <%= nSco %>"> Social Studies <%=nSco %> </button>
-                                <div class="mb-5">
-                                    <div class="english n<%= nEng %>">
-                                        <table class="table table tEng">
-                                            <h2 class="text-light bg-dark">English <%= nMath %>
-                                            </h2>
-                                            <tr class="bg-primary">
-                                                <th data-column="name" data-order="desc">Date
-                                                    &#9650</th>
-                                                <th data-column="name" data-order="desc">Topic
-                                                    &#9650</th>
-                                                <th data-column="english" data-order="desc">
-                                                    Score &#9650</th>
-                                                <th data-column="maths" data-order="desc">Total
-                                                    &#9650</th>
-                                                <th data-column="science" data-order="desc">
-                                                    Percent % &#9650</th>
-                                                <th data-column="socialcience"
-                                                    data-order="desc">Admin % &#9650</th>
-                                            </tr>
-                                            <tbody class="" id="myTable">
-                                                <% for(let subjectAssesment of
-                                                    student.subjectAssesments) {%>
-                                                    <% if(subjectAssesment.subject==="English" )
-                                                        { %>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.date
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.topic
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
+                                    <% nEng +=1 %>
+                                        <% nMath +=1 %>
+                                            <% nSci +=1 %>
+                                                <% nSco +=1 %>
+                                                    <div class="">
+                                                        <h3 class="text-center"><a href="/students/<%= student._id %>">
+                                                                <%= student.firstN %>
+                                                                    <%= student.lastN %>
+                                                            </a>
+                                                        </h3>
+                                                        <button class="btn btn-primary text-center <%= nEng %>"> English
+                                                            <%= nEng %>
+                                                        </button>
+                                                        <button class="btn btn-warning <%= nMath %>"> Mathematics
+                                                            <%=nMath %> </button>
+                                                        <button class="btn btn-danger <%= nSci %>"> Science <%= nSci %>
+                                                        </button>
+                                                        <button class="btn btn-info <%= nSco %>"> Social Studies <%=nSco
+                                                                %> </button>
+                                                        <div class="mb-5">
+                                                            <div class="english n<%= nEng %>">
 
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.studentScore
+                                                                <table class="table table tEng">
+                                                                    <h2 class="text-light bg-dark">English <%= nMath %>
+                                                                    </h2>
+                                                                    <tr class="bg-primary">
+                                                                        <th data-column="name" data-order="desc">Date
+                                                                            &#9650</th>
+                                                                        <th data-column="name" data-order="desc">Topic
+                                                                            &#9650</th>
+                                                                        <th data-column="english" data-order="desc">
+                                                                            Score &#9650</th>
+                                                                        <th data-column="maths" data-order="desc">Total
+                                                                            &#9650</th>
+                                                                        <th data-column="science" data-order="desc">
+                                                                            Percent % &#9650</th>
+                                                                        <th data-column="socialcience"
+                                                                            data-order="desc">Admin % &#9650</th>
+                                                                    </tr>
+                                                                    <tbody class="" id="myTable">
+                                                                        <% for(let subjectAssesment of
+                                                                            student.subjectAssesments) {%>
+                                                                            <% if(subjectAssesment.subject==="English" )
+                                                                                { %>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.date
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.topic
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.studentScore
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.totalScore
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.studentScore
+                                                                                                    /
+                                                                                                    subjectAssesment.totalScore
+                                                                                                    *100 %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= student.admin.username
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <% } %>
+                                                                                    <% } %>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="math <%= nMath %>">
+                                                                <table class="table">
+                                                                    <h2 class="text-light bg-dark">Mathematics <%= nMath
                                                                             %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.totalScore
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.studentScore
-                                                                            /
-                                                                            subjectAssesment.totalScore
-                                                                            *100 %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= student.admin.username
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
+                                                                    </h2>
+                                                                    <tr class="bg-warning">
+                                                                        <th data-column="name" data-order="desc">Date
+                                                                            &#9650</th>
+                                                                        <th data-column="name" data-order="desc">Topic
+                                                                            &#9650</th>
+                                                                        <th data-column="english" data-order="desc">
+                                                                            Score &#9650</th>
+                                                                        <th data-column="maths" data-order="desc">Total
+                                                                            &#9650</th>
+                                                                        <th data-column="science" data-order="desc">
+                                                                            Percent % &#9650</th>
+                                                                        <th data-column="socialcience"
+                                                                            data-order="desc">Admin % &#9650</th>
+
+                                                                    </tr>
+                                                                    <tbody id="myTable">
+                                                                        <% for(let subjectAssesment of
+                                                                            student.subjectAssesments) {%>
+                                                                            <% if(subjectAssesment.subject==="Math" ) {
+                                                                                %>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.date
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.topic
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.studentScore
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.totalScore
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.studentScore
+                                                                                                    /
+                                                                                                    subjectAssesment.totalScore
+                                                                                                    *100 %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= student.admin.username
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <% } %>
+                                                                                    <% } %>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="science <%= nEng %>">
+                                                                <table class="table">
+                                                                    <h2 class="text-light bg-dark">Science</h2>
+                                                                    <tr class="bg-danger">
+                                                                        <th data-column="name" data-order="desc">Date
+                                                                            &#9650</th>
+                                                                        <th data-column="name" data-order="desc">Topic
+                                                                            &#9650</th>
+                                                                        <th data-column="english" data-order="desc">
+                                                                            Score &#9650</th>
+                                                                        <th data-column="maths" data-order="desc">Total
+                                                                            &#9650</th>
+                                                                        <th data-column="science" data-order="desc">
+                                                                            Percent % &#9650</th>
+                                                                        <th data-column="socialcience"
+                                                                            data-order="desc">Admin % &#9650</th>
+                                                                    </tr>
+                                                                    <tbody id="myTable">
+                                                                        <% for(let subjectAssesment of
+                                                                            student.subjectAssesments) {%>
+                                                                            <% if(subjectAssesment.subject==="Science" )
+                                                                                { %>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.date
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.topic
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.studentScore
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.totalScore
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.studentScore
+                                                                                                    /
+                                                                                                    subjectAssesment.totalScore
+                                                                                                    *100 %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= student.admin %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <% } %>
+                                                                                    <% } %>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="social <%= nEng %>">
+                                                                <table class="table">
+                                                                    <h2 class="text-light bg-dark">Social Studies</h2>
+                                                                    <tr class="bg-info">
+                                                                        <th data-column="name" data-order="desc">Date
+                                                                            &#9650</th>
+                                                                        <th data-column="name" data-order="desc">Topic
+                                                                            &#9650</th>
+                                                                        <th data-column="english" data-order="desc">
+                                                                            Score &#9650</th>
+                                                                        <th data-column="maths" data-order="desc">Total
+                                                                            &#9650</th>
+                                                                        <th data-column="science" data-order="desc">
+                                                                            Percent % &#9650</th>
+                                                                        <th data-column="socialcience"
+                                                                            data-order="desc">Admin % &#9650</th>
+                                                                    </tr>
+                                                                    <tbody id="myTable">
+                                                                        <% for(let subjectAssesment of
+                                                                            student.subjectAssesments) {%>
+                                                                            <% if(subjectAssesment.subject==="Social" )
+                                                                                { %>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.date
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.topic
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.studentScore
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.totalScore
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.studentScore
+                                                                                                    /
+                                                                                                    subjectAssesment.totalScore
+                                                                                                    *100 %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="row_data"
+                                                                                            edit_type="click"
+                                                                                            col_name="fname">
+                                                                                            <span>
+                                                                                                <%= subjectAssesment.admin.username
+                                                                                                    %>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <% } %>
+                                                                                    <% } %>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <% } %>
                                                         <% } %>
-                                                            <% } %>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="math <%= nMath %>">
-                                        <table class="table">
-                                            <h2 class="text-light bg-dark">Mathematics <%= nMath
-                                                    %>
-                                            </h2>
-                                            <tr class="bg-warning">
-                                                <th data-column="name" data-order="desc">Date
-                                                    &#9650</th>
-                                                <th data-column="name" data-order="desc">Topic
-                                                    &#9650</th>
-                                                <th data-column="english" data-order="desc">
-                                                    Score &#9650</th>
-                                                <th data-column="maths" data-order="desc">Total
-                                                    &#9650</th>
-                                                <th data-column="science" data-order="desc">
-                                                    Percent % &#9650</th>
-                                                <th data-column="socialcience"
-                                                    data-order="desc">Admin % &#9650</th>
-
-                                            </tr>
-                                            <tbody id="myTable">
-                                                <% for(let subjectAssesment of
-                                                    student.subjectAssesments) {%>
-                                                    <% if(subjectAssesment.subject==="Math" ) {
-                                                        %>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.date
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.topic
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.studentScore
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.totalScore
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.studentScore
-                                                                            /
-                                                                            subjectAssesment.totalScore
-                                                                            *100 %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= student.admin.username
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <% } %>
-                                                            <% } %>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="science <%= nEng %>">
-                                        <table class="table">
-                                            <h2 class="text-light bg-dark">Science</h2>
-                                            <tr class="bg-danger">
-                                                <th data-column="name" data-order="desc">Date
-                                                    &#9650</th>
-                                                <th data-column="name" data-order="desc">Topic
-                                                    &#9650</th>
-                                                <th data-column="english" data-order="desc">
-                                                    Score &#9650</th>
-                                                <th data-column="maths" data-order="desc">Total
-                                                    &#9650</th>
-                                                <th data-column="science" data-order="desc">
-                                                    Percent % &#9650</th>
-                                                <th data-column="socialcience"
-                                                    data-order="desc">Admin % &#9650</th>
-                                            </tr>
-                                            <tbody id="myTable">
-                                                <% for(let subjectAssesment of
-                                                    student.subjectAssesments) {%>
-                                                    <% if(subjectAssesment.subject==="Science" )
-                                                        { %>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.date
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.topic
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.studentScore
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.totalScore
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.studentScore
-                                                                            /
-                                                                            subjectAssesment.totalScore
-                                                                            *100 %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= student.admin %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <% } %>
-                                                            <% } %>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="social <%= nEng %>">
-                                        <table class="table">
-                                            <h2 class="text-light bg-dark">Social Studies</h2>
-                                            <tr class="bg-info">
-                                                <th data-column="name" data-order="desc">Date
-                                                    &#9650</th>
-                                                <th data-column="name" data-order="desc">Topic
-                                                    &#9650</th>
-                                                <th data-column="english" data-order="desc">
-                                                    Score &#9650</th>
-                                                <th data-column="maths" data-order="desc">Total
-                                                    &#9650</th>
-                                                <th data-column="science" data-order="desc">
-                                                    Percent % &#9650</th>
-                                                <th data-column="socialcience"
-                                                    data-order="desc">Admin % &#9650</th>
-                                            </tr>
-                                            <tbody id="myTable">
-                                                <% for(let subjectAssesment of
-                                                    student.subjectAssesments) {%>
-                                                    <% if(subjectAssesment.subject==="Social" )
-                                                        { %>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.date
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.topic
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.studentScore
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.totalScore
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.studentScore
-                                                                            /
-                                                                            subjectAssesment.totalScore
-                                                                            *100 %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="row_data"
-                                                                    edit_type="click"
-                                                                    col_name="fname">
-                                                                    <span>
-                                                                        <%= subjectAssesment.admin.username
-                                                                            %>
-                                                                    </span>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <% } %>
-                                                            <% } %>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                         <% } %>
-                    <% } %>
         </div>
         <div class="container gr2Marks">
             <h1 class="text-center">Level 2</h1>
             <% for(let student of students) { %>
                 <% if(student.level===2){ %>
-                    
+
                     <% let nEng=0 %>
                         <% let nMath=0 %>
                             <% let nSci=0 %>
@@ -1778,7 +1783,7 @@
             <h1 class="text-center">Level 3</h1>
             <% for(let student of students) { %>
                 <% if(student.level===3){ %>
-                    
+
                     <% let nEng=0 %>
                         <% let nMath=0 %>
                             <% let nSci=0 %>
@@ -2184,7 +2189,7 @@
             <h1 class="text-center">Level 4</h1>
             <% for(let student of students) { %>
                 <% if(student.level===4){ %>
-                    
+
                     <% let nEng=0 %>
                         <% let nMath=0 %>
                             <% let nSci=0 %>
@@ -2590,7 +2595,7 @@
             <h1 class="text-center">Level 5</h1>
             <% for(let student of students) { %>
                 <% if(student.level===5){ %>
-                    
+
                     <% let nEng=0 %>
                         <% let nMath=0 %>
                             <% let nSci=0 %>
@@ -2996,7 +3001,7 @@
             <h1 class="text-center">Level 6</h1>
             <% for(let student of students) { %>
                 <% if(student.level===6){ %>
-                    
+
                     <% let nEng=0 %>
                         <% let nMath=0 %>
                             <% let nSci=0 %>
@@ -3402,7 +3407,7 @@
             <h1 class="text-center">Level 7</h1>
             <% for(let student of students) { %>
                 <% if(student.level===7){ %>
-                    
+
                     <% let nEng=0 %>
                         <% let nMath=0 %>
                             <% let nSci=0 %>
@@ -3808,7 +3813,7 @@
             <h1 class="text-center">Level 8</h1>
             <% for(let student of students) { %>
                 <% if(student.level===8){ %>
-                    
+
                     <% let nEng=0 %>
                         <% let nMath=0 %>
                             <% let nSci=0 %>
@@ -4214,7 +4219,7 @@
             <h1 class="text-center">Level 9</h1>
             <% for(let student of students) { %>
                 <% if(student.level===9){ %>
-                    
+
                     <% let nEng=0 %>
                         <% let nMath=0 %>
                             <% let nSci=0 %>
@@ -4620,7 +4625,7 @@
             <h1 class="text-center">Level 10</h1>
             <% for(let student of students) { %>
                 <% if(student.level===10){ %>
-                    
+
                     <% let nEng=0 %>
                         <% let nMath=0 %>
                             <% let nSci=0 %>
@@ -5026,7 +5031,7 @@
             <h1 class="text-center">Level 11</h1>
             <% for(let student of students) { %>
                 <% if(student.level===11){ %>
-                    
+
                     <% let nEng=0 %>
                         <% let nMath=0 %>
                             <% let nSci=0 %>
@@ -5432,7 +5437,7 @@
             <h1 class="text-center">Level 12</h1>
             <% for(let student of students) { %>
                 <% if(student.level===12){ %>
-                    
+
                     <% let nEng=0 %>
                         <% let nMath=0 %>
                             <% let nSci=0 %>
@@ -5837,163 +5842,163 @@
     </div>
 
     <div class="assesments" id="assesmentsContainer">
-            <div class="row">
-                <div class="col-8 offset-2">
-                    <h1 class="text-center"><i class="fas fa-marker"></i> All Student Marks</h1>
-                    <!-- <h3><a href="/students/new">Add New Student</a></h3> -->
-                    <% for(let student of students) { %>
-                        <% let totalScore=0 %>
-                            <% let studentTotalScore=0 %>
-                                <% let studentPercentage=0 %>
-                                    <div class="row">
-                                        <h3>
-                                            <!-- <span>
+        <div class="row">
+            <div class="col-8 offset-2">
+                <h1 class="text-center"><i class="fas fa-marker"></i> All Student Marks</h1>
+                <!-- <h3><a href="/students/new">Add New Student</a></h3> -->
+                <% for(let student of students) { %>
+                    <% let totalScore=0 %>
+                        <% let studentTotalScore=0 %>
+                            <% let studentPercentage=0 %>
+                                <div class="row">
+                                    <h3>
+                                        <!-- <span>
                                 <%= student.firstN %>
                                 <%= student.lastN %>
                                 <%= student.level %>
                             </span> -->
-                                            <a href="/students/<%= student._id %>" class="text-dark">
-                                                <%= student.firstN %>
-                                                    <%= student.lastN %>
-                                                        <%= student.level %>
-                                            </a>
-                                            <button class="btn btn-md text-primary"><i
-                                                    class="fas fa-arrow-down"></i></button>
-                                        </h3>
+                                        <a href="/students/<%= student._id %>" class="text-dark">
+                                            <%= student.firstN %>
+                                                <%= student.lastN %>
+                                                    <%= student.level %>
+                                        </a>
+                                        <button class="btn btn-md text-primary"><i
+                                                class="fas fa-arrow-down"></i></button>
+                                    </h3>
 
-                                        <% for(let subjectAssesment of student.subjectAssesments) { %>
-                                            <% studentTotalScore +=subjectAssesment.studentScore %>
-                                                <% totalScore +=subjectAssesment.totalScore %>
-                                                    <% studentPercentage +=subjectAssesment.studentTotalScore /
-                                                        subjectAssesment.totalScore %>
+                                    <% for(let subjectAssesment of student.subjectAssesments) { %>
+                                        <% studentTotalScore +=subjectAssesment.studentScore %>
+                                            <% totalScore +=subjectAssesment.totalScore %>
+                                                <% studentPercentage +=subjectAssesment.studentTotalScore /
+                                                    subjectAssesment.totalScore %>
 
-                                                        <!-- <h6 class="text-success"> Total Student Mark <%= studentTotalScore %>
+                                                    <!-- <h6 class="text-success"> Total Student Mark <%= studentTotalScore %>
                                                     </h6>
                                                     <h6 class="text-danger"> Total Mark <%= totalScore %>
                                                     </h6> -->
 
-                                                        <!-- <span>
+                                                    <!-- <span>
                                                         <%= subjectAssesment.subject %> | <%= subjectAssesment.topic %> | <%= subjectAssesment.date %> | <%= subjectAssesment.studentScore %> / <%=
                                                         subjectAssesment.totalScore %> = <%= subjectAssesment.studentPercentage %>%
                                                     </span> -->
 
-                                                        <div class=" col-lg-3 col-md-4 col-sm-6 mb-3 box">
-                                                            <div class="border">
-                                                                <h5 class="text-center">
-                                                                    <%= subjectAssesment.subject %>
-                                                                </h5>
-                                                                <p class="text-center">
-                                                                    <%= subjectAssesment.topic %>
-                                                                </p>
-                                                                <p class="text-center">
-                                                                    <%= subjectAssesment.date %>
-                                                                </p>
-                                                                <p class="text-center">
-                                                                    <%= parseFloat(subjectAssesment.studentScore/subjectAssesment.totalScore
-                                                                        *100 ).toFixed(2)%> %
-                                                                </p>
-                                                                <center>
-                                                                    <!--this is to center the btn for now -->
-                                                                    <% if( currentUser &&
-                                                                        student.admin.equals(currentUser._id)) {%>
-                                                                        <button class="btn btn-warning"
-                                                                            type="button">Edit</button>
-                                                                        <% } %>
-                                                                </center>
-                                                            </div>
+                                                    <div class=" col-lg-3 col-md-4 col-sm-6 mb-3 box">
+                                                        <div class="border">
+                                                            <h5 class="text-center">
+                                                                <%= subjectAssesment.subject %>
+                                                            </h5>
+                                                            <p class="text-center">
+                                                                <%= subjectAssesment.topic %>
+                                                            </p>
+                                                            <p class="text-center">
+                                                                <%= subjectAssesment.date %>
+                                                            </p>
+                                                            <p class="text-center">
+                                                                <%= parseFloat(subjectAssesment.studentScore/subjectAssesment.totalScore
+                                                                    *100 ).toFixed(2)%> %
+                                                            </p>
+                                                            <center>
+                                                                <!--this is to center the btn for now -->
+                                                                <% if( currentUser &&
+                                                                    student.admin.equals(currentUser._id)) {%>
+                                                                    <button class="btn btn-warning"
+                                                                        type="button">Edit</button>
+                                                                    <% } %>
+                                                            </center>
                                                         </div>
-                                                        <% } %>
-                                    </div>
-                                    <% } %>
-                </div>
+                                                    </div>
+                                                    <% } %>
+                                </div>
+                                <% } %>
             </div>
+        </div>
     </div>
 
     <div class="container" id="eventsContainer">
-            <h1>Events</h1>
-            <table class="table table-bordered">
-                <tbody>
-                    <tr>
-                        <th>Image</th>
-                        <th>Event</th>
-                        <th>Description</th>
-                        <th>Date</th>
-                    </tr>
-                    <tr>
-                        <td><img src="" attr=""></td>
-                        <td>Foam Party</td>
-                        <td>
-                            <p>From 4pm-9pm
-                            <p>
-                            <p>This Summers Hottest School Party
-                            <p>
-                            <p>Tickets available by your home class Teacher
-                            <p>
-                        </td>
-                        <td>29-February</td>
-                    </tr>
-                </tbody>
-            </table>
+        <h1>Events</h1>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>Image</th>
+                    <th>Event</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td><img src="" attr=""></td>
+                    <td>Foam Party</td>
+                    <td>
+                        <p>From 4pm-9pm
+                        <p>
+                        <p>This Summers Hottest School Party
+                        <p>
+                        <p>Tickets available by your home class Teacher
+                        <p>
+                    </td>
+                    <td>29-February</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <div class="container" id="rosterContainer">
-            <h1>Exams</h1>
-            <table class="table table-bordered">
-                <tbody>
-                    <tr>
-                        <th>Level</th>
-                        <th>Date</th>
-                        <th>Content</th>
-                        <th>Extra</th>
-                    </tr>
-                    <tr>
-                        <td>Level R</td>
-                        <td>05 June 2021</td>
-                        <td>Level 1</td>
-                        <td>Level 2</td>
-                    </tr>
-                    <tr>
-                        <td>Level 1</td>
-                        <td>17 June 2021</td>
-                        <td>Level 1</td>
-                        <td>Level 2</td>
-                    </tr>
-                    <tr>
-                        <td>Level 2</td>
-                        <td>17 June 2021</td>
-                        <td>Level 1</td>
-                        <td>Level 2</td>
-                    </tr>
-                    <tr>
-                        <td>Level 3</td>
-                        <td>17 June 2021</td>
-                        <td>Level 1</td>
-                        <td>Level 2</td>
-                    </tr>
-                    <tr>
-                        <td>Level 4</td>
-                        <td>17 June 2021</td>
-                        <td>Level 1</td>
-                        <td>Level 2</td>
-                    </tr>
-                    <tr>
-                        <td>Level 5</td>
-                        <td>17 June 2021</td>
-                        <td>Level 1</td>
-                        <td>Level 2</td>
-                    </tr>
-                    <tr>
-                        <td>Level 6</td>
-                        <td>17 June 2021</td>
-                        <td>Level 1</td>
-                        <td>Level 2</td>
-                    </tr>
-                    <tr>
-                        <td>Level 7</td>
-                        <td>17 June 2021</td>
-                        <td>Level 1</td>
-                        <td>Level 2</td>
-                    </tr>
-                </tbody>
-            </table>
+        <h1>Exams</h1>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>Level</th>
+                    <th>Date</th>
+                    <th>Content</th>
+                    <th>Extra</th>
+                </tr>
+                <tr>
+                    <td>Level R</td>
+                    <td>05 June 2021</td>
+                    <td>Level 1</td>
+                    <td>Level 2</td>
+                </tr>
+                <tr>
+                    <td>Level 1</td>
+                    <td>17 June 2021</td>
+                    <td>Level 1</td>
+                    <td>Level 2</td>
+                </tr>
+                <tr>
+                    <td>Level 2</td>
+                    <td>17 June 2021</td>
+                    <td>Level 1</td>
+                    <td>Level 2</td>
+                </tr>
+                <tr>
+                    <td>Level 3</td>
+                    <td>17 June 2021</td>
+                    <td>Level 1</td>
+                    <td>Level 2</td>
+                </tr>
+                <tr>
+                    <td>Level 4</td>
+                    <td>17 June 2021</td>
+                    <td>Level 1</td>
+                    <td>Level 2</td>
+                </tr>
+                <tr>
+                    <td>Level 5</td>
+                    <td>17 June 2021</td>
+                    <td>Level 1</td>
+                    <td>Level 2</td>
+                </tr>
+                <tr>
+                    <td>Level 6</td>
+                    <td>17 June 2021</td>
+                    <td>Level 1</td>
+                    <td>Level 2</td>
+                </tr>
+                <tr>
+                    <td>Level 7</td>
+                    <td>17 June 2021</td>
+                    <td>Level 1</td>
+                    <td>Level 2</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
