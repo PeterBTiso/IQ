@@ -69,7 +69,7 @@ maybe check if the button that is clicked child has the same class the toggle di
     - CONTACT - add gps features etc and remove jquery.
     - Add a absence page. Click on student and mark absent and add to student model.
     - Add a notification/anouncements view page.
-    - give the roster CRUD capabilty
+    - give the roster CRUD capabilty.
 
 
 * Ask Peter to help fix:

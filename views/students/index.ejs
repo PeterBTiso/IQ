@@ -45,12 +45,11 @@
                 <thead class="thBack bg-secondary text-light">
                     <h2 class="text-center">Grade 1</h2>
                     <tr>
-                        <th>Name</th>
-                        <th>Last Name</th>
-                        <th>Absences</th>
-                        <th>Avg</th>
-                        <th>Eng Avg</th>
-                        <th>Khm Avg</th>
+                        <th>Full Name</th>
+                        <th>English Avg</th>
+                        <th>Math Avg</th>
+                        <th>Science Avg</th>
+                        <th>Social S Avg</th>
                     </tr>
                 </thead>
                 <% for(let student of students) { %>
@@ -61,34 +60,62 @@
                                     <div class="row_data" edit_type="click" col_name="fname"><a
                                             href="/students/<%= student._id %>">
                                             <%= student.firstN %>
-                                        </a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="row_data" edit_type="click" col_name="lname">
-                                        <%= student.lastN %>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="row_data" edit_type="click" col_name="absc">3</div>
+                                                <%= student.lastN %>
+                                        </a></div>
                                 </td>
                                 <td>
                                     <div class="row_data" edit_type="click" col_name="avg">
-                                        <%= student.level %>
+                                        <% let engScore=0 %>
+                                            <% let engTotal=0 %>
+                                                <% for(let subjectAssesment of student.subjectAssesments) { %>
+                                                    <% if(subjectAssesment.subject==="English" ){ %>
+                                                        <% engScore +=subjectAssesment.studentScore %>
+                                                            <% engTotal +=subjectAssesment.totalScore %>
+                                                                <% } %>
+                                                                    <% } %>
+                                                                        <%= Math.floor(engScore/engTotal *100) %>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="engAvg">
-                                        <%= student.firstN %>
+                                    <div class="row_data" edit_type="click" col_name="">
+                                        <% let mathScore=0 %>
+                                            <% let mathTotal=0 %>
+                                                <% for(let subjectAssesment of student.subjectAssesments) { %>
+                                                    <% if(subjectAssesment.subject==="Math" ){ %>
+                                                        <% mathScore +=subjectAssesment.studentScore %>
+                                                            <% mathTotal +=subjectAssesment.totalScore %>
+                                                                <% } %>
+                                                                    <% } %>
+                                                                        <%= Math.floor(mathScore/mathTotal *100) %>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="khmerAvg">
-                                        <%= student.firstN %>
+                                    <div class="row_data" edit_type="click" col_name="avg">
+                                        <% let sciScore=0 %>
+                                            <% let sciTotal=0 %>
+                                                <% for(let subjectAssesment of student.subjectAssesments) { %>
+                                                    <% if(subjectAssesment.subject==="Science" ){ %>
+                                                        <% sciScore +=subjectAssesment.studentScore %>
+                                                            <% sciTotal +=subjectAssesment.totalScore %>
+                                                                <% } %>
+                                                                    <% } %>
+                                                                        <%= Math.floor(sciScore/sciTotal *100) %>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="row_data" edit_type="click" col_name="avg">
+                                        <% let scoScore=0 %>
+                                            <% let scoTotal=0 %>
+                                                <% for(let subjectAssesment of student.subjectAssesments) { %>
+                                                    <% if(subjectAssesment.subject==="Social" ){ %>
+                                                        <% scoScore +=subjectAssesment.studentScore %>
+                                                            <% scoTotal +=subjectAssesment.totalScore %>
+                                                                <% } %>
+                                                                    <% } %>
+                                                                        <%= Math.floor(scoScore/scoTotal *100) %>
                                     </div>
                                 </td>
                         </tbody>
-
                         <% } %>
                             <% } %>
             </table>
@@ -98,12 +125,11 @@
                 <thead class="thBack bg-secondary text-light">
                     <h2 class="text-center">Grade 2</h2>
                     <tr>
-                        <th>Name</th>
-                        <th>Last Name</th>
-                        <th>Absences</th>
-                        <th>Avg</th>
-                        <th>Eng Avg</th>
-                        <th>Khm Avg</th>
+                        <th>Full Name</th>
+                        <th>English Avg</th>
+                        <th>Math Avg</th>
+                        <th>Science Avg</th>
+                        <th>Social S Avg</th>
                     </tr>
                 </thead>
                 <% for(let student of students) { %>
@@ -114,33 +140,62 @@
                                     <div class="row_data" edit_type="click" col_name="fname"><a
                                             href="/students/<%= student._id %>">
                                             <%= student.firstN %>
+                                                <%= student.lastN %>
                                         </a></div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="lname">
-                                        <%= student.lastN %>
+                                    <div class="row_data" edit_type="click" col_name="avg">
+                                        <% let engScore=0 %>
+                                            <% let engTotal=0 %>
+                                                <% for(let subjectAssesment of student.subjectAssesments) { %>
+                                                    <% if(subjectAssesment.subject==="English" ){ %>
+                                                        <% engScore +=subjectAssesment.studentScore %>
+                                                            <% engTotal +=subjectAssesment.totalScore %>
+                                                                <% } %>
+                                                                    <% } %>
+                                                                        <%= Math.floor(engScore/engTotal *100) %>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="absc">3</div>
+                                    <div class="row_data" edit_type="click" col_name="">
+                                        <% let mathScore=0 %>
+                                            <% let mathTotal=0 %>
+                                                <% for(let subjectAssesment of student.subjectAssesments) { %>
+                                                    <% if(subjectAssesment.subject==="Math" ){ %>
+                                                        <% mathScore +=subjectAssesment.studentScore %>
+                                                            <% mathTotal +=subjectAssesment.totalScore %>
+                                                                <% } %>
+                                                                    <% } %>
+                                                                        <%= Math.floor(mathScore/mathTotal *100) %>
+                                    </div>
                                 </td>
                                 <td>
                                     <div class="row_data" edit_type="click" col_name="avg">
-                                        <%= student.level %>
+                                        <% let sciScore=0 %>
+                                            <% let sciTotal=0 %>
+                                                <% for(let subjectAssesment of student.subjectAssesments) { %>
+                                                    <% if(subjectAssesment.subject==="Science" ){ %>
+                                                        <% sciScore +=subjectAssesment.studentScore %>
+                                                            <% sciTotal +=subjectAssesment.totalScore %>
+                                                                <% } %>
+                                                                    <% } %>
+                                                                        <%= Math.floor(sciScore/sciTotal *100) %>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="engAvg">
-                                        <%= student.firstN %>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="row_data" edit_type="click" col_name="khmerAvg">
-                                        <%= student.firstN %>
+                                    <div class="row_data" edit_type="click" col_name="avg">
+                                        <% let scoScore=0 %>
+                                            <% let scoTotal=0 %>
+                                                <% for(let subjectAssesment of student.subjectAssesments) { %>
+                                                    <% if(subjectAssesment.subject==="Social" ){ %>
+                                                        <% scoScore +=subjectAssesment.studentScore %>
+                                                            <% scoTotal +=subjectAssesment.totalScore %>
+                                                                <% } %>
+                                                                    <% } %>
+                                                                        <%= Math.floor(scoScore/scoTotal *100) %>
                                     </div>
                                 </td>
                         </tbody>
-
                         <% } %>
                             <% } %>
             </table>
@@ -1836,7 +1891,7 @@
                                                                                     <td>
                                                                                         <div class="row_data"
                                                                                             edit_type="click"
-                                                                                            col_name="fname">
+                                                                                            col_name="date">
                                                                                             <span>
                                                                                                 <%= subjectAssesment.date
                                                                                                     %>
@@ -1846,7 +1901,7 @@
                                                                                     <td>
                                                                                         <div class="row_data"
                                                                                             edit_type="click"
-                                                                                            col_name="fname">
+                                                                                            col_name="topic">
                                                                                             <span>
                                                                                                 <%= subjectAssesment.topic
                                                                                                     %>
@@ -1857,7 +1912,7 @@
                                                                                     <td>
                                                                                         <div class="row_data"
                                                                                             edit_type="click"
-                                                                                            col_name="fname">
+                                                                                            col_name="score">
                                                                                             <span>
                                                                                                 <%= subjectAssesment.studentScore
                                                                                                     %>
@@ -1867,7 +1922,7 @@
                                                                                     <td>
                                                                                         <div class="row_data"
                                                                                             edit_type="click"
-                                                                                            col_name="fname">
+                                                                                            col_name="totalScore">
                                                                                             <span>
                                                                                                 <%= subjectAssesment.totalScore
                                                                                                     %>
@@ -1877,12 +1932,9 @@
                                                                                     <td>
                                                                                         <div class="row_data"
                                                                                             edit_type="click"
-                                                                                            col_name="fname">
+                                                                                            col_name="percent">
                                                                                             <span>
-                                                                                                <%= subjectAssesment.studentScore
-                                                                                                    /
-                                                                                                    subjectAssesment.totalScore
-                                                                                                    *100 %>
+                                                                                                <%= Math.floor(subjectAssesment.studentScore / subjectAssesment.totalScore * 100) %>
                                                                                             </span>
                                                                                         </div>
                                                                                     </td>
@@ -1974,10 +2026,7 @@
                                                                                             edit_type="click"
                                                                                             col_name="fname">
                                                                                             <span>
-                                                                                                <%= subjectAssesment.studentScore
-                                                                                                    /
-                                                                                                    subjectAssesment.totalScore
-                                                                                                    *100 %>
+                                                                                                <%= Math.floor(subjectAssesment.studentScore / subjectAssesment.totalScore * 100) %>
                                                                                             </span>
                                                                                         </div>
                                                                                     </td>
