@@ -1,32 +1,32 @@
 // Top Buttons
-// function dataBtn() {
-//   var element = document.getElementById("hideData");
-//   element.classList.toggle("mystyle");
-// }
-// function marksBtn() {
-//   var element = document.getElementById("hideMarks");
-//   element.classList.toggle("mystyle");
-// }
-// function assesBtn() {
-//   var element = document.getElementById("hideAssesments");
-//   element.classList.toggle("mystyle");
-// }
-// function eventsBtn() {
-//   var element = document.getElementById("hideEvents");
-//   element.classList.toggle("mystyle");
-// }
-// function rosterBtn() {
-//   var element = document.getElementById("hideRoster");
-//   element.classList.toggle("mystyle");
-// }
-// function vacaBtn() {
-//   var element = document.getElementById("hideNews");
-//   element.classList.toggle("mystyle");
-// }
-// function newsBtn() {
-//   var element = document.getElementById("hideNews");
-//   element.classList.toggle("mystyle");
-// }
+function dataBtn() {
+  var element = document.getElementById("hideData");
+  element.classList.toggle("mystyle");
+}
+function marksBtn() {
+  var element = document.getElementById("hideMarks");
+  element.classList.toggle("mystyle");
+}
+function assesBtn() {
+  var element = document.getElementById("hideAssesments");
+  element.classList.toggle("mystyle");
+}
+function eventsBtn() {
+  var element = document.getElementById("hideEvents");
+  element.classList.toggle("mystyle");
+}
+function rosterBtn() {
+  var element = document.getElementById("hideRoster");
+  element.classList.toggle("mystyle");
+}
+function vacaBtn() {
+  var element = document.getElementById("hideNews");
+  element.classList.toggle("mystyle");
+}
+function newsBtn() {
+  var element = document.getElementById("hideNews");
+  element.classList.toggle("mystyle");
+}
 
 document.querySelector("#hideData").addEventListener("click", function myFunction() {
     var x = document.querySelector("#studentData") ;
@@ -169,105 +169,40 @@ document.querySelector("#g1").addEventListener("click", function myFunction() {
     }
   }) 
 
-  // this is to hide and show the students marks 
-  document.querySelector("#gr1-marksB").addEventListener("click", function myFunction() {
-    var x = document.querySelector(".gr1Marks") ;
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }) 
-  document.querySelector("#gr2-marksB").addEventListener("click", function myFunction() {
-    var x = document.querySelector(".gr2Marks") ;
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }) 
-  document.querySelector("#gr3-marksB").addEventListener("click", function myFunction() {
-    var x = document.querySelector(".gr3Marks") ;
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }) 
-  document.querySelector("#gr4-marksB").addEventListener("click", function myFunction() {
-    var x = document.querySelector(".gr4Marks") ;
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }) 
-  document.querySelector("#gr5-marksB").addEventListener("click", function myFunction() {
-    var x = document.querySelector(".gr5Marks") ;
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }) 
-  document.querySelector("#gr6-marksB").addEventListener("click", function myFunction() {
-    var x = document.querySelector(".gr6Marks") ;
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }) 
-  document.querySelector("#gr7-marksB").addEventListener("click", function myFunction() {
-    var x = document.querySelector(".gr7Marks") ;
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }) 
-  document.querySelector("#gr8-marksB").addEventListener("click", function myFunction() {
-    var x = document.querySelector(".gr8Marks") ;
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }) 
-  document.querySelector("#gr9-marksB").addEventListener("click", function myFunction() {
-    var x = document.querySelector(".gr9Marks") ;
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }) 
-  document.querySelector("#gr10-marksB").addEventListener("click", function myFunction() {
-    var x = document.querySelector(".gr10Marks") ;
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }) 
-  document.querySelector("#gr11-marksB").addEventListener("click", function myFunction() {
-    var x = document.querySelector(".gr11Marks") ;
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }) 
-  
-  document.querySelector("#gr12-marksB").addEventListener("click", function myFunction() {
-    var x = document.querySelector(".gr12Marks") ;
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  })
+  var handlersAdded = [];
+  var hideGrades = function(){
+    document.querySelectorAll('.gradeContainer').forEach(div => {
+      div.classList.add('invisible');
+  })};
+  var hideTables = function(parentId){
+    document.querySelectorAll(`#${parentId} .marks_table`).forEach(div => {
+      div.classList.add('invisible');
+  })};
+  var removeInvisible = function(selector){
+    document.querySelector(selector).classList.remove('invisible');
+  }
 
+  // this is to hide and show the students marks 
+  document.querySelectorAll(".GradeBtn").forEach(btn =>{
+    btn.addEventListener("click", function myFunction() {
+      removeInvisible(`.${btn.id.replace('btn', '')}`);
+  
+      hideTables(document.querySelector(`.${btn.id.replace('btn', '')} .student_marks`).id);
+  
+      document.querySelectorAll(".student_marks > button").forEach(btn => {
+        var parentId = btn.parentElement.id;
+  
+        if(!handlersAdded.includes(`${parentId}_${btn.name}`)){
+          handlersAdded.push(`${parentId}_${btn.name}`);
+  
+          btn.addEventListener("click", () => {
+            hideTables(parentId);
+            removeInvisible(`.${btn.name.replace('btn', 'tbl')}`);
+          })
+        }
+      })
+    })
+  }) 
 
 // this is to hide and show the subjects on the marks dropdown
 // let studentsSubjects = document.querySelectorAll("div");

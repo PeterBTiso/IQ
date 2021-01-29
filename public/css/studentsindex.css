@@ -126,11 +126,15 @@ tbody:hover tr:hover td {
 }
 
 
+/* Custom classes  */
 
+.invisible{
+    display: none;
+}
 
-
-
-
+.marks_table{
+    overflow: auto;
+}
 
 
 .btn{
@@ -151,7 +155,7 @@ tbody:hover tr:hover td {
 #rosterContainer{
     display:none;
 }
-.gr1Marks{
+/* .gr1Marks{
     display:none;
 }
 .gr2Marks{
@@ -186,7 +190,7 @@ tbody:hover tr:hover td {
 }
 .gr12Marks{
     display:none;
-}
+} */
 table{
     width:100%;
     table-layout: auto;

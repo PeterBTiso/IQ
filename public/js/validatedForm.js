@@ -2,7 +2,7 @@
     'use strict'
 
     // calling the bs script for the image addition on student]
-    bsCustomFileInput.init()
+    //bsCustomFileInput.init()
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     const forms = document.querySelectorAll('.validated-form')
 
