@@ -258,7 +258,6 @@ document.querySelector("#g1").addEventListener("click", function myFunction() {
       x.style.display = "none";
     }
   }) 
-  
   document.querySelector("#gr12-marksB").addEventListener("click", function myFunction() {
     var x = document.querySelector(".gr12Marks") ;
     if (x.style.display === "none") {
@@ -266,10 +265,10 @@ document.querySelector("#g1").addEventListener("click", function myFunction() {
     } else {
       x.style.display = "none";
     }
-  })
+  }) 
 
 
-// this is to hide and show the subjects on the marks dropdown
+  // this is to hide and show the subjects on the marks dropdown
 // let studentsSubjects = document.querySelectorAll("div");
 // // console.log(studentsSubjects)
 // for(let i = 0 ; i <= studentsSubjects.length() ; i++ ){

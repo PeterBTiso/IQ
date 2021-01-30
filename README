@@ -1,36 +1,3 @@
-Next:
-
-align studens names to the left on the subject assessments page.
-
-Students assessments Grade 3 buttons, take the count, create a class given to the subject Button and 
-the subject Table, add event listener to each button that changes the display of its sibling table.
- 
-
-- START WORKING ON THE DESIGNS
-    - Make students index page grade buttons sticky and shrink on mobile
-    - add show which button is clicked on pages
-    - fix assesments table overflow
-
-- START ARRANGING THE CONTENT
-    - GALLERY ADDED - Make a gallery model with CRUD
-    - ROSTER ADDED - add a roster model and add the model to mongo and give CRUD.
-    - OFFICE - make possible to add new working folders.
-    - EVENTS - add an events Model and CRUD.
-    - CALENDER - add calender model and CRUD.
-    - CONTACT - add gps features etc and remove jquery.
-    - Add a absence page. Click on student and mark absent and add to student model.
-    - Add a notification/anouncements view page.
-    - give the roster CRUD capabilty.
-
-
-* Ask Peter to help fix:
-    - password security on user register (0-9a-z!@#$%^&*())
-    - Password confirmation on register
-    - The bootstrap dropwdown 
-    - marks table data on mobile scrollable
-    - point me towards how to make the roster editable
-    - add a search feature
-
 MVC - Model View Control
 CRUD - Create Read Update Delete
 
@@ -82,4 +49,34 @@ for each Student there should be :
 16) 
 
 
+Next:
 
+loop through all html classes, search where class list is i+=1
+if this button is clicked search for class="`n${i}`" and toggle display
+maybe check if the button that is clicked child has the same class the toggle display
+
+- START WORKING ON THE DESIGNS
+    - Make students index page grade buttons sticky and shrink on mobile
+    - add show which button is clicked on pages
+    - fix assesments table overflow
+
+- START ARRANGING THE CONTENT
+    - GALLERY ADDED - Make a gallery model with CRUD
+    - ROSTER ADDED - add a roster model and add the model to mongo and give CRUD.
+    - OFFICE - make possible to add new working folders.
+    - EVENTS - add an events Model and CRUD.
+    - CALENDER - add calender model and CRUD.
+    - CONTACT - add gps features etc and remove jquery.
+    - Add a absence page. Click on student and mark absent and add to student model.
+    - Add a notification/anouncements view page.
+    - give the roster CRUD capabilty.
+
+
+* Ask Peter to help fix:
+    - how to make buttons hide and display each student marks.
+    - password security on user register (0-9a-z!@#$%^&*())
+    - Password confirmation on register
+    - The bootstrap dropwdown 
+    - marks table data on mobile scrollable
+    - point me towards how to make the roster editable
+    - add a search feature
