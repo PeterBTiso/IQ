@@ -5,7 +5,7 @@
 
 
     <!-- toggle buttons at the top -->
-    <div class="container col-md-12 col-lg-8 offset-lg-2 offset-md-1 mb-3 sticky">
+    <div class="tbl_user_data text-center mb-3 sticky">
         <button class=" btn btn-success" id="hideAdd"><i class="fas fa-user-plus"></i><a class="text-light"
                 href="/students/new">ADD</a></button>
         <button class="btn btn-primary" id="hideData" onclick="dataBtn()"><i class="fas fa-align-justify"></i> AVG%
@@ -21,10 +21,10 @@
     </div>
 
     <!-- students in each grade and their avg for subjects to date -->
-    <div class="tbl_user_data " id="studentData" style="overflow-x:auto;">
+    <div class="tbl_user_data text-center" id="studentData" style="overflow-x:auto;">
         <h1 class="text-center"><i class="fas fa-marker "></i>Student Subject Averages</h1>
         <div class="row">
-            <div class="col-lg-10 offset-lg-2 sticky mb-3" id="add">
+            <div class="col-lg-8 offset-lg-2 sticky mb-3" id="add">
                 <button class="btn btn-warning" id="g1"><i class="fas fa-user-plus"></i>Gr1</button>
                 <button class="btn btn-warning" id="g2"><i class="fas fa-align-justify"></i>Gr2</button>
                 <button class=" btn btn-warning" id="g3"><i class="fas fa-user-plus"></i>Gr3</button>
@@ -41,9 +41,15 @@
         </div>
 
         <div id="gr1">
+            <% let count1 = 0 %>
+            <% for(let student of students) { %>
+                <% if(student.level===1){ %>
+                    <% count1 += 1 %>
+                    <% } %>
+                <% } %>
             <table class="table table-hover mb-5">
                 <thead class="thBack bg-secondary text-light">
-                    <h2 class="text-center">Grade 1</h2>
+                    <h2 class="text-left ml-5">Grade 1 <span class="float-right mr-5">Student Count : <%= count1 %></span></h2>
                     <tr>
                         <th>Full Name</th>
                         <th>English Avg</th>
@@ -121,9 +127,15 @@
             </table>
         </div>
         <div id="gr2">
+            <% let count2 = 0 %>
+            <% for(let student of students) { %>
+                <% if(student.level===2){ %>
+                    <% count2 += 1 %>
+                    <% } %>
+                <% } %>
             <table class="table table-hover mb-5">
                 <thead class="thBack bg-secondary text-light">
-                    <h2 class="text-center">Grade 2</h2>
+                    <h2 class="text-left ml-5">Grade 2 <span class="float-right mr-5">Student Count : <%= count2 %></span></h2>
                     <tr>
                         <th>Full Name</th>
                         <th>English Avg</th>
@@ -201,15 +213,22 @@
             </table>
         </div>
         <div id="gr3">
+            <% let count3 = 0 %>
+            <% for(let student of students) { %>
+                <% if(student.level===3){ %>
+                    <% count3 += 1 %>
+                    <% } %>
+                <% } %>
+                
             <table class="table table-hover mb-5">
                 <thead class="thBack bg-secondary text-light">
-                    <h2 class="text-center">Grade 3</h2>
+                    <h2 class="text-left ml-5">Grade 3 <span class="float-right mr-5">Student Count : <%= count3 %></span></h2>
                     <tr>
                         <th>Full Name</th>
                         <th>English Avg</th>
                         <th>Math Avg</th>
                         <th>Science Avg</th>
-                        <th>Social Sjccvjh Avg</th>
+                        <th>Social Avg</th>
                     </tr>
                 </thead>
                 <% for(let student of students) { %>
@@ -280,9 +299,15 @@
             </table>
         </div>
         <div id="gr4">
+            <% let count4 = 0 %>
+            <% for(let student of students) { %>
+                <% if(student.level===4){ %>
+                    <% count4 += 1 %>
+                    <% } %>
+                <% } %>
             <table class="table table-hover mb-5">
                 <thead class="thBack bg-secondary text-light">
-                    <h2 class="text-center">Grade 4</h2>
+                    <h2 class="text-left ml-5">Grade 4 <span class="float-right mr-5">Student Count : <%= count4 %></span></h2>
                     <tr>
                         <th>Full Name</th>
                         <th>English Avg</th>
@@ -360,9 +385,15 @@
             </table>
         </div>
         <div id="gr5">
+            <% let count5 = 0 %>
+            <% for(let student of students) { %>
+                <% if(student.level===5){ %>
+                    <% count5 += 1 %>
+                    <% } %>
+                <% } %>
             <table class="table table-hover mb-5">
                 <thead class="thBack bg-secondary text-light">
-                    <h2 class="text-center">Grade 5</h2>
+                    <h2 class="text-left ml-5">Grade 5 <span class="float-right mr-5">Student Count : <%= count5 %></span></h2>
                     <tr>
                         <th>Full Name</th>
                         <th>English Avg</th>
@@ -440,9 +471,15 @@
             </table>
         </div>
         <div id="gr6">
+            <% let count6 = 0 %>
+            <% for(let student of students) { %>
+                <% if(student.level===6){ %>
+                    <% count6 += 1 %>
+                    <% } %>
+                <% } %>
             <table class="table table-hover mb-5">
                 <thead class="thBack bg-secondary text-light">
-                    <h2 class="text-center">Grade 6</h2>
+                    <h2 class="text-left ml-5">Grade 6 <span class="float-right mr-5">Student Count : <%= count6 %></span></h2>
                     <tr>
                         <th>Full Name</th>
                         <th>English Avg</th>
@@ -520,9 +557,15 @@
             </table>
         </div>
         <div id="gr7">
+            <% let count7 = 0 %>
+            <% for(let student of students) { %>
+                <% if(student.level===7){ %>
+                    <% count7 += 1 %>
+                    <% } %>
+                <% } %>
             <table class="table table-hover mb-5">
                 <thead class="thBack bg-secondary text-light">
-                    <h2 class="text-center">Grade 7</h2>
+                    <h2 class="text-left ml-5">Grade 7 <span class="float-right mr-5">Student Count : <%= count7 %></span></h2>
                     <tr>
                         <th>Full Name</th>
                         <th>English Avg</th>
@@ -600,9 +643,15 @@
             </table>
         </div>
         <div id="gr8">
+            <% let count8 = 0 %>
+            <% for(let student of students) { %>
+                <% if(student.level===8){ %>
+                    <% count8 += 1 %>
+                    <% } %>
+                <% } %>
             <table class="table table-hover mb-5">
                 <thead class="thBack bg-secondary text-light">
-                    <h2 class="text-center">Grade 8</h2>
+                    <h2 class="text-left ml-5">Grade 8 <span class="float-right mr-5">Student Count : <%= count8 %></span></h2>
                     <tr>
                         <th>Full Name</th>
                         <th>English Avg</th>
@@ -680,9 +729,15 @@
             </table>
         </div>
         <div id="gr9">
+            <% let count9 = 0 %>
+            <% for(let student of students) { %>
+                <% if(student.level===9){ %>
+                    <% count9 += 1 %>
+                    <% } %>
+                <% } %>
             <table class="table table-hover mb-5">
                 <thead class="thBack bg-secondary text-light">
-                    <h2 class="text-center">Grade 9</h2>
+                    <h2 class="text-left ml-5">Grade 9 <span class="float-right mr-5">Student Count : <%= count9 %></span></h2>
                     <tr>
                         <th>Full Name</th>
                         <th>English Avg</th>
@@ -760,9 +815,15 @@
             </table>
         </div>
         <div id="gr10">
+            <% let count10 = 0 %>
+            <% for(let student of students) { %>
+                <% if(student.level===10){ %>
+                    <% count10 += 1 %>
+                    <% } %>
+                <% } %>
             <table class="table table-hover mb-5">
                 <thead class="thBack bg-secondary text-light">
-                    <h2 class="text-center">Grade 10</h2>
+                    <h2 class="text-left ml-5">Grade 10 <span class="float-right mr-5">Student Count : <%= count10 %></span></h2>
                     <tr>
                         <th>Full Name</th>
                         <th>English Avg</th>
@@ -840,9 +901,15 @@
             </table>
         </div>
         <div id="gr11">
+            <% let count11 = 0 %>
+            <% for(let student of students) { %>
+                <% if(student.level===11){ %>
+                    <% count11 += 1 %>
+                    <% } %>
+                <% } %>
             <table class="table table-hover mb-5">
                 <thead class="thBack bg-secondary text-light">
-                    <h2 class="text-center">Grade 11</h2>
+                    <h2 class="text-left ml-5">Grade 11 <span class="float-right mr-5">Student Count : <%= count11 %></span></h2>
                     <tr>
                         <th>Full Name</th>
                         <th>English Avg</th>
@@ -920,9 +987,15 @@
             </table>
         </div>
         <div id="gr12">
+            <% let count12 = 0 %>
+            <% for(let student of students) { %>
+                <% if(student.level===12){ %>
+                    <% count12 += 1 %>
+                    <% } %>
+                <% } %>
             <table class="table table-hover mb-5">
                 <thead class="thBack bg-secondary text-light">
-                    <h2 class="text-center">Grade 12</h2>
+                    <h2 class="text-left ml-5">Grade 12 <span class="float-right mr-5">Student Count : <%= count12 %></span></h2>
                     <tr>
                         <th>Full Name</th>
                         <th>English Avg</th>
@@ -1818,24 +1891,29 @@
         <div class="container gr3Marks">
             <h1 class="text-center">Level 3</h1>
             <% for(let student of students) { %>
-                <% if(student.level===3){ %>
+                <% if(student.level === 3){ %>
 
                     <% let nEng=0 %>
                         <% let nMath=0 %>
                             <% let nSci=0 %>
                                 <% let nSco=0 %>
+                                    
 
                                     <% nEng +=1 %>
                                         <% nMath +=1 %>
                                             <% nSci +=1 %>
                                                 <% nSco +=1 %>
-
+                                                
 
                                                     <div class="">
-                                                        <h3 class="text-center"><a href="/students/<%= student._id %>">
-                                                                <%= student.firstN %>
+                                                        
+                                                            
+                                                        
+                                                        <div class="text-center mb-4">
+                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                                <%= student.firstN %> <%= student.lastN %>
                                                             </a>
-                                                        </h3>
+                                                        
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
                                                         </button>
                                                         <button class="btn btn-warning <%= nMath %>"> Mathematics <%=
@@ -1844,6 +1922,7 @@
                                                         </button>
                                                         <button class="btn btn-info  <%= nSco %>"> Social Studies <%=
                                                                 nSco %> </button>
+                                                        </div>
                                                         <div class="mb-5">
                                                             <div class="english n<%= nEng %>">
                                                                 <table class="table table tEng">

@@ -25,7 +25,11 @@ body{
 .nav-link{
     display: flex;
 }
-
+.studsNames{
+    font-size: 2.5em;
+    float:left;
+    margin-top: -16px;
+}
 strong {
 	font-weight: bold; 
 }
