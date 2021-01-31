@@ -22,7 +22,7 @@
 
     <!-- students in each grade and their avg for subjects to date -->
     <div class="tbl_user_data text-center" id="studentData" style="overflow-x:auto;">
-        <h1 class="text-center"><i class="fas fa-marker "></i>Student Subject Averages</h1>
+        <h1 class="text-center"><i class="fas fa-marker "></i>Subject Assessments</h1>
         <div class="row">
             <div class="col-lg-8 offset-lg-2 sticky mb-3" id="add">
                 <button class="btn btn-warning" id="g1"><i class="fas fa-user-plus"></i>Gr1</button>
@@ -63,11 +63,11 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="fname"><a
+                                    <div class="row_data" edit_type="click" col_name="fname"><b><a
                                             href="/students/<%= student._id %>">
                                             <%= student.firstN %>
                                                 <%= student.lastN %>
-                                        </a></div>
+                                        </a></b></div>
                                 </td>
                                 <td>
                                     <div class="row_data" edit_type="click" col_name="avg">
@@ -149,11 +149,11 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="fname"><a
+                                    <div class="row_data" edit_type="click" col_name="fname"><b><a
                                             href="/students/<%= student._id %>">
                                             <%= student.firstN %>
                                                 <%= student.lastN %>
-                                        </a></div>
+                                        </a></b></div>
                                 </td>
                                 <td>
                                     <div class="row_data" edit_type="click" col_name="avg">
@@ -236,10 +236,10 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <i><b><a href="/students/<%= student._id %>">
+                                  <b><a href="/students/<%= student._id %>">
                                             <%= student.firstN %>
                                                 <%= student.lastN %>
-                                        </a></b>  </i>      
+                                        </a></b>       
                                 </td>
                                 <td>
                                     <div class="row_data" edit_type="click" col_name="avg">
@@ -321,11 +321,11 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="fname"><a
+                                    <div class="row_data" edit_type="click" col_name="fname"><b><a
                                             href="/students/<%= student._id %>">
                                             <%= student.firstN %>
                                                 <%= student.lastN %>
-                                        </a></div>
+                                        </a></b></div>
                                 </td>
                                 <td>
                                     <div class="row_data" edit_type="click" col_name="avg">
@@ -407,11 +407,11 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="fname"><a
+                                    <div class="row_data" edit_type="click" col_name="fname"><b><a
                                             href="/students/<%= student._id %>">
                                             <%= student.firstN %>
                                                 <%= student.lastN %>
-                                        </a></div>
+                                        </a></b></div>
                                 </td>
                                 <td>
                                     <div class="row_data" edit_type="click" col_name="avg">
@@ -493,11 +493,11 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="fname"><a
+                                    <div class="row_data" edit_type="click" col_name="fname"><b><a
                                             href="/students/<%= student._id %>">
                                             <%= student.firstN %>
                                                 <%= student.lastN %>
-                                        </a></div>
+                                        </a></b></div>
                                 </td>
                                 <td>
                                     <div class="row_data" edit_type="click" col_name="avg">
@@ -579,11 +579,11 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="fname"><a
+                                    <div class="row_data" edit_type="click" col_name="fname"><b><a
                                             href="/students/<%= student._id %>">
                                             <%= student.firstN %>
                                                 <%= student.lastN %>
-                                        </a></div>
+                                        </a></b></div>
                                 </td>
                                 <td>
                                     <div class="row_data" edit_type="click" col_name="avg">
@@ -1076,7 +1076,7 @@
 
     <!-- students in each grade and their avg for subjects to date -->
     <div class="container marks" id="marksContainer">
-        <h1 class="text-center mb-3"><i class="fas fa-marker "></i>Student Subject Assessment Marks</h1>
+        <h1 class="text-center mb-3"><i class="fas fa-marker "></i>Assessment Marks</h1>
         <div class="row">
             <div class="col-lg-8 offset-lg-2 sticky mb-3" id="add">
                 <button class="btn btn-warning" id="gr1-marksB"><i class="fas fa-user-plus"></i>Gr1</button>
@@ -1108,11 +1108,10 @@
                                             <% nSci +=1 %>
                                                 <% nSco +=1 %>
                                                     <div class="">
-                                                        <h3 class="text-center"><a href="/students/<%= student._id %>">
-                                                                <%= student.firstN %>
-                                                                    <%= student.lastN %>
+                                                        <div class="text-center mb-4">
+                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                                <%= student.firstN %> <%= student.lastN %>
                                                             </a>
-                                                        </h3>
                                                         <button class="btn btn-primary text-center <%= nEng %>"> English
                                                             <%= nEng %>
                                                         </button>
@@ -1122,6 +1121,7 @@
                                                         </button>
                                                         <button class="btn btn-info <%= nSco %>"> Social Studies <%=nSco
                                                                 %> </button>
+                                                                </div>
                                                         <div class="mb-5">
                                                             <div class="english n<%= nEng %>">
 
@@ -1505,13 +1505,11 @@
                                         <% nMath +=1 %>
                                             <% nSci +=1 %>
                                                 <% nSco +=1 %>
-
-
                                                     <div class="">
-                                                        <h3 class="text-center"><a href="/students/<%= student._id %>">
-                                                                <%= student.firstN %>
+                                                        <div class="text-center mb-4">
+                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                                <%= student.firstN %> <%= student.lastN %>
                                                             </a>
-                                                        </h3>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
                                                         </button>
                                                         <button class="btn btn-warning <%= nMath %>"> Mathematics <%=
@@ -1520,6 +1518,7 @@
                                                         </button>
                                                         <button class="btn btn-info <%= nSco %>"> Social Studies <%=
                                                                 nSco %> </button>
+                                                                </div>
                                                         <div class="mb-5">
                                                             <div class="english n<%= nEng %>">
                                                                 <table class="table table tEng">
@@ -1784,7 +1783,8 @@
                                                                                             edit_type="click"
                                                                                             col_name="fname">
                                                                                             <span>
-                                                                                                <%= student.admin %>
+                                                                                                <%= student.admin.username
+                                                                                                    %>
                                                                                             </span>
                                                                                         </div>
                                                                                     </td>
@@ -1906,9 +1906,7 @@
                                                 
 
                                                     <div class="">
-                                                        
-                                                            
-                                                        
+                                
                                                         <div class="text-center mb-4">
                                                             <a class="studsNames" href="/students/<%= student._id %>">
                                                                 <%= student.firstN %> <%= student.lastN %>
@@ -2307,8 +2305,9 @@
 
 
                                                     <div class="">
-                                                        <h3 class="text-center"><a href="/students/<%= student._id %>">
-                                                                <%= student.firstN %>
+                                                        <div class="text-center mb-4">
+                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                                <%= student.firstN %> <%= student.lastN %>
                                                             </a>
                                                         </h3>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
@@ -2319,7 +2318,9 @@
                                                         </button>
                                                         <button class="btn btn-info <%= nSco %>"> Social Studies <%=
                                                                 nSco %> </button>
+                                                                </div>
                                                         <div class="mb-5">
+                                                            
                                                             <div class="english n<%= nEng %>">
                                                                 <table class="table table tEng">
                                                                     <h2 class="text-light bg-dark">English <%= nMath %>
@@ -2580,7 +2581,8 @@
                                                                                             edit_type="click"
                                                                                             col_name="fname">
                                                                                             <span>
-                                                                                                <%= student.admin %>
+                                                                                                <%= student.admin.username
+                                                                                                    %>
                                                                                             </span>
                                                                                         </div>
                                                                                     </td>
@@ -2701,10 +2703,10 @@
 
 
                                                     <div class="">
-                                                        <h3 class="text-center"><a href="/students/<%= student._id %>">
-                                                                <%= student.firstN %>
+                                                        <div class="text-center mb-4">
+                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                                <%= student.firstN %> <%= student.lastN %>
                                                             </a>
-                                                        </h3>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
                                                         </button>
                                                         <button class="btn btn-warning <%= nMath %>"> Mathematics <%=
@@ -2713,6 +2715,7 @@
                                                         </button>
                                                         <button class="btn btn-info <%= nSco %>"> Social Studies <%=
                                                                 nSco %> </button>
+                                                                </div>
                                                         <div class="mb-5">
                                                             <div class="english n<%= nEng %>">
                                                                 <table class="table table tEng">
@@ -2974,7 +2977,8 @@
                                                                                             edit_type="click"
                                                                                             col_name="fname">
                                                                                             <span>
-                                                                                                <%= student.admin %>
+                                                                                                <%= student.admin.username
+                                                                                                    %>
                                                                                             </span>
                                                                                         </div>
                                                                                     </td>
@@ -3095,10 +3099,10 @@
 
 
                                                     <div class="">
-                                                        <h3 class="text-center"><a href="/students/<%= student._id %>">
-                                                                <%= student.firstN %>
+                                                        <div class="text-center mb-4">
+                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                                <%= student.firstN %> <%= student.lastN %>
                                                             </a>
-                                                        </h3>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
                                                         </button>
                                                         <button class="btn btn-warning <%= nMath %>"> Mathematics <%=
@@ -3107,6 +3111,7 @@
                                                         </button>
                                                         <button class="btn btn-info <%= nSco %>"> Social Studies <%=
                                                                 nSco %> </button>
+                                                                </div>
                                                         <div class="mb-5">
                                                             <div class="english n<%= nEng %>">
                                                                 <table class="table table tEng">
@@ -3368,7 +3373,8 @@
                                                                                             edit_type="click"
                                                                                             col_name="fname">
                                                                                             <span>
-                                                                                                <%= student.admin %>
+                                                                                                <%= student.admin.username
+                                                                                                    %>
                                                                                             </span>
                                                                                         </div>
                                                                                     </td>
@@ -3489,10 +3495,10 @@
 
 
                                                     <div class="">
-                                                        <h3 class="text-center"><a href="/students/<%= student._id %>">
-                                                                <%= student.firstN %>
+                                                        <div class="text-center mb-4">
+                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                                <%= student.firstN %> <%= student.lastN %>
                                                             </a>
-                                                        </h3>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
                                                         </button>
                                                         <button class="btn btn-warning <%= nMath %>"> Mathematics <%=
@@ -3501,6 +3507,7 @@
                                                         </button>
                                                         <button class="btn btn-info <%= nSco %>"> Social Studies <%=
                                                                 nSco %> </button>
+                                                                </div>
                                                         <div class="mb-5">
                                                             <div class="english n<%= nEng %>">
                                                                 <table class="table table tEng">
@@ -3762,7 +3769,8 @@
                                                                                             edit_type="click"
                                                                                             col_name="fname">
                                                                                             <span>
-                                                                                                <%= student.admin %>
+                                                                                                <%= student.admin.username
+                                                                                                    %>
                                                                                             </span>
                                                                                         </div>
                                                                                     </td>
@@ -3880,13 +3888,11 @@
                                         <% nMath +=1 %>
                                             <% nSci +=1 %>
                                                 <% nSco +=1 %>
-
-
                                                     <div class="">
-                                                        <h3 class="text-center"><a href="/students/<%= student._id %>">
-                                                                <%= student.firstN %>
+                                                        <div class="text-center mb-4">
+                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                                <%= student.firstN %> <%= student.lastN %>
                                                             </a>
-                                                        </h3>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
                                                         </button>
                                                         <button class="btn btn-warning <%= nMath %>"> Mathematics <%=
@@ -3895,6 +3901,7 @@
                                                         </button>
                                                         <button class="btn btn-info <%= nSco %>"> Social Studies <%=
                                                                 nSco %> </button>
+                                                        </div>
                                                         <div class="mb-5">
                                                             <div class="english n<%= nEng %>">
                                                                 <table class="table table tEng">
@@ -4156,7 +4163,8 @@
                                                                                             edit_type="click"
                                                                                             col_name="fname">
                                                                                             <span>
-                                                                                                <%= student.admin %>
+                                                                                                <%= student.admin.username
+                                                                                                    %>
                                                                                             </span>
                                                                                         </div>
                                                                                     </td>
@@ -4277,10 +4285,10 @@
 
 
                                                     <div class="">
-                                                        <h3 class="text-center"><a href="/students/<%= student._id %>">
-                                                                <%= student.firstN %>
+                                                        <div class="text-center mb-4">
+                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                                <%= student.firstN %> <%= student.lastN %>
                                                             </a>
-                                                        </h3>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
                                                         </button>
                                                         <button class="btn btn-warning <%= nMath %>"> Mathematics <%=
@@ -4289,6 +4297,7 @@
                                                         </button>
                                                         <button class="btn btn-info <%= nSco %>"> Social Studies <%=
                                                                 nSco %> </button>
+                                                                </div>
                                                         <div class="mb-5">
                                                             <div class="english n<%= nEng %>">
                                                                 <table class="table table tEng">
@@ -4550,7 +4559,8 @@
                                                                                             edit_type="click"
                                                                                             col_name="fname">
                                                                                             <span>
-                                                                                                <%= student.admin %>
+                                                                                                <%= student.admin.username
+                                                                                                    %>
                                                                                             </span>
                                                                                         </div>
                                                                                     </td>
@@ -4671,10 +4681,10 @@
 
 
                                                     <div class="">
-                                                        <h3 class="text-center"><a href="/students/<%= student._id %>">
-                                                                <%= student.firstN %>
+                                                        <div class="text-center mb-4">
+                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                                <%= student.firstN %> <%= student.lastN %>
                                                             </a>
-                                                        </h3>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
                                                         </button>
                                                         <button class="btn btn-warning <%= nMath %>"> Mathematics <%=
@@ -4683,6 +4693,7 @@
                                                         </button>
                                                         <button class="btn btn-info <%= nSco %>"> Social Studies <%=
                                                                 nSco %> </button>
+                                                            </div>
                                                         <div class="mb-5">
                                                             <div class="english n<%= nEng %>">
                                                                 <table class="table table tEng">
@@ -4944,7 +4955,8 @@
                                                                                             edit_type="click"
                                                                                             col_name="fname">
                                                                                             <span>
-                                                                                                <%= student.admin %>
+                                                                                                <%= student.admin.username
+                                                                                                    %>
                                                                                             </span>
                                                                                         </div>
                                                                                     </td>
@@ -5062,13 +5074,11 @@
                                         <% nMath +=1 %>
                                             <% nSci +=1 %>
                                                 <% nSco +=1 %>
-
-
                                                     <div class="">
-                                                        <h3 class="text-center"><a href="/students/<%= student._id %>">
-                                                                <%= student.firstN %>
+                                                        <div class="text-center mb-4">
+                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                                <%= student.firstN %> <%= student.lastN %>
                                                             </a>
-                                                        </h3>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
                                                         </button>
                                                         <button class="btn btn-warning <%= nMath %>"> Mathematics <%=
@@ -5077,6 +5087,7 @@
                                                         </button>
                                                         <button class="btn btn-info <%= nSco %>"> Social Studies <%=
                                                                 nSco %> </button>
+                                                                </div>
                                                         <div class="mb-5">
                                                             <div class="english n<%= nEng %>">
                                                                 <table class="table table tEng">
@@ -5338,7 +5349,8 @@
                                                                                             edit_type="click"
                                                                                             col_name="fname">
                                                                                             <span>
-                                                                                                <%= student.admin %>
+                                                                                                <%= student.admin.username
+                                                                                                    %>
                                                                                             </span>
                                                                                         </div>
                                                                                     </td>
@@ -5456,13 +5468,11 @@
                                         <% nMath +=1 %>
                                             <% nSci +=1 %>
                                                 <% nSco +=1 %>
-
-
                                                     <div class="">
-                                                        <h3 class="text-center"><a href="/students/<%= student._id %>">
-                                                                <%= student.firstN %>
+                                                        <div class="text-center mb-4">
+                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                                <%= student.firstN %> <%= student.lastN %>
                                                             </a>
-                                                        </h3>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
                                                         </button>
                                                         <button class="btn btn-warning <%= nMath %>"> Mathematics <%=
@@ -5471,6 +5481,7 @@
                                                         </button>
                                                         <button class="btn btn-info <%= nSco %>"> Social Studies <%=
                                                                 nSco %> </button>
+                                                                </div>
                                                         <div class="mb-5">
                                                             <div class="english n<%= nEng %>">
                                                                 <table class="table table tEng">
@@ -5732,7 +5743,8 @@
                                                                                             edit_type="click"
                                                                                             col_name="fname">
                                                                                             <span>
-                                                                                                <%= student.admin %>
+                                                                                                <%= student.admin.username
+                                                                                                    %>
                                                                                             </span>
                                                                                         </div>
                                                                                     </td>

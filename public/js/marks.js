@@ -267,6 +267,8 @@ document.querySelector("#g1").addEventListener("click", function myFunction() {
     }
   }) 
 
+  var dt = new Date();
+  document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
   // this is to hide and show the subjects on the marks dropdown
 // let studentsSubjects = document.querySelectorAll("div");
