@@ -15,6 +15,9 @@ html{
     background-size: 100%;
     background-position-y: bottom;
   }
+  .navbarNav{
+    min-width:80%;
+  }
   .mainH{
     margin-top:70px;
     font-weight:800;
@@ -30,7 +33,7 @@ html{
     font-weight:700;
     color:rgb(0, 0, 0);
     font-size: 3em;
-    color:rgb(43, 44, 44);
+    color:rgb(82, 220, 238);
     /* text-shadow:#040505 0 -3px; */
   }
 
@@ -41,7 +44,7 @@ html{
     font-weight:700;
     color:rgb(0, 0, 0);
     font-size: 4em;
-    color:rgb(50, 52, 53);
+    color:rgb(82, 220, 238);
     /* text-shadow:#040505 0 -3px; */
   }
   
@@ -73,7 +76,7 @@ html{
     color:rgb(49, 47, 47);
   }
   .card:hover{
-    transform: scale(1.1);
+    transform: scale(1.4);
     transition:0.5s;
   }
  

@@ -3,7 +3,16 @@ const SubjectAssesment = require('../models/subjectAssesment');
 const { cloudinary } = require('../cloudinary');
 
 module.exports.index = async (req, res) => {
-    const students = await Student.find({}).populate('subjectAssesments').populate('admin');
+    const student = await Student.findById(req.params.id).populate({
+        path: 'subjectAssesments',
+        populate: {
+            path: 'admin',
+        }
+    }).populate('admin');
+    if (!student) {
+        req.flash('error', 'Cannot find that student!');
+        return res.redirect('/students');
+    }
     res.render('students/index', { students })
 };
 
