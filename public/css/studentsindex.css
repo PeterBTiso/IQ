@@ -421,9 +421,9 @@ table{
         font-weight: 600;
         border: 10px;
     }
-    input{
+    /* input{
         width:100%;
-    }
+    } */
     table{
         table-layout: auto;
         font-size: small;
