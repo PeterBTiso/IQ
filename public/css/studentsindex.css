@@ -7,6 +7,9 @@ body{
 #submitBtn{
     width:100%;
 }
+.form-check-inline{
+    float :right;
+}
 .navbar-brand {
     padding-top: .3125rem;
     padding-bottom: .3125rem;

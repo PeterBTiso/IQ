@@ -106,15 +106,15 @@
             </div> -->
             <!--  -->
 
-            <div class="mb-3">
+            <div class="mb-3 ml-auto">
                 <% student.images.forEach(function(img, i) {  %>
                 <img src="<%= img.thumbnail %>" class="img-thumbnail" alt="">
-                <div class="form-check-inline ml-3">
+                
+                <div class="form-control w-auto">
+                    <label for="image-<%=i%>">Delete?</label>
                     <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename%>">
                 </div>
-                
-                    <label for="image-<%=i%>">Delete?</label>
-                
+                        
                 <% })%>
             </div>
             <div class="text-center">
