@@ -109,14 +109,20 @@
             <div class="mb-3">
                 <% student.images.forEach(function(img, i) {  %>
                 <img src="<%= img.thumbnail %>" class="img-thumbnail" alt="">
-                <div class="form-check-inline">
+                <div class="form-check-inline ml-3">
                     <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename%>">
                 </div>
-                <label for="image-<%=i%>">Delete?</label>
+                
+                    <label for="image-<%=i%>">Delete?</label>
+                
                 <% })%>
             </div>
-            <button class="btn btn-success">Update student</button>
+            <div class="text-center">
+                <button class="btn btn-success updateBtn w-100">Update student</button>
+            </div>
         </form>
-        <a href="/students/<%= student._id %>"><button class="btn btn-warning" >Back To Student</button></a>
+        <div class="text-center ">
+            <a href="/students/<%= student._id %>"><button class="btn btn-warning deleteBtn w-100" >Back To Student</button></a>
+        </div>
     </div>
 </div>
