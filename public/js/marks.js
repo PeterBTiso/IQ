@@ -1,32 +1,3 @@
-// Top Buttons
-// function dataBtn() {
-//   var element = document.getElementById("hideData");
-//   element.classList.toggle("mystyle");
-// }
-// function marksBtn() {
-//   var element = document.getElementById("hideMarks");
-//   element.classList.toggle("mystyle");
-// }
-// function assesBtn() {
-//   var element = document.getElementById("hideAssesments");
-//   element.classList.toggle("mystyle");
-// }
-// function eventsBtn() {
-//   var element = document.getElementById("hideEvents");
-//   element.classList.toggle("mystyle");
-// }
-// function rosterBtn() {
-//   var element = document.getElementById("hideRoster");
-//   element.classList.toggle("mystyle");
-// }
-// function vacaBtn() {
-//   var element = document.getElementById("hideNews");
-//   element.classList.toggle("mystyle");
-// }
-// function newsBtn() {
-//   var element = document.getElementById("hideNews");
-//   element.classList.toggle("mystyle");
-// }
 
 document.querySelector("#hideData").addEventListener("click", function myFunction() {
     var x = document.querySelector("#studentData") ;
@@ -279,13 +250,3 @@ document.querySelector("#g1").addEventListener("click", function myFunction() {
 //   console.log(i)
 // }
   
-
-
-  // document.querySelector(".engBtn").addEventListener("click", function myFunction() {
-  //   var x = document.querySelector(".english") ;
-  //   if (x.style.display === "none") {
-  //     x.style.display = "block";
-  //   } else {
-  //     x.style.display = "none";
-  //   }
-  // })  

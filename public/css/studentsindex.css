@@ -7,6 +7,9 @@ body{
 #submitBtn{
     width:100%;
 }
+.hello{
+    display:none;
+}
 .form-check-inline{
     float :right;
 }
@@ -26,6 +29,9 @@ body{
     font-size: 2.5em;
     float:left;
     margin-top: -16px;
+}
+.indexHead{
+    text-align: left;
 }
 strong {
 	font-weight: bold; 
@@ -344,6 +350,11 @@ table{
         border: 10px;
         margin-right: 10px;
       }
+      a{
+        table-layout: auto;
+        font-size: large;
+        font-weight: 700;
+    }
     button {
       font-size: 30px;
       width:auto;
@@ -420,6 +431,12 @@ table{
         font-size: 15px;
         font-weight: 600;
         border: 10px;
+    }
+    .indexHead{
+        text-align: left;
+    }
+    .stuCount{
+        display:none;
     }
     /* input{
         width:100%;

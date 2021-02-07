@@ -17,6 +17,5 @@ module.exports.deleteSubjectAssesment = async (req, res) => {
     await Student.findByIdAndUpdate(id, { $pull: { subjectAssesments: subjectAssesmentId } });
     await SubjectAssesment.findByIdAndDelete(subjectAssesmentId);
     req.flash('success', 'Successfully deleted a Assesment!');
-    res.redirect(`/students/${ id }`);
+    res.redirect(`/students`);
 };
-

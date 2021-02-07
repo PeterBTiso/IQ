@@ -154,6 +154,7 @@
                                 </p>
                                 <h6 class="card-subtitle mb-2 text-muted">By <%= subjectAssesment.admin.username%></h6>
                                 <%  if( currentUser && subjectAssesment.admin.equals(currentUser._id))  {%>
+
                                 <form
                                     action="/students/<%= student._id %>/subjectAssesments/<%= subjectAssesment._id %>?_method=DELETE"
                                     method="POST">
@@ -166,7 +167,7 @@
                     </div>
                        
                             <a href="/students"><button class="btn btn-warning">All Students</button></a>
-                </div>
+            </div>
     </div>
 
     <script>

@@ -70,7 +70,7 @@
                                         </a></b></div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let engScore=0 %>
                                             <% let engTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -96,7 +96,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let sciScore=0 %>
                                             <% let sciTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -109,7 +109,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let scoScore=0 %>
                                             <% let scoTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -156,7 +156,7 @@
                                         </a></b></div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let engScore=0 %>
                                             <% let engTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -182,7 +182,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let sciScore=0 %>
                                             <% let sciTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -195,7 +195,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let scoScore=0 %>
                                             <% let scoTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -220,15 +220,16 @@
                     <% } %>
                 <% } %>
                 
-            <table class="table table-hover mb-5">
+            <table class="table table-hover mb-5 myTable">
                 <thead class="thBack bg-secondary text-light">
-                    <h2 class="text-left ml-5">Grade 3 <span class="float-right mr-5">Student Count : <%= count3 %></span></h2>
+                    <h2 class="text-left ml-5">Grade 3 <span class="float-right mr-5"> <%= count3 %></span><span class="float-right stuCount">Student Count : </span></h2>
                     <tr>
                         <th>Full Name</th>
                         <th>English</th>
                         <th>Math</th>
                         <th>Science</th>
                         <th>Social</th>
+                        <th>Average</th>
                     </tr>
                 </thead>
                 <% for(let student of students) { %>
@@ -239,49 +240,241 @@
                                   <b><a href="/students/<%= student._id %>">
                                             <%= student.firstN %>
                                                 <%= student.lastN %>
-                                        </a></b>       
+                                        </a>
+                                  </b>    
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let engScore=0 %>
                                             <% let engTotal=0 %>
+                                            <% let studNum = 0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
-                                                    <% if(subjectAssesment.subject==="English" ){ %>
+                                                    <% studNum += 1 %><% if(subjectAssesment.subject==="English" ){ %>
                                                         <% engScore +=subjectAssesment.studentScore %>
                                                             <% engTotal +=subjectAssesment.totalScore %>
                                                                 <% } %>
                                                                     <% } %>
-                                                                        <%= Math.floor(engScore/engTotal *100) %>
+                                                                    <button class="btn btn-primary engBtn<%= studNum %>"><%= Math.floor(engScore/engTotal *100) %></button>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="">
+                                    <div class="row_data text-center" edit_type="click" col_name="">
                                         <% let mathScore=0 %>
                                             <% let mathTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
                                                     <% if(subjectAssesment.subject==="Math" ){ %>
+
                                                         <% mathScore +=subjectAssesment.studentScore %>
                                                             <% mathTotal +=subjectAssesment.totalScore %>
+
                                                                 <% } %>
                                                                     <% } %>
-                                                                        <%= Math.floor(mathScore/mathTotal *100) %>
+                                                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg-math-<%= studNum %>"><%= Math.floor(mathScore/mathTotal *100) %> </button>
+                                                                        <div class="modal fade bd-example-modal-lg-math-<%= studNum %>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                                            <div class="modal-dialog modal-lg">
+                                                                                <div class="modal-content">
+                                                                                    
+                                                                                        <table class="table">
+                                                                                            <thead>
+                                                                                            <tr class="bg-warning">
+                                                                                                <th data-column="name" data-order="desc">Date
+                                                                                                    &#9650</th>
+                                                                                                <th  data-column="name"  onclick="sortTable(0)">Topic
+                                                                                                    &#9650</th>
+                                                                                                <th data-column="english" >
+                                                                                                    Score &#9650</th>
+                                                                                                <th data-column="maths" >Total
+                                                                                                    &#9650</th>
+                                                                                                <th data-column="science" >
+                                                                                                    Percent % &#9650</th>
+                                                                                                <th data-column="socialcience"
+                                                                                                    >Admin % &#9650</th>
+                        
+                                                                                            </tr>
+                                                                                        </thead>
+                                                                                            <tbody class="myTable">
+                                                                                                <% for(let subjectAssesment of student.subjectAssesments) { %>
+                                                                                                    <% if(subjectAssesment.subject==="Math" ) {%>
+                                                                                                        <tr>
+                                                                                                            <td>
+                                                                                                                <div class="row_data"
+                                                                                                                    edit_type="click"
+                                                                                                                    col_name="fname">
+                                                                                                                    <span>
+                                                                                                                        <%= subjectAssesment.date %>
+                                                                                                                    </span>
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                            <td>
+                                                                                                                <div class="row_data"
+                                                                                                                    edit_type="click"
+                                                                                                                    col_name="fname">
+                                                                                                                    <span>
+                                                                                                                        <%= subjectAssesment.topic
+                                                                                                                            %>
+                                                                                                                    </span>
+                                                                                                                </div>
+                                                                                                            </td>
+                        
+                                                                                                            <td>
+                                                                                                                <div class="row_data"
+                                                                                                                    edit_type="click"
+                                                                                                                    col_name="fname">
+                                                                                                                    <span>
+                                                                                                                        <%= subjectAssesment.studentScore
+                                                                                                                            %>
+                                                                                                                    </span>
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                            <td>
+                                                                                                                <div class="row_data"
+                                                                                                                    edit_type="click"
+                                                                                                                    col_name="fname">
+                                                                                                                    <span>
+                                                                                                                        <%= subjectAssesment.totalScore
+                                                                                                                            %>
+                                                                                                                    </span>
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                            <td>
+                                                                                                                <div class="row_data"
+                                                                                                                    edit_type="click"
+                                                                                                                    col_name="fname">
+                                                                                                                    <span>
+                                                                                                                        <%= Math.floor(subjectAssesment.studentScore / subjectAssesment.totalScore * 100) %>
+                                                                                                                    </span>
+                                                                                                                </div>
+                                                                                                            </td>
+                                                                                                            <td>
+                                                                                                            <%  if( currentUser && subjectAssesment.admin.equals(currentUser._id))  {%>
+
+                                                                                                                <form
+                                                                                                                    action="/students/<%= student._id %>/subjectAssesments/<%= subjectAssesment._id %>?_method=DELETE"
+                                                                                                                    method="POST">
+                                                                                                                    <button class="btn btn-sm btn-danger btn-center cardDelBtn">Delete</button>
+                                                                                                                </form>
+                                                                                                                <% } %>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                    <% } %>
+                                                                                                <% } %>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
                                     </div>
+                                   
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="">
                                         <% let sciScore=0 %>
                                             <% let sciTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
-                                                    <% if(subjectAssesment.subject==="Science" ){ %>
+                                                    <% if(subjectAssesment.subject === "Science" ) { %>
+
                                                         <% sciScore +=subjectAssesment.studentScore %>
-                                                            <% sciTotal +=subjectAssesment.totalScore %>
+                                                            <% sciTotal += subjectAssesment.totalScore %>
+
                                                                 <% } %>
                                                                     <% } %>
-                                                                        <%= Math.floor(sciScore/sciTotal *100) %>
+                                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg-sci-<%= studNum %>"><%= Math.floor(sciScore/sciTotal *100) %> </button>
+                                                                        <div class=" modal fade bd-example-modal-lg-sci-<%= studNum %>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                                        <div class="modal-dialog modal-lg">
+                                                                            <div class="modal-content ">
+                                                                                    <table class="table mt-0">
+                                                                                        <thead>
+                                                                                        <tr class="bg-danger">
+                                                                                            <th data-column="name" data-order="desc">Date
+                                                                                                &#9650</th>
+                                                                                            <th  data-column="name" >Topic
+                                                                                                &#9650</th>
+                                                                                            <th data-column="" >
+                                                                                                Score &#9650</th>
+                                                                                            <th data-column="" >Total
+                                                                                                &#9650</th>
+                                                                                            <th data-column="" >
+                                                                                                Percent % &#9650</th>
+                                                                                            <th data-column=""
+                                                                                                >Admin % &#9650</th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                            <% for(let subjectAssesment of student.subjectAssesments) { %>
+                                                                                                <% if(subjectAssesment.subject==="Science" ) {%>
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <div class="row_data"
+                                                                                                                edit_type="click"
+                                                                                                                col_name="fname">
+                                                                                                                <span>
+                                                                                                                    <%= subjectAssesment.date
+                                                                                                                        %>
+                                                                                                                </span>
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <div class="row_data"
+                                                                                                                edit_type="click"
+                                                                                                                col_name="fname">
+                                                                                                                <span>
+                                                                                                                    <%= subjectAssesment.topic
+                                                                                                                        %>
+                                                                                                                </span>
+                                                                                                            </div>
+                                                                                                        </td>
+                    
+                                                                                                        <td>
+                                                                                                            <div class="row_data"
+                                                                                                                edit_type="click"
+                                                                                                                col_name="fname">
+                                                                                                                <span>
+                                                                                                                    <%= subjectAssesment.studentScore
+                                                                                                                        %>
+                                                                                                                </span>
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <div class="row_data"
+                                                                                                                edit_type="click"
+                                                                                                                col_name="fname">
+                                                                                                                <span>
+                                                                                                                    <%= subjectAssesment.totalScore
+                                                                                                                        %>
+                                                                                                                </span>
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <div class="row_data"
+                                                                                                                edit_type="click"
+                                                                                                                col_name="fname">
+                                                                                                                <span>
+                                                                                                                    <%= Math.floor(subjectAssesment.studentScore / subjectAssesment.totalScore * 100) %>
+                                                                                                                </span>
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <div class="row_data"
+                                                                                                                edit_type="click"
+                                                                                                                col_name="fname">
+                                                                                                                <span>
+                                                                                                                    <%= student.admin.username
+                                                                                                                        %>
+                                                                                                                </span>
+                                                                                                            </div>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                <% } %>
+                                                                                            <% } %>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                     </div>
-                                </td>
+                                </td>                           
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let scoScore=0 %>
                                             <% let scoTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -290,13 +483,25 @@
                                                             <% scoTotal +=subjectAssesment.totalScore %>
                                                                 <% } %>
                                                                     <% } %>
-                                                                        <%= Math.floor(scoScore/scoTotal *100) %>
+                                                                    <button class="btn btn-info"><%= Math.floor(scoScore/scoTotal *100) %></button>
                                     </div>
                                 </td>
-                        </tbody>
-                        <% } %>
-                            <% } %>
-            </table>
+                                <td>
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
+                                        <% let fullAvg  =0 %>
+                                            <% let subjAvg = 0 %>
+                                                <% for(let subjectAssesment of student.subjectAssesments) { %>
+                                                        <% subjAvg += subjectAssesment.studentScore %>
+                                                            <% fullAvg +=subjectAssesment.totalScore %>
+                                                                    <% } %>
+                                                                    <button class="btn btn-info"><%= Math.floor(subjAvg/fullAvg *100) %></button>
+                                    </div>
+                                </td>
+                                </tr> 
+                                <% } %>
+                                <% } %>
+                                
+                                            
         </div>
         <div id="gr4">
             <% let count4 = 0 %>
@@ -321,14 +526,14 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="fname"><b><a
-                                            href="/students/<%= student._id %>">
-                                            <%= student.firstN %>
-                                                <%= student.lastN %>
-                                        </a></b></div>
+                                    <div class="row_data" edit_type="click" col_name="fname">
+                                        <b>
+                                            <a href="/students/<%= student._id %>"><%= student.firstN %> <%= student.lastN %></a>
+                                        </b>
+                                    </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let engScore=0 %>
                                             <% let engTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -354,7 +559,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let sciScore=0 %>
                                             <% let sciTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -367,7 +572,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let scoScore=0 %>
                                             <% let scoTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -379,6 +584,7 @@
                                                                         <%= Math.floor(scoScore/scoTotal *100) %>
                                     </div>
                                 </td>
+                             </tr>   
                         </tbody>
                         <% } %>
                             <% } %>
@@ -414,7 +620,7 @@
                                         </a></b></div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let engScore=0 %>
                                             <% let engTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -440,7 +646,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let sciScore=0 %>
                                             <% let sciTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -453,7 +659,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let scoScore=0 %>
                                             <% let scoTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -500,7 +706,7 @@
                                         </a></b></div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let engScore=0 %>
                                             <% let engTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -526,7 +732,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let sciScore=0 %>
                                             <% let sciTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -539,7 +745,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let scoScore=0 %>
                                             <% let scoTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -586,7 +792,7 @@
                                         </a></b></div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let engScore=0 %>
                                             <% let engTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -612,7 +818,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let sciScore=0 %>
                                             <% let sciTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -625,7 +831,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let scoScore=0 %>
                                             <% let scoTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -672,7 +878,7 @@
                                         </a></div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let engScore=0 %>
                                             <% let engTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -698,7 +904,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let sciScore=0 %>
                                             <% let sciTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -711,7 +917,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let scoScore=0 %>
                                             <% let scoTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -758,7 +964,7 @@
                                         </a></div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let engScore=0 %>
                                             <% let engTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -784,7 +990,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let sciScore=0 %>
                                             <% let sciTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -797,7 +1003,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let scoScore=0 %>
                                             <% let scoTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -844,7 +1050,7 @@
                                         </a></div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let engScore=0 %>
                                             <% let engTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -870,7 +1076,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let sciScore=0 %>
                                             <% let sciTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -883,7 +1089,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let scoScore=0 %>
                                             <% let scoTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -930,7 +1136,7 @@
                                         </a></div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let engScore=0 %>
                                             <% let engTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -956,7 +1162,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let sciScore=0 %>
                                             <% let sciTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -969,7 +1175,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let scoScore=0 %>
                                             <% let scoTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -1016,7 +1222,7 @@
                                         </a></div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let engScore=0 %>
                                             <% let engTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -1042,7 +1248,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let sciScore=0 %>
                                             <% let sciTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -1055,7 +1261,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row_data" edit_type="click" col_name="avg">
+                                    <div class="row_data text-center" edit_type="click" col_name="avg">
                                         <% let scoScore=0 %>
                                             <% let scoTotal=0 %>
                                                 <% for(let subjectAssesment of student.subjectAssesments) { %>
@@ -1074,7 +1280,6 @@
         </div>
     </div>
 
-    <!-- students in each grade and their avg for subjects to date -->
     <div class="tbl_user_data marks" id="marksContainer">
         <h1 class="text-center mb-3"><i class="fas fa-marker "></i>Assessment Marks</h1>
         <div class="row">
@@ -1906,7 +2111,6 @@
                                                 
 
                                                     <div class="">
-                                
                                                         <div class="text-center mb-4">
                                                             <a class="studsNames" href="/students/<%= student._id %>">
                                                                 <%= student.firstN %> <%= student.lastN %>
@@ -1929,7 +2133,7 @@
                                                                     <tr class="bg-primary">
                                                                         <th data-column="name" data-order="desc">Date
                                                                             &#9650</th>
-                                                                        <th data-column="name" data-order="desc">Topic
+                                                                        <th data-column="name" data-order="desc" onclick="sortTable(0)"></th>>Topic
                                                                             &#9650</th>
                                                                         <th data-column="english" data-order="desc">
                                                                             Score &#9650</th>
@@ -2012,7 +2216,7 @@
                                                                     </tbody>
                                                                 </table>
                                                             </div>
-                                                            <div class="math <%= nMath %>">
+                                                            <div class="math <%= nMath %> myTable">
                                                                 <table class="table">
                                                                     <h2 class="text-light bg-dark">Mathematics <%= nMath
                                                                             %>
@@ -2020,7 +2224,7 @@
                                                                     <tr class="bg-warning">
                                                                         <th data-column="name" data-order="desc">Date
                                                                             &#9650</th>
-                                                                        <th data-column="name" data-order="desc">Topic
+                                                                        <th  data-column="name" data-order="desc" onclick="sortTable(0)">Topic
                                                                             &#9650</th>
                                                                         <th data-column="english" data-order="desc">
                                                                             Score &#9650</th>
@@ -6011,3 +6215,4 @@
             </tbody>
         </table>
     </div>
+
