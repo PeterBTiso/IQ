@@ -5,43 +5,43 @@
 
 
     <!-- toggle buttons at the top -->
-    <div class="tbl_user_data text-center mb-3 sticky">
+    <div class="tbl_user_data text-center mb-3 sticky topToggleBtns">
         <button class=" btn btn-success" id="hideAdd"><a class="text-light"
                 href="/students/new">ADD</a></button>
-        <button class="btn btn-primary" id="hideData" onclick="dataBtn()"><i class="fas fa-align-justify"></i> AVG%
+        <button class="btn btn-primary" id="hideStudents"><i class="fas fa-align-justify"></i> AVG%
         </button>
-        <button class="btn btn-primary" id="hideMarks" onclick="marksBtn()"><i class="fas fa-marker"></i>MARKS</button>
-        <button class="btn btn-primary" id="hideAssesments" onclick="assesBtn()"><i
+        <button class="btn btn-primary" id="hideMarks"><i class="fas fa-marker"></i>MARKS</button>
+        <button class="btn btn-primary" id="hideAssesments"><i
                 class="fas fa-marker"></i>ASSESMENTS</button>
-        <button class="btn btn-primary" id="hideEvents" onclick="eventsBtn()"><i class="fas fa-calendar-alt"></i>
+        <button class="btn btn-primary" id="hideEvents"><i class="fas fa-calendar-alt"></i>
             EVENTS</button>
-        <button class="btn btn-primary" id="hideRoster" onclick="rosterBtn()">ROSTER</button>
-        <button class="btn btn-primary" id="hideVaca" onclick="vacaBtn()">VACATIONS</button>
-        <button class="btn btn-primary" id="hideNews" onclick="newsBtn()">NEWS</button>
+        <button class="btn btn-primary" id="hideRoster">ROSTER</button>
+        <button class="btn btn-primary" id="hideVaca">VACATIONS</button>
+        <button class="btn btn-primary" id="hideNews">NEWS</button>
     </div>
 
     <!-- students in each grade and their avg for subjects to date -->
-    <div class="tbl_user_data text-center" id="studentData" style="overflow-x:auto;">
+    <div class="tbl_user_data text-center" id="StudentsContainer" style="overflow-x:auto;">
         <h1 class="text-center"><i class="fas fa-marker "></i>Subject Assessments</h1>
         <div class="row">
             <div class="col-lg-8 offset-lg-2 sticky mb-3" id="add">
-                <button class="btn btn-warning" id="g1"><i class="fas fa-user-plus"></i>Gr1</button>
-                <button class="btn btn-warning" id="g2"><i class="fas fa-align-justify"></i>Gr2</button>
-                <button class="btn btn-warning" id="g3"><i class="fas fa-user-plus"></i>Gr3</button>
-                <button class="btn btn-warning" id="g4"><i class="fas fa-align-justify"></i>Gr4</button>
-                <button class="btn btn-warning" id="g5"><i class="fas fa-marker"></i>Gr5</button>
-                <button class="btn btn-warning" id="g6"><i class="fas fa-calendar-alt"></i> Gr6</button>
-                <button class="btn btn-warning" id="g7"><i class="fas fa-user-plus"></i>Gr7</button>
-                <button class="btn btn-warning" id="g8"><i class="fas fa-align-justify"></i>Gr8</button>
-                <button class=" btn btn-warning" id="g9"><i class="fas fa-user-plus"></i>Gr9</button>
-                <button class="btn btn-warning" id="g10"><i class="fas fa-align-justify"></i>Gr10</button>
-                <button class="btn btn-warning" id="g11"><i class="fas fa-marker"></i>Gr11</button>
-                <button class="btn btn-warning" id="g12"><i class="fas fa-calendar-alt"></i>Gr12</button>
+                <button class="btn btn-warning Avgbtn" name="btngr1Avg"  id="g1"><i class="fas fa-user-plus"></i>Gr1</button>
+                <button class="btn btn-warning Avgbtn" name="btngr2Avg"  id="g2"><i class="fas fa-align-justify"></i>Gr2</button>
+                <button class="btn btn-warning Avgbtn" name="btngr3Avg"  id="g3"><i class="fas fa-user-plus"></i>Gr3</button>
+                <button class="btn btn-warning Avgbtn" name="btngr4Avg"  id="g4"><i class="fas fa-align-justify"></i>Gr4</button>
+                <button class="btn btn-warning Avgbtn" name="btngr5Avg"  id="g5"><i class="fas fa-marker"></i>Gr5</button>
+                <button class="btn btn-warning Avgbtn" name="btngr6Avg"  id="g6"><i class="fas fa-calendar-alt"></i> Gr6</button>
+                <button class="btn btn-warning Avgbtn" name="btngr7Avg"  id="g7"><i class="fas fa-user-plus"></i>Gr7</button>
+                <button class="btn btn-warning Avgbtn" name="btngr8Avg"  id="g8"><i class="fas fa-align-justify"></i>Gr8</button>
+                <button class="btn btn-warning Avgbtn" name="btngr9Avg"  id="g9"><i class="fas fa-user-plus"></i>Gr9</button>
+                <button class="btn btn-warning Avgbtn" name="btngr10Avg" id="g10"><i class="fas fa-align-justify"></i>Gr10</button>
+                <button class="btn btn-warning Avgbtn" name="btngr11Avg" id="g11"><i class="fas fa-marker"></i>Gr11</button>
+                <button class="btn btn-warning Avgbtn" name="btngr12Avg" id="g12"><i class="fas fa-calendar-alt"></i>Gr12</button>
             </div>
         </div>
 
         
-        <div id="gr3">
+        <div id="gr3" class="gr3Avg gradeAvg">
             <% let count3 = 0 %>
             <% for(let student of students) { %>
                 <% if(student.level===3){ %>
@@ -66,7 +66,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                  <b><a href="/students/<%= student._id %>">
+                                  <b><a href="/students/<%= student._id %>" class='student_Avg'>
                                             <%= student.firstN %>
                                                 <%= student.lastN %>
                                         </a>
@@ -531,7 +531,7 @@
                                 <% } %>
                             </table>
         </div>
-        <div id="gr4">
+        <div id="gr4" class="gr4Avg gradeAvg">
             <% let count4 = 0 %>
             <% for(let student of students) { %>
                 <% if(student.level===4){ %>
@@ -556,7 +556,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                  <b><a href="/students/<%= student._id %>">
+                                  <b><a href="/students/<%= student._id %>" class='student_Avg'>
                                             <%= student.firstN %>
                                                 <%= student.lastN %>
                                         </a>
@@ -1021,7 +1021,7 @@
                                 <% } %>
                             </table>
         </div>
-        <div id="gr5">
+        <div id="gr5" class="gr5Avg gradeAvg">
             <% let count5 = 0 %>
             <% for(let student of students) { %>
                 <% if(student.level===5){ %>
@@ -1504,7 +1504,7 @@
                             <% } %>
             </table>
         </div>
-        <div id="gr6">
+        <div id="gr6" class="gr6Avg gradeAvg">
             <% let count6 = 0 %>
             <% for(let student of students) { %>
                 <% if(student.level===6){ %>
@@ -1989,25 +1989,25 @@
         </div>
     </div>
 
-    <div class="tbl_user_data marks" id="marksContainer">
+    <div class="tbl_user_data marks" id="MarksContainer">
         <h1 class="text-center mb-3"><i class="fas fa-marker "></i>Assessment Marks</h1>
         <div class="row">
             <div class="col-lg-8 offset-lg-2 sticky mb-3 text-center" id="add">
-                <button class="btn btn-warning" id="gr1-marksB"><i class="fas fa-user-plus marksB"></i>Gr1</button>
-                <button class="btn btn-warning" id="gr2-marksB"><i class="fas fa-align-justify marksB"></i>Gr2</button>
-                <button class=" btn btn-warning" id="gr3-marksB"><i class="fas fa-user-plus marksB"></i>Gr3</button>
-                <button class="btn btn-warning" id="gr4-marksB"><i class="fas fa-align-justify marksB"></i>Gr4</button>
-                <button class="btn btn-warning" id="gr5-marksB"><i class="fas fa-marker marksB"></i>Gr5</button>
-                <button class="btn btn-warning" id="gr6-marksB"><i class="fas fa-calendar-alt marksB"></i> Gr6</button>
-                <button class=" btn btn-warning" id="gr7-marksB"><i class="fas fa-user-plus marksB"></i>Gr7</button>
-                <button class="btn btn-warning" id="gr8-marksB"><i class="fas fa-align-justify marksB"></i>Gr8</button>
-                <button class=" btn btn-warning" id="gr9-marksB"><i class="fas fa-user-plus marksB"></i>Gr9</button>
-                <button class="btn btn-warning" id="gr10-marksB"><i class="fas fa-align-justify marksB"></i>Gr10</button>
-                <button class="btn btn-warning" id="gr11-marksB"><i class="fas fa-marker marksB"></i>Gr11</button>
-                <button class="btn btn-warning" id="gr12-marksB"><i class="fas fa-calendar-alt marksB"></i>Gr12</button>
+                <button class="btn btn-warning Marksbtn" name="btngr1Marks" id="gr1-marksB"><i class="fas fa-user-plus marksB"></i>Gr1</button>
+                <button class="btn btn-warning Marksbtn" name="btngr2Marks" id="gr2-marksB"><i class="fas fa-align-justify marksB"></i>Gr2</button>
+                <button class="btn btn-warning Marksbtn" name="btngr3Marks" id="gr3-marksB"><i class="fas fa-user-plus marksB"></i>Gr3</button>
+                <button class="btn btn-warning Marksbtn" name="btngr4Marks" id="gr4-marksB"><i class="fas fa-align-justify marksB"></i>Gr4</button>
+                <button class="btn btn-warning Marksbtn" name="btngr5Marks" id="gr5-marksB"><i class="fas fa-marker marksB"></i>Gr5</button>
+                <button class="btn btn-warning Marksbtn" name="btngr6Marks" id="gr6-marksB"><i class="fas fa-calendar-alt marksB"></i> Gr6</button>
+                <button class="btn btn-warning Marksbtn" name="btngr7Marks" id="gr7-marksB"><i class="fas fa-user-plus marksB"></i>Gr7</button>
+                <button class="btn btn-warning Marksbtn" name="btngr8Marks" id="gr8-marksB"><i class="fas fa-align-justify marksB"></i>Gr8</button>
+                <button class="btn btn-warning Marksbtn" name="btngr9Marks" id="gr9-marksB"><i class="fas fa-user-plus marksB"></i>Gr9</button>
+                <button class="btn btn-warning Marksbtn" name="btngr10Marks" id="gr10-marksB"><i class="fas fa-align-justify marksB"></i>Gr10</button>
+                <button class="btn btn-warning Marksbtn" name="btngr11Marks" id="gr11-marksB"><i class="fas fa-marker marksB"></i>Gr11</button>
+                <button class="btn btn-warning Marksbtn" name="btngr12Marks" id="gr12-marksB"><i class="fas fa-calendar-alt marksB"></i>Gr12</button>
             </div>
         </div>
-        <div class="container gr1Marks">
+        <div class="container gr1Marks gradeMarks">
             <h1 class="text-center">Level 1</h1>
             <% for(let student of students) { %>
                 <% if(student.level === 1){ %>
@@ -2023,7 +2023,7 @@
                                                 <% nSco +=1 %>
                                                     <div class="">
                                                         <div class="text-center mb-4">
-                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                            <a class="studsNames" href="/students/<%= student._id %>" class='student_Marks'>
                                                                 <%= student.firstN %> <%= student.lastN %>
                                                             </a>
                                                         <button class="btn btn-primary text-center <%= nEng %>"> English
@@ -2405,7 +2405,7 @@
                                                     <% } %>
                                                         <% } %>
         </div>
-        <div class="container gr2Marks">
+        <div class="container gr2Marks gradeMarks">
             <h1 class="text-center">Level 2</h1>
             <% for(let student of students) { %>
                 <% if(student.level===2){ %>
@@ -2421,7 +2421,7 @@
                                                 <% nSco +=1 %>
                                                     <div class="">
                                                         <div class="text-center mb-4">
-                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                            <a class="studsNames" href="/students/<%= student._id %>" class='student_Marks'>
                                                                 <%= student.firstN %> <%= student.lastN %>
                                                             </a>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
@@ -2802,7 +2802,7 @@
                                                     <% } %>
                                                         <% } %>
         </div>
-        <div class="container gr3Marks">
+        <div class="container gr3Marks gradeMarks">
             <h1 class="text-center">Level 3</h1>
             <% for(let student of students) { %>
                 <% if(student.level === 3){ %>
@@ -2821,7 +2821,7 @@
 
                                                     <div class="">
                                                         <div class="text-center mb-4">
-                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                            <a class="studsNames" href="/students/<%= student._id %>" class='student_Marks'>
                                                                 <%= student.firstN %> <%= student.lastN %>
                                                             </a>
                                                         
@@ -3201,7 +3201,7 @@
                                                     <% } %>
                                                         <% } %>
         </div>
-        <div class="container gr4Marks">
+        <div class="container gr4Marks gradeMarks">
             <h1 class="text-center">Level 4</h1>
             <% for(let student of students) { %>
                 <% if(student.level===4){ %>
@@ -3219,7 +3219,7 @@
 
                                                     <div class="">
                                                         <div class="text-center mb-4">
-                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                            <a class="studsNames" href="/students/<%= student._id %>" class='student_Marks'>
                                                                 <%= student.firstN %> <%= student.lastN %>
                                                             </a>
                                                         </h3>
@@ -3599,7 +3599,7 @@
                                                     <% } %>
                                                         <% } %>
         </div>
-        <div class="container gr5Marks">
+        <div class="container gr5Marks gradeMarks">
             <h1 class="text-center">Level 5</h1>
             <% for(let student of students) { %>
                 <% if(student.level===5){ %>
@@ -3617,7 +3617,7 @@
 
                                                     <div class="">
                                                         <div class="text-center mb-4">
-                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                            <a class="studsNames" href="/students/<%= student._id %>" class='student_Marks'>
                                                                 <%= student.firstN %> <%= student.lastN %>
                                                             </a>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
@@ -3995,7 +3995,7 @@
                                                     <% } %>
                                                         <% } %>
         </div>
-        <div class="container gr6Marks">
+        <div class="container gr6Marks gradeMarks">
             <h1 class="text-center">Level 6</h1>
             <% for(let student of students) { %>
                 <% if(student.level===6){ %>
@@ -4013,7 +4013,7 @@
 
                                                     <div class="">
                                                         <div class="text-center mb-4">
-                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                            <a class="studsNames" href="/students/<%= student._id %>" class='student_Marks'>
                                                                 <%= student.firstN %> <%= student.lastN %>
                                                             </a>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
@@ -4391,7 +4391,7 @@
                                                     <% } %>
                                                         <% } %>
         </div>
-        <div class="container gr7Marks">
+        <div class="container gr7Marks gradeMarks">
             <h1 class="text-center">Level 7</h1>
             <% for(let student of students) { %>
                 <% if(student.level===7){ %>
@@ -4409,7 +4409,7 @@
 
                                                     <div class="">
                                                         <div class="text-center mb-4">
-                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                            <a class="studsNames" href="/students/<%= student._id %>" class='student_Marks'>
                                                                 <%= student.firstN %> <%= student.lastN %>
                                                             </a>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
@@ -4787,7 +4787,7 @@
                                                     <% } %>
                                                         <% } %>
         </div>
-        <div class="container gr8Marks">
+        <div class="container gr8Marks gradeMarks">
             <h1 class="text-center">Level 8</h1>
             <% for(let student of students) { %>
                 <% if(student.level===8){ %>
@@ -4803,7 +4803,7 @@
                                                 <% nSco +=1 %>
                                                     <div class="">
                                                         <div class="text-center mb-4">
-                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                            <a class="studsNames" href="/students/<%= student._id %>" class='student_Marks'>
                                                                 <%= student.firstN %> <%= student.lastN %>
                                                             </a>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
@@ -5181,7 +5181,7 @@
                                                     <% } %>
                                                         <% } %>
         </div>
-        <div class="container gr9Marks">
+        <div class="container gr9Marks gradeMarks">
             <h1 class="text-center">Level 9</h1>
             <% for(let student of students) { %>
                 <% if(student.level===9){ %>
@@ -5199,7 +5199,7 @@
 
                                                     <div class="">
                                                         <div class="text-center mb-4">
-                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                            <a class="studsNames" href="/students/<%= student._id %>" class='student_Marks'>
                                                                 <%= student.firstN %> <%= student.lastN %>
                                                             </a>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
@@ -5577,7 +5577,7 @@
                                                     <% } %>
                                                         <% } %>
         </div>
-        <div class="container gr10Marks">
+        <div class="container gr10Marks gradeMarks">
             <h1 class="text-center">Level 10</h1>
             <% for(let student of students) { %>
                 <% if(student.level===10){ %>
@@ -5595,7 +5595,7 @@
 
                                                     <div class="">
                                                         <div class="text-center mb-4">
-                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                            <a class="studsNames" href="/students/<%= student._id %>" class='student_Marks'>
                                                                 <%= student.firstN %> <%= student.lastN %>
                                                             </a>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
@@ -5973,7 +5973,7 @@
                                                     <% } %>
                                                         <% } %>
         </div>
-        <div class="container gr11Marks">
+        <div class="container gr11Marks gradeMarks">
             <h1 class="text-center">Level 11</h1>
             <% for(let student of students) { %>
                 <% if(student.level===11){ %>
@@ -5989,7 +5989,7 @@
                                                 <% nSco +=1 %>
                                                     <div class="">
                                                         <div class="text-center mb-4">
-                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                            <a class="studsNames" href="/students/<%= student._id %>" class='student_Marks'>
                                                                 <%= student.firstN %> <%= student.lastN %>
                                                             </a>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
@@ -6367,7 +6367,7 @@
                                                     <% } %>
                                                         <% } %>
         </div>
-        <div class="container gr12Marks">
+        <div class="container gr12Marks gradeMarks">
             <h1 class="text-center">Level 12</h1>
             <% for(let student of students) { %>
                 <% if(student.level===12){ %>
@@ -6383,7 +6383,7 @@
                                                 <% nSco +=1 %>
                                                     <div class="">
                                                         <div class="text-center mb-4">
-                                                            <a class="studsNames" href="/students/<%= student._id %>">
+                                                            <a class="studsNames" href="/students/<%= student._id %>" class='student_Marks'>
                                                                 <%= student.firstN %> <%= student.lastN %>
                                                             </a>
                                                         <button class="btn btn-primary <%= nEng %>"> English <%= nEng %>
@@ -6763,7 +6763,7 @@
         </div>
     </div>
 
-    <div class="assesments" id="assesmentsContainer">
+    <div class="assesments" id="AssesmentsContainer">
         <div class="row">
             <div class="col-8 offset-2">
                 <h1 class="text-center"><i class="fas fa-marker"></i> All Student Marks</h1>
@@ -6836,7 +6836,7 @@
         </div>
     </div>
 
-    <div class="container" id="eventsContainer">
+    <div class="container" id="EventsContainer">
         <h1>Events</h1>
         <table class="table table-bordered">
             <tbody>
@@ -6863,7 +6863,7 @@
         </table>
     </div>
 
-    <div class="container" id="rosterContainer">
+    <div class="container" id="RosterContainer">
         <h1>Exams</h1>
         <table class="table table-bordered">
             <tbody>
